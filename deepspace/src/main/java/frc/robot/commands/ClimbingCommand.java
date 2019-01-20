@@ -7,15 +7,12 @@
 
 package frc.robot.commands;
 
-import frc.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
-
-public class DriveManuallyCommand extends Command {
-  public DriveManuallyCommand() {
+public class ClimbingCommand extends Command {
+  public ClimbingCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.driveSubsystemRef);
   }
 
   // Called just before this Command runs the first time
@@ -26,9 +23,6 @@ public class DriveManuallyCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double move = -Robot.m_oi.stick.getY();
-    double turn = Robot.m_oi.stick.getX();
-    Robot.driveSubsystemRef.manualDrive(move, turn);
   }
 
   // Make this return true when this Command no longer needs to run execute()
