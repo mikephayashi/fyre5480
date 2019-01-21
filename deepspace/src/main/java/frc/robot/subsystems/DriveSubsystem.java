@@ -13,7 +13,7 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import frc.robot.Robot;
+
 import frc.robot.RobotMap;
 import frc.robot.commands.DriveManuallyCommand;
 
@@ -36,7 +36,7 @@ public class DriveSubsystem extends Subsystem {
   DifferentialDrive drive = new DifferentialDrive(m_left, m_right);
 
   //Encoders
-  Encoder sampleEncoder = new Encoder(RobotMap.encoder_port_one, RobotMap.encoder_port_two, false, Encoder.EncodingType.k4X);
+  Encoder wheeelChassis_Encoder = new Encoder(RobotMap.wheel_encoder_port_one, RobotMap.wheel_encoder_port_two, false, Encoder.EncodingType.k4X);
 
   //Sensors
   public Ultrasonic ultra = new Ultrasonic(RobotMap.ultrasonic_digital_out,RobotMap.ultrasonic_digital_in); // usually (1,1)... creates the ultra object and assigns ultra to be an ultrasonic sensor which uses DigitalOutput 1 for the echo pulse and DigitalInput 1 for the trigger pulse
@@ -51,17 +51,18 @@ public class DriveSubsystem extends Subsystem {
 
   public void driveEncoder(){
     
-    /*int count = sampleEncoder.get();
-    double raw_distance = sampleEncoder.getRaw();
-    double distance = sampleEncoder.getDistance();
-    double period = sampleEncoder.getPeriod();
-    double rate = sampleEncoder.getRate();
-    boolean direction = sampleEncoder.getDirection();
-    boolean stopped = sampleEncoder.getStopped();*/
+    /*int count = wheeelChassis_Encoder.get();
+    double raw_distance = wheeelChassis_Encoder.getRaw();
+    double distance = wheeelChassis_Encoder.getDistance();
+    double period = wheeelChassis_Encoder.getPeriod();
+    double rate = wheeelChassis_Encoder.getRate();
+    boolean direction = wheeelChassis_Encoder.getDirection();
+    boolean stopped = wheeelChassis_Encoder.getStopped();*/
   }
 
-  public void ultraSonicDistanceSensor(){
+  public double ultraSonicDistanceSensor(){
     double range = ultra.getRangeInches(); // reads the range on the ultrasonic sensor
+    return range;
   }
 
   

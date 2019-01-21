@@ -12,6 +12,8 @@ import edu.wpi.first.wpilibj.command.Command;
 
 
 public class DriveManuallyCommand extends Command {
+
+
   public DriveManuallyCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -30,6 +32,7 @@ public class DriveManuallyCommand extends Command {
     double move = -Robot.m_oi.stick.getY();
     double turn = Robot.m_oi.stick.getX();
     Robot.driveSubsystemRef.manualDrive(move, turn);
+    Robot.driveSubsystemRef.driveEncoder();
   }
 
   // Make this return true when this Command no longer needs to run execute()
