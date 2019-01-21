@@ -26,21 +26,27 @@ public class RobotMap {
   public static int rangefinderModule = 1;*/
 
   //Drive Motor
-  public static int leftMaster = 1;
-	public static int leftSlave = 2;
-	public static int rightMaster = 3;
-  public static int rightSlave = 4;
+  public static int leftMaster = 0;
+	public static int leftSlave = 0;
+	public static int rightMaster = 0;
+  public static int rightSlave = 0;
   
   //OI - joystick and buttons
   public static int joy_stick_port = 0;
 
   //Wheel Chassis encoder
-  public static int encoder_port_one = 5;
-  public static int encoder_port_two = 6;
+  public static int wheel_encoder_port_one = 0;
+  public static int wheel_encoder_port_two = 0;
 
   //Ultrasonic sensor
-  public static int ultrasonic_digital_out = 7;
-  public static int ultrasonic_digital_in = 8;
+  public static int ultrasonic_digital_out = 0;
+  public static int ultrasonic_digital_in = 0;
 
+  //Lift Subsystem Encoder
+  public static int lift_encoder_port_one = 0;
+  public static int lift_encoder_port_two = 0;
 
+  //Climbing Subsystem Encoder
+  public static int climbing_encoder_port_one = 0;
+  public static int climbing_encoder_port_two = 0;
 }
