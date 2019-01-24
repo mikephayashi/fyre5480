@@ -9,7 +9,6 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Spark;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -25,15 +24,9 @@ public class DriveSubsystem extends Subsystem {
   // here. Call these from Commands.
 
   //Drive Train
-  Spark m_frontLeft = new Spark(RobotMap.leftMaster);
-  Spark m_rearLeft = new Spark(RobotMap.leftSlave);
-  SpeedControllerGroup m_left = new SpeedControllerGroup(m_frontLeft, m_rearLeft);
-
-  Spark m_frontRight = new Spark(RobotMap.rightMaster);
-  Spark m_rearRight = new Spark(RobotMap.rightSlave);
-  SpeedControllerGroup m_right = new SpeedControllerGroup(m_frontRight, m_rearRight);
-
-  DifferentialDrive drive = new DifferentialDrive(m_left, m_right);
+  Spark m_left = new Spark(RobotMap.leftMotor);
+	Spark m_right = new Spark(RobotMap.rightMotor);
+  DifferentialDrive m_drive = new DifferentialDrive(m_left,m_right);
 
   //Encoders
   Encoder wheeelChassis_Encoder = new Encoder(RobotMap.wheel_encoder_port_one, RobotMap.wheel_encoder_port_two, false, Encoder.EncodingType.k4X);
@@ -46,7 +39,7 @@ public class DriveSubsystem extends Subsystem {
   }
 
   public void manualDrive(double move, double turn){
-    drive.arcadeDrive(move, turn);
+    m_drive.arcadeDrive(move, turn);
   }
 
   public void driveEncoder(){
