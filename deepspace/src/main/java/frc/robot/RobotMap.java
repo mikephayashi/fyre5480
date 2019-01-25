@@ -26,10 +26,8 @@ public class RobotMap {
   public static int rangefinderModule = 1;*/
 
   //Drive Motor
-  public static int leftMaster = 0;
-	public static int leftSlave = 0;
-	public static int rightMaster = 0;
-  public static int rightSlave = 0;
+  public static int leftMotor = 0;
+	public static int rightMotor = 1;
   
   //OI - joystick and buttons
   public static int joy_stick_port = 0;
