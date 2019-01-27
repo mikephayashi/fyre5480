@@ -46,7 +46,7 @@ from networktables import NetworkTablesInstance
 #       ]
 #   }
 
-configFile = "/boot/frc.json"
+configFile = "/boot/frc.json" #add json here
 
 class CameraConfig: pass
 
