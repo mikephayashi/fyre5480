@@ -49,7 +49,7 @@ public class Robot extends TimedRobot {
     //chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
     CameraServer.getInstance().startAutomaticCapture();
-    driveSubsystemRef.ultra.setAutomaticMode(true); // turns on automatic mode
+    //driveSubsystemRef.ultra.setAutomaticMode(true); // turns on automatic mode
   }
 
   /**
