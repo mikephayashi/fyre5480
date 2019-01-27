@@ -31,9 +31,9 @@ public class DriveManuallyCommand extends Command {
   @Override
   protected void execute() {
     
-    /*double throttle = Robot.m_oi.stick.getThrottleChannel();
+    /* double throttle = Robot.m_oi.stick.getThrottleChannel();
     double move = -Robot.m_oi.stick.getY()*throttle;
-    double turn = Robot.m_oi.stick.getX();*/
+    double turn = Robot.m_oi.stick.getX(); */
 
     double move = Robot.m_oi.m_xBox.getY(Hand.kLeft) * 0.5;
     double turn = Robot.m_oi.m_xBox.getY(Hand.kRight) * 0.5;

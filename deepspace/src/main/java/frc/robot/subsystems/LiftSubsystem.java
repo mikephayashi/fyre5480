@@ -20,23 +20,23 @@ public class LiftSubsystem extends Subsystem {
   // here. Call these from Commands.
 
   //Encoders
-  Encoder lift_Encoder = new Encoder(RobotMap.lift_encoder_port_one, RobotMap.lift_encoder_port_two, false, Encoder.EncodingType.k4X);
+  //Encoder lift_Encoder = new Encoder(RobotMap.lift_encoder_port_one, RobotMap.lift_encoder_port_two, false, Encoder.EncodingType.k4X);
 
 
 public LiftSubsystem(){
 
 }
 
-public void liftEncoder(){
+/* public void liftEncoder(){
     
-  /*int count = lift_Encoder.get();
+  int count = lift_Encoder.get();
   double raw_distance = lift_Encoder.getRaw();
   double distance = lift_Encoder.getDistance();
   double period = lift_Encoder.getPeriod();
   double rate = lift_Encoder.getRate();
   boolean direction = lift_Encoder.getDirection();
-  boolean stopped = lift_Encoder.getStopped();*/
-}
+  boolean stopped = lift_Encoder.getStopped();
+} */
 
   @Override
   public void initDefaultCommand() {

@@ -42,21 +42,21 @@ public class DriveSubsystem extends Subsystem {
     m_drive.arcadeDrive(move, turn);
   }
 
-  public void driveEncoder(){
+ /*  public void driveEncoder(){
     
-    /*int count = wheeelChassis_Encoder.get();
+    int count = wheeelChassis_Encoder.get();
     double raw_distance = wheeelChassis_Encoder.getRaw();
     double distance = wheeelChassis_Encoder.getDistance();
     double period = wheeelChassis_Encoder.getPeriod();
     double rate = wheeelChassis_Encoder.getRate();
     boolean direction = wheeelChassis_Encoder.getDirection();
-    boolean stopped = wheeelChassis_Encoder.getStopped();*/
-  }
+    boolean stopped = wheeelChassis_Encoder.getStopped();
+  } */
 
-  /*public double ultraSonicDistanceSensor(){
+/*   public double ultraSonicDistanceSensor(){
     double range = ultra.getRangeInches(); // reads the range on the ultrasonic sensor
     return range;
-  }*/
+  } */
 
   
 
