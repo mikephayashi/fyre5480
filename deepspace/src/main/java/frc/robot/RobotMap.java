@@ -30,7 +30,7 @@ public class RobotMap {
 	public static int rightMotor = 1;
   
   //OI - joystick and buttons
-  public static int joy_stick_port = 0;
+  //public static int joy_stick_port = 0;
 
   //Wheel Chassis encoder
   public static int wheel_encoder_port_one = 0;

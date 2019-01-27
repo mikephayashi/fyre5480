@@ -29,10 +29,10 @@ public class DriveSubsystem extends Subsystem {
   DifferentialDrive m_drive = new DifferentialDrive(m_left,m_right);
 
   //Encoders
-  Encoder wheeelChassis_Encoder = new Encoder(RobotMap.wheel_encoder_port_one, RobotMap.wheel_encoder_port_two, false, Encoder.EncodingType.k4X);
+  //Encoder wheeelChassis_Encoder = new Encoder(RobotMap.wheel_encoder_port_one, RobotMap.wheel_encoder_port_two, false, Encoder.EncodingType.k4X);
 
   //Sensors
-  public Ultrasonic ultra = new Ultrasonic(RobotMap.ultrasonic_digital_out,RobotMap.ultrasonic_digital_in); // usually (1,1)... creates the ultra object and assigns ultra to be an ultrasonic sensor which uses DigitalOutput 1 for the echo pulse and DigitalInput 1 for the trigger pulse
+  //public Ultrasonic ultra = new Ultrasonic(RobotMap.ultrasonic_digital_out,RobotMap.ultrasonic_digital_in); // usually (1,1)... creates the ultra object and assigns ultra to be an ultrasonic sensor which uses DigitalOutput 1 for the echo pulse and DigitalInput 1 for the trigger pulse
 
   public DriveSubsystem(){
 
@@ -53,10 +53,10 @@ public class DriveSubsystem extends Subsystem {
     boolean stopped = wheeelChassis_Encoder.getStopped();*/
   }
 
-  public double ultraSonicDistanceSensor(){
+  /*public double ultraSonicDistanceSensor(){
     double range = ultra.getRangeInches(); // reads the range on the ultrasonic sensor
     return range;
-  }
+  }*/
 
   
 

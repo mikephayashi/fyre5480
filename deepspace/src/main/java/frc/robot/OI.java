@@ -8,6 +8,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.XboxController;
 //import edu.wpi.first.wpilibj.buttons.Button;
 import frc.robot.RobotMap;
 
@@ -17,10 +18,13 @@ import frc.robot.RobotMap;
  */
 public class OI {
 
+  // XBox
+  public XboxController m_xBox = new XboxController(1);
+
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a joystick.
   // You create one by telling it which joystick it's on and which button number it is.
-  public Joystick stick = new Joystick(RobotMap.joy_stick_port);
+  //public Joystick stick = new Joystick(RobotMap.joy_stick_port);
   // Button button = new JoystickButton(stick, buttonNumber);
 
   /*Button button1 = new JoystickButton(stick, 1),
