@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import frc.robot.commands.ManipulatorCommand;
+import java.io.*;
 
 /**
  * Add your docs here.
@@ -40,10 +41,12 @@ public class ManipulatorSubsystem extends Subsystem {
 
     compress.enabled();
 
-    if (pressureSwitch){
+    if (!pressureSwitch){
       compress.setClosedLoopControl(true);
+      System.out.println("Pneumatic Compressor On");
     } else {
       compress.setClosedLoopControl(false);
+      System.out.println("Pneumatic Compressor Off");
     }
     
     
