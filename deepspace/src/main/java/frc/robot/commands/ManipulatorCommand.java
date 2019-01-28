@@ -20,12 +20,13 @@ public class ManipulatorCommand extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.manipulatorSubsystemRef.compressor_toggle();
+    
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    Robot.manipulatorSubsystemRef.compressor_toggle();
   }
 
   // Make this return true when this Command no longer needs to run execute()

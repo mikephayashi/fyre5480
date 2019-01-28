@@ -40,11 +40,13 @@ public class ManipulatorSubsystem extends Subsystem {
 
     compress.enabled();
 
-    while (pressureSwitch){
+    if (pressureSwitch){
       compress.setClosedLoopControl(true);
+    } else {
+      compress.setClosedLoopControl(false);
     }
     
-    compress.setClosedLoopControl(false);
+    
     
 
   }
