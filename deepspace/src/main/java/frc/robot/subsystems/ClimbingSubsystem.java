@@ -20,7 +20,7 @@ public class ClimbingSubsystem extends Subsystem {
   // here. Call these from Commands.
 
   //Encoders
-  Encoder climbing_Encoder = new Encoder(RobotMap.climbing_encoder_port_one, RobotMap.climbing_encoder_port_two, false, Encoder.EncodingType.k4X);
+  //Encoder climbing_Encoder = new Encoder(RobotMap.climbing_encoder_port_one, RobotMap.climbing_encoder_port_two, false, Encoder.EncodingType.k4X);
 
   @Override
   public void initDefaultCommand() {

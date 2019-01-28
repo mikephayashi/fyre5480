@@ -7,12 +7,13 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-
+import edu.wpi.first.wpilibj.interfaces.Gyro;
 import frc.robot.RobotMap;
 import frc.robot.commands.DriveManuallyCommand;
 
@@ -23,43 +24,50 @@ public class DriveSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  //Drive Train
+  // Drive Train
   Spark m_left = new Spark(RobotMap.leftMotor);
-	Spark m_right = new Spark(RobotMap.rightMotor);
-  DifferentialDrive m_drive = new DifferentialDrive(m_left,m_right);
+  Spark m_right = new Spark(RobotMap.rightMotor);
+  DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
 
-  //Encoders
-  //Encoder wheeelChassis_Encoder = new Encoder(RobotMap.wheel_encoder_port_one, RobotMap.wheel_encoder_port_two, false, Encoder.EncodingType.k4X);
+  // Encoders
+  // Encoder wheeelChassis_Encoder = new Encoder(RobotMap.wheel_encoder_port_one,
+  // RobotMap.wheel_encoder_port_two, false, Encoder.EncodingType.k4X);
 
-  //Sensors
-  //public Ultrasonic ultra = new Ultrasonic(RobotMap.ultrasonic_digital_out,RobotMap.ultrasonic_digital_in); // usually (1,1)... creates the ultra object and assigns ultra to be an ultrasonic sensor which uses DigitalOutput 1 for the echo pulse and DigitalInput 1 for the trigger pulse
+  // Ultrasonic sensor
+  // public Ultrasonic ultra = new Ultrasonic(RobotMap.ultrasonic_digital_out,RobotMap.ultrasonic_digital_in);
+  // usually (1,1)... creates the ultra object and assigns ultra to be an ultrasonic sensor which uses DigitalOutput 1 for the echo pulse and DigitalInput 1 for the trigger pulse
 
-  public DriveSubsystem(){
+  //Gyro
+  //public Gyro gyro_sensor = new AnalogGyro(RobotMap.gyro_port);
+
+  public DriveSubsystem() {
 
   }
 
-  public void manualDrive(double move, double turn){
+  public void manualDrive(double move, double turn) {
     m_drive.arcadeDrive(move, turn);
   }
 
- /*  public void driveEncoder(){
-    
-    int count = wheeelChassis_Encoder.get();
-    double raw_distance = wheeelChassis_Encoder.getRaw();
-    double distance = wheeelChassis_Encoder.getDistance();
-    double period = wheeelChassis_Encoder.getPeriod();
-    double rate = wheeelChassis_Encoder.getRate();
-    boolean direction = wheeelChassis_Encoder.getDirection();
-    boolean stopped = wheeelChassis_Encoder.getStopped();
-  } */
-
-/*   public double ultraSonicDistanceSensor(){
-    double range = ultra.getRangeInches(); // reads the range on the ultrasonic sensor
-    return range;
-  } */
-
   
+  //  public void driveSensors(){
+    
+  //   //Encoder
+  //   int count = wheeelChassis_Encoder.get(); 
+  //   double raw_distance = wheeelChassis_Encoder.getRaw(); 
+  //   double distance = wheeelChassis_Encoder.getDistance(); 
+  //   double period = wheeelChassis_Encoder.getPeriod(); 
+  //   double rate = wheeelChassis_Encoder.getRate(); 
+  //   boolean direction = wheeelChassis_Encoder.getDirection(); 
+  //   boolean stopped = wheeelChassis_Encoder.getStopped(); 
 
+  //   //Ultrasonic
+  //   double range = ultra.getRangeInches(); // reads the range on the ultrasonic sensor return range
+
+  //   //Gyro
+  //   double angle = gyro.getAngle(); // get current heading
+  
+  //  }
+   
 
   @Override
   public void initDefaultCommand() {

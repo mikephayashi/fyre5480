@@ -40,7 +40,6 @@ public class DriveManuallyCommand extends Command {
     
 
     Robot.driveSubsystemRef.manualDrive(move, turn);
-    //Robot.driveSubsystemRef.driveEncoder();
   }
 
   // Make this return true when this Command no longer needs to run execute()
