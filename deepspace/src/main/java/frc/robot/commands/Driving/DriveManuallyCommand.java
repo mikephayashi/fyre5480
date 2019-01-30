@@ -5,7 +5,7 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.robot.commands.Driving;
 
 import frc.robot.Robot;
 import edu.wpi.first.wpilibj.GenericHID.Hand;

@@ -27,22 +27,22 @@ public class OI {
   //public Joystick stick = new Joystick(RobotMap.joy_stick_port);
   // Button button = new JoystickButton(stick, buttonNumber);
 
-  /*Button button1 = new JoystickButton(stick, 1),
-			button2 = new JoystickButton(stick, 2),
-			button3 = new JoystickButton(stick, 3),
-			button4 = new JoystickButton(stick, 4),
-			button5 = new JoystickButton(stick, 5),
-			button6 = new JoystickButton(stick, 6),
-			button7 = new JoystickButton(stick, 7),
-      button8 = new JoystickButton(stick, 8); */
+  // Button button1 = new JoystickButton(stick, 1),
+	// 		button2 = new JoystickButton(stick, 2),
+	// 		button3 = new JoystickButton(stick, 3),
+	// 		button4 = new JoystickButton(stick, 4),
+	// 		button5 = new JoystickButton(stick, 5),
+	// 		button6 = new JoystickButton(stick, 6),
+	// 		button7 = new JoystickButton(stick, 7),
+  //     button8 = new JoystickButton(stick, 8); 
       
-    /*button1.whenPressed(new PrepareToGrab());
-		button2.whenPressed(new Grab());
-		button3.whenPressed(new DriveToDistance(0.11));
-		button4.whenPressed(new PlaceSoda());
-    button6.whenPressed(new DriveToDistance(0.2));
-    button7.whenPressed(new SodaDelivery());
-		button8.whenPressed(new Stow());*/
+    // button1.whenPressed(new PrepareToGrab());
+		// button2.whenPressed(new Grab());
+		// button3.whenPressed(new DriveToDistance(0.11));
+		// button4.whenPressed(new PlaceSoda());
+    // button6.whenPressed(new DriveToDistance(0.2));
+    // button7.whenPressed(new SodaDelivery());
+		// button8.whenPressed(new Stow());
 		
 
   //// TRIGGERING COMMANDS WITH BUTTONS

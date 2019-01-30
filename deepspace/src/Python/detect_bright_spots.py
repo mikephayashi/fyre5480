@@ -32,7 +32,10 @@ thresh = cv2.dilate(thresh, None, iterations=4)
 # image, then initialize a mask to store only the "large"
 # components
 labels = measure.label(thresh, neighbors=8, background=0)
+# measure.labels #http://scikit-image.org/docs/dev/api/skimage.measure.html#skimage.measure.label
 mask = np.zeros(thresh.shape, dtype="uint8")
+#shape #https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_core/py_basic_ops/py_basic_ops.html
+#np.zeros https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.zeros.html
 
 # loop over the unique components
 for label in np.unique(labels):
@@ -71,7 +74,3 @@ for (i, c) in enumerate(cnts):
 # show the output image
 cv2.imshow("Image", image)
 cv2.waitKey(0)
-
-"""# show the output image
-cv2.imshow("Image", thresh)
-cv2.waitKey(0)"""

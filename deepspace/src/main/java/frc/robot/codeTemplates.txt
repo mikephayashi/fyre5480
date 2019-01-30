@@ -1,7 +1,0 @@
-
-//Pneumatic Compressor
-
-//Solenoid 
-Solenoid exampleSolenoid = new Solenoid(1);
-exampleSolenoid.set(true);
-exampleSolenoid.set(false);

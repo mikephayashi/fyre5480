@@ -5,16 +5,14 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.robot.commands.Lift;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
 
-public class VisionCommand extends Command {
-  public VisionCommand() {
+public class UpLiftCommand extends Command {
+  public UpLiftCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.visionSubsystemRef);
   }
 
   // Called just before this Command runs the first time
