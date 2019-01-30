@@ -8,6 +8,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import frc.robot.commands.Lift.UpLiftCommand;
@@ -21,24 +22,38 @@ public class LiftSubsystem extends Subsystem {
   // here. Call these from Commands.
 
   //Encoders
-  //Encoder lift_Encoder = new Encoder(RobotMap.lift_encoder_port_one, RobotMap.lift_encoder_port_two, false, Encoder.EncodingType.k4X);
+  public Encoder lift_Encoder = new Encoder(RobotMap.lift_encoder_port_one, RobotMap.lift_encoder_port_two, false, Encoder.EncodingType.k4X);
+  public int count = lift_Encoder.get();
+  public double raw_distance = lift_Encoder.getRaw();
+  public double distance = lift_Encoder.getDistance();
+  public double period = lift_Encoder.getPeriod();
+  public double rate = lift_Encoder.getRate();
+  public boolean direction = lift_Encoder.getDirection();
+  public boolean stopped = lift_Encoder.getStopped();
+  //Motors
+  public Spark LiftMotorController = new Spark(RobotMap.lift_motor_port);
 
-
-public LiftSubsystem(){
-
-}
-
-/* public void liftEncoder(){
+  //Lift Down Level
+  public void liftDown(){
+    lift_Encoder.reset();
+    if (count != 0){
+      LiftMotorController.set(0.5);
+    } else {
+      LiftMotorController.set(0);
+    }
     
-  int count = lift_Encoder.get();
-  double raw_distance = lift_Encoder.getRaw();
-  double distance = lift_Encoder.getDistance();
-  double period = lift_Encoder.getPeriod();
-  double rate = lift_Encoder.getRate();
-  boolean direction = lift_Encoder.getDirection();
-  boolean stopped = lift_Encoder.getStopped();
-} */
+  }
 
+  //Lift Up Level
+  public void liftUp(){
+    lift_Encoder.reset();
+    if (count != 10){
+      LiftMotorController.set(0.5);
+    } else {
+      LiftMotorController.set(0);
+    }
+  }
+  
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
