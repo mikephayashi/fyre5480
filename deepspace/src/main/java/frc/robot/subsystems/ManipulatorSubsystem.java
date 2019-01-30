@@ -12,7 +12,9 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-import frc.robot.commands.ManipulatorCommand;
+import frc.robot.commands.Manipulator.CargoCommand;
+import frc.robot.commands.Manipulator.CloseHatchCommand;
+import frc.robot.commands.Manipulator.OpenHatchCommand;
 import java.io.*;
 
 /**
@@ -67,6 +69,6 @@ public class ManipulatorSubsystem extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new ManipulatorCommand());
+    setDefaultCommand(new CargoCommand());
   }
 }

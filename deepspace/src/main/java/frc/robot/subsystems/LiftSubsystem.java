@@ -10,7 +10,8 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-import frc.robot.commands.LiftCommand;
+import frc.robot.commands.Lift.UpLiftCommand;
+import frc.robot.commands.Lift.DownLiftCommand;
 
 /**
  * Add your docs here.
@@ -41,6 +42,6 @@ public LiftSubsystem(){
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new LiftCommand());
+    setDefaultCommand(new UpLiftCommand());
   }
 }
