@@ -25,18 +25,24 @@ public class RobotMap {
   public static int rangefinderPort = 1;
   public static int rangefinderModule = 1;*/
 
-  //Drive Motor
+  //Drive subsystem Drive Motors
   public static int leftMotor = 0;
 	public static int rightMotor = 1;
   
-  //OI - joystick and buttons
-  public static int joy_stick_port = 0;
+  //OI joystick and buttons
+  //public static int joy_stick_port = 0;
 
-  //Wheel Chassis encoder
+  //OI X Box Controller
+  public static int xbox_port = 1;
+
+  //Dirve Subystem Wheel Chassis encoder
   public static int wheel_encoder_port_one = 0;
   public static int wheel_encoder_port_two = 0;
 
-  //Ultrasonic sensor
+  //Drive Subystem Gyro
+  public static int gyro_port = 0;
+
+  //Dirve Subystem Ultrasonic sensor
   public static int ultrasonic_digital_out = 0;
   public static int ultrasonic_digital_in = 0;
 
@@ -47,4 +53,13 @@ public class RobotMap {
   //Climbing Subsystem Encoder
   public static int climbing_encoder_port_one = 0;
   public static int climbing_encoder_port_two = 0;
+
+  //Mainpulator Subsystem Switch
+  public static int manipulator_switch_port = 0;
+
+  //Manipulator Subsystem Compressor
+  public static int manipulator_compressor_port = 0;
+
+  //Manipulator Subystem Solenoid
+  public static int manipulator_solenoid_port = 0;
 }

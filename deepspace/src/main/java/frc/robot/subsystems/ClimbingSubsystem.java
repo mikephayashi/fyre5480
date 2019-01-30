@@ -20,7 +20,7 @@ public class ClimbingSubsystem extends Subsystem {
   // here. Call these from Commands.
 
   //Encoders
-  Encoder climbing_Encoder = new Encoder(RobotMap.climbing_encoder_port_one, RobotMap.climbing_encoder_port_two, false, Encoder.EncodingType.k4X);
+  //Encoder climbing_Encoder = new Encoder(RobotMap.climbing_encoder_port_one, RobotMap.climbing_encoder_port_two, false, Encoder.EncodingType.k4X);
 
   @Override
   public void initDefaultCommand() {
@@ -28,14 +28,14 @@ public class ClimbingSubsystem extends Subsystem {
     setDefaultCommand(new ClimbingCommand());
   }
 
-  public void climbingEncoder(){
+  /* public void climbingEncoder(){
     
-    /*int count = climbing_Encoder.get();
+    int count = climbing_Encoder.get();
     double raw_distance = climbing_Encoder.getRaw();
     double distance = climbing_Encoder.getDistance();
     double period = climbing_Encoder.getPeriod();
     double rate = climbing_Encoder.getRate();
     boolean direction = climbing_Encoder.getDirection();
-    boolean stopped = climbing_Encoder.getStopped();*/
-  }
+    boolean stopped = climbing_Encoder.getStopped();
+  } */
 }
