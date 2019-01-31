@@ -30,7 +30,13 @@ public class RobotMap {
 	public static int rightMotor = 1;
   
   //OI joystick and buttons
-  //public static int joy_stick_port = 0;
+  public static int joy_stick_port = 0;
+  public static int button_one = 0;
+  public static int button_two = 0;
+  public static int button_three = 0;
+  public static int button_four = 0;
+  public static int button_five = 0;
+  public static int button_six = 0;
 
   //OI X Box Controller
   public static int xbox_port = 1;
@@ -49,10 +55,16 @@ public class RobotMap {
   //Lift Subsystem Encoder
   public static int lift_encoder_port_one = 0;
   public static int lift_encoder_port_two = 0;
+  
+  //Lift Subsystem Motor
+  public static int lift_motor_port = 0;
 
   //Climbing Subsystem Encoder
   public static int climbing_encoder_port_one = 0;
   public static int climbing_encoder_port_two = 0;
+
+  //Climbing Subsystem Motor
+  public static int climbing_motor_port = 0;
 
   //Mainpulator Subsystem Switch
   public static int manipulator_switch_port = 0;
@@ -62,4 +74,15 @@ public class RobotMap {
 
   //Manipulator Subystem Solenoid
   public static int manipulator_solenoid_port = 0;
+  
+  //Manipulator Subsystem Motor
+  public static int manipulator_motor_port = 0;
+
+  //Manipulator Subsystem Motorswings
+  public static int cargo_wings_motor_port = 0;
+
+  //Manipulator Subsystem Encoder
+  public static int cargo_encoder_port_one = 0;
+  public static int cargo_encoder_port_two = 0;
 }
+  

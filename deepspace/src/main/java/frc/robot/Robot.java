@@ -47,8 +47,8 @@ public class Robot extends TimedRobot {
     m_chooser.setDefaultOption("Default Auto", new DriveManuallyCommand());
     //chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
-    //CameraServer.getInstance().startAutomaticCapture();
-    //driveSubsystemRef.ultra.setAutomaticMode(true); // turns on automatic mode
+    CameraServer.getInstance().startAutomaticCapture();
+    
   }
 
   /**

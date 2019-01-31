@@ -8,6 +8,7 @@
 package frc.robot.commands.Driving;
 
 import frc.robot.Robot;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -20,6 +21,7 @@ public class DriveManuallyCommand extends Command {
     // eg. requires(chassis);
     requires(Robot.driveSubsystemRef);
   }
+
 
   // Called just before this Command runs the first time
   @Override
@@ -37,8 +39,6 @@ public class DriveManuallyCommand extends Command {
 
     double move = Robot.m_oi.m_xBox.getY(Hand.kLeft) * 0.5;
     double turn = Robot.m_oi.m_xBox.getY(Hand.kRight) * 0.5;
-    
-
     Robot.driveSubsystemRef.manualDrive(move, turn);
   }
 

@@ -9,13 +9,18 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import edu.wpi.first.wpilibj.Spark;
 import frc.robot.commands.Manipulator.CargoCommand;
 import frc.robot.commands.Manipulator.CloseHatchCommand;
 import frc.robot.commands.Manipulator.OpenHatchCommand;
 import java.io.*;
+import java.sql.Time;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Add your docs here.
@@ -25,24 +30,33 @@ public class ManipulatorSubsystem extends Subsystem {
   // here. Call these from Commands.
 
   //Switches
-  //public DigitalInput limitSwitch = new DigitalInput(RobotMap.manipulator_switch_port);
+  public DigitalInput limitSwitch = new DigitalInput(RobotMap.manipulator_switch_port);
+  public Boolean limitSwitch_value = limitSwitch.get();
 
   //Compressor
   public Compressor compress = new Compressor(RobotMap.manipulator_compressor_port);
+  public boolean pressureSwitch = compress.getPressureSwitchValue();
+  public double current = compress.getCompressorCurrent();
   
-
   //Solenoid
-  // public Solenoid manipulator_solenoid = new Solenoid(RobotMap.manipulator_solenoid_port);
-  // public Boolean solenoid_state;
+  public Solenoid manipulator_solenoid = new Solenoid(RobotMap.manipulator_solenoid_port);
 
+  //Motors
+  Spark manipulatorMotorController = new Spark(RobotMap.manipulator_motor_port);
+  Spark cargoWingsMotorController = new Spark(RobotMap.cargo_wings_motor_port);
 
-  public void compressor_toggle(){
+  //Encoders
+  public Encoder cargo_encoder = new Encoder(RobotMap.cargo_encoder_port_one, RobotMap.cargo_encoder_port_two, false, Encoder.EncodingType.k4X);
+  public int count = cargo_encoder.get();
+  public double raw_distance = cargo_encoder.getRaw();
+  public double distance = cargo_encoder.getDistance();
+  public double period = cargo_encoder.getPeriod();
+  public double rate = cargo_encoder.getRate();
+  public boolean direction = cargo_encoder.getDirection();
+  public boolean stopped = cargo_encoder.getStopped();
 
-    boolean pressureSwitch = compress.getPressureSwitchValue();
-    double current = compress.getCompressorCurrent();
-
+  public void compressor(){
     compress.enabled();
-
     if (!pressureSwitch){
       compress.setClosedLoopControl(true);
       System.out.println("Pneumatic Compressor On");
@@ -50,20 +64,67 @@ public class ManipulatorSubsystem extends Subsystem {
       compress.setClosedLoopControl(false);
       System.out.println("Pneumatic Compressor Off");
     }
-    
-    
-    
-
   }
 
-  // public void solenoid_toggle(){
-  //   if (solenoid_state == true){
-  //     solenoid_state = false;
-  //   } else {
-  //     solenoid_state = true;
-  //   }
-  //   manipulator_solenoid.set(solenoid_state);
-  // }
+  //Extends Manipulator system beyond chassis frame
+  public void extendManipulator(){
+    if (limitSwitch_value){
+      manipulatorMotorController.set(0.5);
+    } else {
+      manipulatorMotorController.set(0);
+    }
+  }
+
+  //Tretracts manipulator system within chassi frame
+  public void retractManipulator(){
+    if (limitSwitch_value){
+      manipulatorMotorController.set(0.5);
+    } else {
+      manipulatorMotorController.set(0);
+    }
+  }
+
+  //Extend cargo wings to hold balls
+  public void extendCargoWings(){
+    cargo_encoder.reset();
+    if (count==10){
+      cargoWingsMotorController.set(0.5);
+    } else {
+      cargoWingsMotorController.set(0);
+    }
+    
+  }
+
+  //Retracts Crgo wing back into lift
+  public void retractCargoWings(){
+    cargo_encoder.reset();
+    if (count==10){
+      cargoWingsMotorController.set(0.5);
+    } else {
+      cargoWingsMotorController.set(0);
+    }
+  }
+
+  //Kicks cargo ball out
+  public void cargo(){
+    manipulator_solenoid.set(true);
+    try {
+      Thread.sleep(1000);
+  } catch(InterruptedException e) {
+      System.out.println("got interrupted!");
+  }
+    manipulator_solenoid.set(false);
+  }
+
+  //Opens clasps to put on hatches
+  public void openHatch(){
+    manipulator_solenoid.set(true);
+  }
+
+  //Closes clasps to secure hatch onto robot
+  public void closeHatch(){
+    manipulator_solenoid.set(false);
+  }
 
 
   @Override
