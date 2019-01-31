@@ -5,16 +5,16 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.robot.commands.Lift;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class VisionCommand extends Command {
-  public VisionCommand() {
+public class ManualLiftCommand extends Command {
+  public ManualLiftCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.visionSubsystemRef);
+    requires(Robot.liftSubsystemRef);
   }
 
   // Called just before this Command runs the first time
@@ -25,6 +25,7 @@ public class VisionCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+
   }
 
   // Make this return true when this Command no longer needs to run execute()

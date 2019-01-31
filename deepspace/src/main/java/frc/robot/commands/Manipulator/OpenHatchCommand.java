@@ -5,35 +5,27 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.robot.commands.Manipulator;
 
-import frc.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
-
-public class DriveManuallyCommand extends Command {
-
-
-  public DriveManuallyCommand() {
+public class OpenHatchCommand extends Command {
+  public OpenHatchCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.driveSubsystemRef);
+    requires(Robot.manipulatorSubsystemRef);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double throttle = 0.25;  
-    double move = -Robot.m_oi.stick.getY() * throttle;
-    double turn = Robot.m_oi.stick.getX() * throttle;
-    Robot.driveSubsystemRef.manualDrive(move, turn);
-    Robot.driveSubsystemRef.driveEncoder();
+    Robot.manipulatorSubsystemRef.openHatch();
   }
 
   // Make this return true when this Command no longer needs to run execute()

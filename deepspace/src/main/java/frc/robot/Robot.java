@@ -13,12 +13,11 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.commands.DriveManuallyCommand;
-import frc.robot.subsystems.ClimbingSubsystem;
+import frc.robot.commands.Driving.DriveManuallyCommand;
 import frc.robot.subsystems.DriveSubsystem;
+import frc.robot.subsystems.ClimbingSubsystem;
 import frc.robot.subsystems.LiftSubsystem;
 import frc.robot.subsystems.ManipulatorSubsystem;
-import frc.robot.subsystems.VisionSubsystem;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -28,11 +27,10 @@ import frc.robot.subsystems.VisionSubsystem;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static ClimbingSubsystem climbingSubsystemRef = new ClimbingSubsystem();
   public static DriveSubsystem driveSubsystemRef = new DriveSubsystem();
+  public static ClimbingSubsystem climbingSubsystemRef = new ClimbingSubsystem();
   public static LiftSubsystem liftSubsystemRef = new LiftSubsystem();
   public static ManipulatorSubsystem manipulatorSubsystemRef = new ManipulatorSubsystem();
-  public static VisionSubsystem visionSubsystemRef = new VisionSubsystem();
   public static OI m_oi;
 
   Command m_autonomousCommand;
@@ -45,11 +43,12 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
+    // m_chooser.setDefaultOption("Default Auto", new DriveManuallyCommand());
     m_chooser.setDefaultOption("Default Auto", new DriveManuallyCommand());
     //chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
     CameraServer.getInstance().startAutomaticCapture();
-    driveSubsystemRef.ultra.setAutomaticMode(true); // turns on automatic mode
+    
   }
 
   /**
