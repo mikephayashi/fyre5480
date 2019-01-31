@@ -8,11 +8,13 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-import frc.robot.commands.Lift.UpLiftCommand;
-import frc.robot.commands.Lift.DownLiftCommand;
+import frc.robot.commands.Lift.ManualLiftCommand;
+import frc.robot.commands.Lift.ManualLiftCommand;
 
 /**
  * Add your docs here.
@@ -32,31 +34,45 @@ public class LiftSubsystem extends Subsystem {
   public boolean stopped = lift_Encoder.getStopped();
   //Motors
   public Spark LiftMotorController = new Spark(RobotMap.lift_motor_port);
+  //Ultrasonic
+  public Ultrasonic ultra = new Ultrasonic(RobotMap.ultra_digital_out,RobotMap.ultra_digital_in);
+  // reads the range on the ultrasonic sensor return range
+  public double range = ultra.getRangeInches(); 
+  //Solenoids
+  public Solenoid lift_solenoid = new Solenoid(RobotMap.lift_solenoid_port);
+
+  public LiftSubsystem(){
+    ultra.setAutomaticMode(true); // turns on automatic mode
+  }
 
   //Lift Down Level
-  public void liftDown(){
+  public void liftDown(int level){
     lift_Encoder.reset();
-    if (count != 0){
+    if (count != level){
+      lift_solenoid.set(false);
       LiftMotorController.set(0.5);
     } else {
       LiftMotorController.set(0);
+      lift_solenoid.set(true);
     }
     
   }
 
   //Lift Up Level
-  public void liftUp(){
+  public void liftUp(int level){
     lift_Encoder.reset();
-    if (count != 10){
+    if (count != level){
+      lift_solenoid.set(false);
       LiftMotorController.set(0.5);
     } else {
       LiftMotorController.set(0);
+      lift_solenoid.set(true);
     }
   }
   
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new UpLiftCommand());
+    setDefaultCommand(new ManualLiftCommand());
   }
 }

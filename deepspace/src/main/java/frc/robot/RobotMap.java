@@ -25,7 +25,20 @@ public class RobotMap {
   public static int rangefinderPort = 1;
   public static int rangefinderModule = 1;*/
 
-  //Drive subsystem Drive Motors
+  public enum driveSubsystemPorts{
+    //Drive subsystem Drive Motors
+    leftMotor(0),
+    rightMotor(1);
+
+    private final int value;
+
+    driveSubsystemPorts(final int newValue) {
+        value = newValue;
+    }
+
+    public int getValue() { return value; }
+}
+  
   public static int leftMotor = 0;
 	public static int rightMotor = 1;
   
@@ -37,6 +50,8 @@ public class RobotMap {
   public static int button_four = 0;
   public static int button_five = 0;
   public static int button_six = 0;
+  public static int button_seven = 0;
+  public static int button_eight = 0;
 
   //OI X Box Controller
   public static int xbox_port = 1;
@@ -49,8 +64,10 @@ public class RobotMap {
   public static int gyro_port = 0;
 
   //Dirve Subystem Ultrasonic sensor
-  public static int ultrasonic_digital_out = 0;
-  public static int ultrasonic_digital_in = 0;
+  public static int ultraLeft_digital_out = 0;
+  public static int ultraLeft_digital_in = 0;
+  public static int ultraRight_digital_out = 0;
+  public static int ultraRight_digital_in = 0;
 
   //Lift Subsystem Encoder
   public static int lift_encoder_port_one = 0;
@@ -58,6 +75,13 @@ public class RobotMap {
   
   //Lift Subsystem Motor
   public static int lift_motor_port = 0;
+
+  //Lift Subystem Ultrasonic sensor
+  public static int ultra_digital_out = 0;
+  public static int ultra_digital_in = 0;
+
+  //Lift subystem solenoid
+  public static int lift_solenoid_port = 0;
 
   //Climbing Subsystem Encoder
   public static int climbing_encoder_port_one = 0;
@@ -72,8 +96,11 @@ public class RobotMap {
   //Manipulator Subsystem Compressor
   public static int manipulator_compressor_port = 0;
 
-  //Manipulator Subystem Solenoid
-  public static int manipulator_solenoid_port = 0;
+  //Cargo Subystem Solenoid
+  public static int cargo_solenoid_port = 0;
+
+  //Hatch subsystem solenoid
+  public static int hatch_solenoid_port = 0;
   
   //Manipulator Subsystem Motor
   public static int manipulator_motor_port = 0;
