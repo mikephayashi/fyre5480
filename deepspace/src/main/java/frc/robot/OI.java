@@ -37,16 +37,20 @@ public class OI {
   button3 = new JoystickButton(stick, RobotMap.button_three),
   button4 = new JoystickButton(stick, RobotMap.button_four),
   button5 = new JoystickButton(stick, RobotMap.button_five),
-  button6 = new JoystickButton(stick, RobotMap.button_six); 
+  button6 = new JoystickButton(stick, RobotMap.button_six),
+  button7 = new JoystickButton(stick, RobotMap.button_seven),
+  button8 = new JoystickButton(stick, RobotMap.button_eight); 
   
 
   public OI(){
-    button1.whenPressed(new UpLiftCommand());
-    button2.whenPressed(new DownLiftCommand());
-    button3.whenPressed(new CargoCommand());
-    button4.whenPressed(new CloseHatchCommand());
-    button5.whenPressed(new OpenHatchCommand());
-    button6.whenPressed(new ClimbingCommand());
+    button1.whenPressed(new ManualLiftCommand());
+    button2.whenPressed(new LevelOneLiftCommand());
+    button3.whenPressed(new LevelTwoLiftCommand());
+    button4.whenPressed(new LevelThreeLiftCommand());
+    button5.whenPressed(new CargoCommand());
+    button6.whenPressed(new CloseHatchCommand());
+    button7.whenPressed(new OpenHatchCommand());
+    button8.whenPressed(new ClimbingCommand());
   }
 
 		
