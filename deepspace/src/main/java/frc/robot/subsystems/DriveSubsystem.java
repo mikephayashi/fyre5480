@@ -32,14 +32,14 @@ public class DriveSubsystem extends Subsystem {
   Spark m_right = new Spark(RobotMap.driveSubsystemPorts.rightMotor.getValue());
   DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
   // Encoders
-  public Encoder wheelChassis_Encoder = new Encoder(RobotMap.wheel_encoder_port_one, RobotMap.wheel_encoder_port_two, false, Encoder.EncodingType.k4X);
-  public int count = wheelChassis_Encoder.get(); 
-  public double raw_distance = wheelChassis_Encoder.getRaw(); 
-  public double distance = wheelChassis_Encoder.getDistance(); 
-  public double period = wheelChassis_Encoder.getPeriod(); 
-  public double rate = wheelChassis_Encoder.getRate(); 
-  public boolean direction = wheelChassis_Encoder.getDirection(); 
-  public boolean stopped = wheelChassis_Encoder.getStopped(); 
+  //public Encoder wheelChassis_Encoder = new Encoder(RobotMap.wheel_encoder_port_one, RobotMap.wheel_encoder_port_two, false, Encoder.EncodingType.k4X);
+  //public int count = wheelChassis_Encoder.get(); 
+  //public double raw_distance = wheelChassis_Encoder.getRaw(); 
+  //public double distance = wheelChassis_Encoder.getDistance(); 
+  //public double period = wheelChassis_Encoder.getPeriod(); 
+  // public double rate = wheelChassis_Encoder.getRate(); 
+  // public boolean direction = wheelChassis_Encoder.getDirection(); 
+  // public boolean stopped = wheelChassis_Encoder.getStopped(); 
   // Ultrasonic sensor
    // usually (1,1)... creates the ultra object and assigns ultra to be an ultrasonic sensor which uses DigitalOutput 1 for the echo pulse and DigitalInput 1 for the trigger pulse
   public Ultrasonic ultraLeft = new Ultrasonic(RobotMap.ultraLeft_digital_out,RobotMap.ultraLeft_digital_in);
