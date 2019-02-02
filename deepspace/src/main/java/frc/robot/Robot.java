@@ -15,9 +15,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.Driving.DriveManuallyCommand;
 import frc.robot.subsystems.DriveSubsystem;
-//import frc.robot.subsystems.ClimbingSubsystem;
-//import frc.robot.subsystems.LiftSubsystem;
-//import frc.robot.subsystems.ManipulatorSubsystem;
+import frc.robot.subsystems.ClimbingSubsystem;
+import frc.robot.subsystems.LiftSubsystem;
+import frc.robot.subsystems.ManipulatorSubsystem;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -26,14 +26,14 @@ import frc.robot.subsystems.DriveSubsystem;
  * creating this project, you must also update the build.gradle file in the
  * project.
  */
- //public class Robot extends TimedRobot {
-//   public static DriveSubsystem driveSubsystemRef = new DriveSubsystem();
-//   public static ClimbingSubsystem climbingSubsystemRef = new ClimbingSubsystem();
-//   public static LiftSubsystem liftSubsystemRef = new LiftSubsystem();
-//   public static ManipulatorSubsystem manipulatorSubsystemRef = new ManipulatorSubsystem();
-//   public static OI m_oi;
+ public class Robot extends TimedRobot {
+  public static DriveSubsystem driveSubsystemRef = new DriveSubsystem();
+  public static ClimbingSubsystem climbingSubsystemRef = new ClimbingSubsystem();
+  public static LiftSubsystem liftSubsystemRef = new LiftSubsystem();
+  public static ManipulatorSubsystem manipulatorSubsystemRef = new ManipulatorSubsystem();
+  public static OI m_oi;
 
-  Command m_autonomousCommand;
+
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
   /**
@@ -43,9 +43,8 @@ import frc.robot.subsystems.DriveSubsystem;
   @Override
   public void robotInit() {
     m_oi = new OI();
-    // m_chooser.setDefaultOption("Default Auto", new DriveManuallyCommand());
     m_chooser.setDefaultOption("Default Auto", new DriveManuallyCommand());
-    //chooser.addOption("My Auto", new MyAutoCommand());
+    m_chooser.setDefaultOption("Default Auto", new DriveManuallyCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
     CameraServer.getInstance().startAutomaticCapture();
     
@@ -90,7 +89,6 @@ import frc.robot.subsystems.DriveSubsystem;
    */
   @Override
   public void autonomousInit() {
-    m_autonomousCommand = m_chooser.getSelected();
 
     /*
      * String autoSelected = SmartDashboard.getString("Auto Selector",
@@ -98,11 +96,6 @@ import frc.robot.subsystems.DriveSubsystem;
      * = new MyAutoCommand(); break; case "Default Auto": default:
      * autonomousCommand = new ExampleCommand(); break; }
      */
-
-    // schedule the autonomous command (example)
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.start();
-    }
   }
 
   /**
@@ -119,9 +112,7 @@ import frc.robot.subsystems.DriveSubsystem;
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
     // this line or comment it out.
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.cancel();
-    }
+    
   }
 
   /**

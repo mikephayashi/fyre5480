@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
-import edu.wpi.first.wpilibj.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTable;
 import frc.robot.RobotMap;
 import frc.robot.commands.Driving.DriveManuallyCommand;
 
@@ -32,14 +32,14 @@ public class DriveSubsystem extends Subsystem {
   Spark m_right = new Spark(RobotMap.driveSubsystemPorts.rightMotor.getValue());
   DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
   // Encoders
-  //public Encoder wheelChassis_Encoder = new Encoder(RobotMap.wheel_encoder_port_one, RobotMap.wheel_encoder_port_two, false, Encoder.EncodingType.k4X);
-  //public int count = wheelChassis_Encoder.get(); 
-  //public double raw_distance = wheelChassis_Encoder.getRaw(); 
-  //public double distance = wheelChassis_Encoder.getDistance(); 
-  //public double period = wheelChassis_Encoder.getPeriod(); 
-  // public double rate = wheelChassis_Encoder.getRate(); 
-  // public boolean direction = wheelChassis_Encoder.getDirection(); 
-  // public boolean stopped = wheelChassis_Encoder.getStopped(); 
+  public Encoder wheelChassis_Encoder = new Encoder(RobotMap.wheel_encoder_port_one, RobotMap.wheel_encoder_port_two, false, Encoder.EncodingType.k4X);
+  public int count = wheelChassis_Encoder.get(); 
+  public double raw_distance = wheelChassis_Encoder.getRaw(); 
+  public double distance = wheelChassis_Encoder.getDistance(); 
+  public double period = wheelChassis_Encoder.getRate(); 
+  public double rate = wheelChassis_Encoder.getRate(); 
+  public boolean direction = wheelChassis_Encoder.getDirection(); 
+  public boolean stopped = wheelChassis_Encoder.getStopped(); 
   // Ultrasonic sensor
    // usually (1,1)... creates the ultra object and assigns ultra to be an ultrasonic sensor which uses DigitalOutput 1 for the echo pulse and DigitalInput 1 for the trigger pulse
   public Ultrasonic ultraLeft = new Ultrasonic(RobotMap.ultraLeft_digital_out,RobotMap.ultraLeft_digital_in);
@@ -62,28 +62,28 @@ public class DriveSubsystem extends Subsystem {
     m_drive.arcadeDrive(move, turn);
   }
 
-  // //Simple Networktableprogram
-  // NetworkTableEntry xEntry;
-  // NetworkTableEntry yEntry;
-  // public void RobotInit(){
-  //   NetworkTableInstance inst = NetworkTableInstance.getDefault();
-  //   NetworkTable table = inst.getTable("datatable");
-  //   xEntry = table.getEntry("X");
-  //   yEntry = table.getEntry("Y");
-  // }
-  // public void setTableValue(){
-  //   xEntry.setDouble(1);
-  //   yEntry.setDouble(1);
-  // }
+  //Simple Networktableprogram
+  NetworkTableEntry xEntry;
+  NetworkTableEntry yEntry;
+  public void RobotInit(){
+    NetworkTableInstance inst = NetworkTableInstance.getDefault();
+    NetworkTable table = inst.getTable("datatable");
+    xEntry = table.getEntry("X");
+    yEntry = table.getEntry("Y");
+  }
+  public void setTableValue(){
+    xEntry.setDouble(1);
+    yEntry.setDouble(1);
+  }
 
-  // //TableEntryListenerExample
-  // public void run(){
-  //   NetworkTableInstance inst = NetworkTableInstance.getDefault();
-  //   NetworkTable table = inst.getTable("datatable");
-  //   NetworkTableEntry yEntry = table.getEntry("Y");
-  //   inst.startClientTeam(5480);
-  //   //Continue on FRC
-  // }
+  //TableEntryListenerExample
+  public void run(){
+    NetworkTableInstance inst = NetworkTableInstance.getDefault();
+    NetworkTable table = inst.getTable("datatable");
+    NetworkTableEntry yEntry = table.getEntry("Y");
+    inst.startClientTeam(5480);
+    //Continue on FRC
+  }
    
 
   @Override

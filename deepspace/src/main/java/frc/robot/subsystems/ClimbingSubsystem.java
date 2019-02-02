@@ -21,27 +21,27 @@ public class ClimbingSubsystem extends Subsystem {
   // here. Call these from Commands.
 
   //Encoders
-  // public Encoder climbing_Encoder = new Encoder(RobotMap.climbing_encoder_port_one, RobotMap.climbing_encoder_port_two, false, Encoder.EncodingType.k4X);
-  // public int count = climbing_Encoder.get();
-  // public double raw_distance = climbing_Encoder.getRaw();
-  // public double distance = climbing_Encoder.getDistance();
-  // public double period = climbing_Encoder.getPeriod();
-  // public double rate = climbing_Encoder.getRate();
-  // public boolean direction = climbing_Encoder.getDirection();
-  // public boolean stopped = climbing_Encoder.getStopped();
+  public Encoder climbing_Encoder = new Encoder(RobotMap.climbing_encoder_port_one, RobotMap.climbing_encoder_port_two, false, Encoder.EncodingType.k4X);
+  public int count = climbing_Encoder.get();
+  public double raw_distance = climbing_Encoder.getRaw();
+  public double distance = climbing_Encoder.getDistance();
+  public double period = climbing_Encoder.getRate();
+  public double rate = climbing_Encoder.getRate();
+  public boolean direction = climbing_Encoder.getDirection();
+  public boolean stopped = climbing_Encoder.getStopped();
   //Motors
-  //Spark ClimbingMotorController = new Spark(RobotMap.climbing_encoder_port_one);
+  Spark ClimbingMotorController = new Spark(RobotMap.climbing_encoder_port_one);
 
   //Starts climbing motor and stops when encoder reaches a point
-  // public void climb(){
-  //   climbing_Encoder.reset();
-  //   if (count < 10){
-  //     ClimbingMotorController.set(0.5);
-  //   } else {
-  //     ClimbingMotorController.set(0);
-  //   }
+  public void climb(){
+    climbing_Encoder.reset();
+    if (count < 10){
+      ClimbingMotorController.set(0.5);
+    } else {
+      ClimbingMotorController.set(0);
+    }
     
-  // };
+  };
 
   @Override
   public void initDefaultCommand() {

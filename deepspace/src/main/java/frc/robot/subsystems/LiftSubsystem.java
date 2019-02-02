@@ -14,7 +14,6 @@ import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import frc.robot.commands.Lift.ManualLiftCommand;
-import frc.robot.commands.Lift.ManualLiftCommand;
 
 /**
  * Add your docs here.
@@ -24,14 +23,14 @@ public class LiftSubsystem extends Subsystem {
   // here. Call these from Commands.
 
   //Encoders
-  // public Encoder lift_Encoder = new Encoder(RobotMap.lift_encoder_port_one, RobotMap.lift_encoder_port_two, false, Encoder.EncodingType.k4X);
-  // public int count = lift_Encoder.get();
-  // public double raw_distance = lift_Encoder.getRaw();
-  // public double distance = lift_Encoder.getDistance();
-  // public double period = lift_Encoder.getPeriod();
-  // public double rate = lift_Encoder.getRate();
-  // public boolean direction = lift_Encoder.getDirection();
-  // public boolean stopped = lift_Encoder.getStopped();
+  public Encoder lift_Encoder = new Encoder(RobotMap.lift_encoder_port_one, RobotMap.lift_encoder_port_two, false, Encoder.EncodingType.k4X);
+  public int count = lift_Encoder.get();
+  public double raw_distance = lift_Encoder.getRaw();
+  public double distance = lift_Encoder.getDistance();
+  public double period = lift_Encoder.getRate();
+  public double rate = lift_Encoder.getRate();
+  public boolean direction = lift_Encoder.getDirection();
+  public boolean stopped = lift_Encoder.getStopped();
   //Motors
   public Spark LiftMotorController = new Spark(RobotMap.lift_motor_port);
   //Ultrasonic
@@ -47,7 +46,7 @@ public class LiftSubsystem extends Subsystem {
 
   //Lift Down Level
   public void liftDown(int level){
-    //lift_Encoder.reset();
+    lift_Encoder.reset();
     if (count != level){
       lift_solenoid.set(false);
       LiftMotorController.set(0.5);
@@ -60,7 +59,7 @@ public class LiftSubsystem extends Subsystem {
 
   //Lift Up Level
   public void liftUp(int level){
-    //lift_Encoder.reset();
+    lift_Encoder.reset();
     if (count != level){
       lift_solenoid.set(false);
       LiftMotorController.set(0.5);
