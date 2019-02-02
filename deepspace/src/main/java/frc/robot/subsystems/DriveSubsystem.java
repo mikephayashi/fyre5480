@@ -33,18 +33,18 @@ public class DriveSubsystem extends Subsystem {
   DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
    // Ultrasonic sensor
    // usually (1,1)... creates the ultra object and assigns ultra to be an ultrasonic sensor which uses DigitalOutput 1 for the echo pulse and DigitalInput 1 for the trigger pulse
-  public Ultrasonic ultraLeft = new Ultrasonic(RobotMap.ultraLeft_digital_out,RobotMap.ultraLeft_digital_in);
-  public Ultrasonic ultraRight = new Ultrasonic(RobotMap.ultraRight_digital_out,RobotMap.ultraRight_digital_in);
+  //public Ultrasonic ultraLeft = new Ultrasonic(RobotMap.ultraLeft_digital_out,RobotMap.ultraLeft_digital_in);
+  //public Ultrasonic ultraRight = new Ultrasonic(RobotMap.ultraRight_digital_out,RobotMap.ultraRight_digital_in);
   // reads the range on the ultrasonic sensor return range
-  public double rangeLeft = ultraLeft.getRangeInches(); 
-  public double rangeRight= ultraRight.getRangeInches();
+  //public double rangeLeft = ultraLeft.getRangeInches(); 
+  //public double rangeRight= ultraRight.getRangeInches();
   //Gyro
-  public Gyro gyro_sensor = new AnalogGyro(RobotMap.gyro_port);
-  public double angle = gyro_sensor.getAngle(); // get current heading
+  //public Gyro gyro_sensor = new AnalogGyro(RobotMap.gyro_port);
+  //public double angle = gyro_sensor.getAngle(); // get current heading
 
   public DriveSubsystem(){
-    ultraLeft.setAutomaticMode(true); // turns on automatic mode
-    ultraRight.setAutomaticMode(true);
+    //ultraLeft.setAutomaticMode(true); // turns on automatic mode
+    //ultraRight.setAutomaticMode(true);
   }
   
 
