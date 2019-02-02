@@ -55,14 +55,14 @@ public class ManipulatorSubsystem extends Subsystem {
   //Compressor
   public void compressor(){
   
-    // compress.enabled();
-    // if (!pressureSwitch){
-    //   compress.setClosedLoopControl(true);
-    //   System.out.println("Pneumatic Compressor On");
-    // } else {
-    //   compress.setClosedLoopControl(false);
-    //   System.out.println("Pneumatic Compressor Off");
-    // }
+    compress.enabled();
+    if (!pressureSwitch){
+      compress.setClosedLoopControl(true);
+      System.out.println("Pneumatic Compressor On");
+    } else {
+      compress.setClosedLoopControl(false);
+      System.out.println("Pneumatic Compressor Off");
+    }
   }
 
   //Extends Manipulator system beyond chassis frame
