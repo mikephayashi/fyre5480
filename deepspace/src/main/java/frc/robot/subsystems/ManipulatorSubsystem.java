@@ -30,8 +30,8 @@ public class ManipulatorSubsystem extends Subsystem {
   // here. Call these from Commands.
 
   //Switches
-  // public DigitalInput limitSwitch = new DigitalInput(RobotMap.manipulator_switch_port);
-  // public Boolean limitSwitch_value = limitSwitch.get();
+  public DigitalInput limitSwitch = new DigitalInput(RobotMap.manipulator_switch_port);
+  public Boolean limitSwitch_value = limitSwitch.get();
   //Compressor
   //public Compressor compress = new Compressor(RobotMap.manipulator_compressor_port);
   //public boolean pressureSwitch = compress.getPressureSwitchValue();
