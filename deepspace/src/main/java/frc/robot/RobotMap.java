@@ -64,9 +64,9 @@ public class RobotMap {
   public static int gyro_port = 0;
 
   //Dirve Subystem Ultrasonic sensor
-  public static int ultraLeft_analog_in = 0;
-  //public static int ultraRight_digital_out = 0;
-  //public static int ultraRight_digital_in = 0;
+  public static int ultraLeft_analog_in = 1;
+  public static int ultraRight_analog_in = 2;
+  
 
   //Lift Subsystem Encoder
   public static int lift_encoder_port_one = 0;
@@ -76,8 +76,8 @@ public class RobotMap {
   public static int lift_motor_port = 0;
 
   //Lift Subystem Ultrasonic sensor
-  public static int ultra_digital_out = 0;
-  public static int ultra_digital_in = 0;
+  public static int ultraLift_analog_in = 3;
+
 
   //Lift subystem solenoid
   public static int lift_solenoid_port = 0;

@@ -6,11 +6,10 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.subsystems;
-
+import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Spark;
-import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import frc.robot.commands.Lift.ManualLiftCommand;
@@ -34,11 +33,7 @@ public class LiftSubsystem extends Subsystem {
   //Motors
   //public Spark LiftMotorController = new Spark(RobotMap.lift_motor_port);
   //Ultrasonic
-  //public Ultrasonic ultra = new Ultrasonic(RobotMap.ultra_digital_out,RobotMap.ultra_digital_in);
-  // reads the range on the ultrasonic sensor return range
-  //public double range = ultra.getRangeInches(); 
-  //Solenoids
- //public Solenoid lift_solenoid = new Solenoid(RobotMap.lift_solenoid_port);
+  public AnalogInput ultraLift = new AnalogInput(RobotMap.ultraLift_analog_in);
 
   public LiftSubsystem(){
     //ultra.setAutomaticMode(true); // turns on automatic mode

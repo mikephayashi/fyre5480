@@ -13,7 +13,6 @@ import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Spark;
-import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
@@ -35,10 +34,7 @@ public class DriveSubsystem extends Subsystem {
    // Ultrasonic sensor
    // usually (1,1)... creates the ultra object and assigns ultra to be an ultrasonic sensor which uses DigitalOutput 1 for the echo pulse and DigitalInput 1 for the trigger pulse
   public AnalogInput ultraLeft = new AnalogInput(RobotMap.ultraLeft_analog_in);
-  //public Ultrasonic ultraRight = new Ultrasonic(RobotMap.ultraRight_digital_out,RobotMap.ultraRight_digital_in);
-  // reads the range on the ultrasonic sensor return range
-  //public double rangeLeft = ultraLeft.getRangeInches(); 
-  //public double rangeRight= ultraRight.getRangeInches();
+  public AnalogInput ultraRight = new AnalogInput(RobotMap.ultraRight_analog_in);
   //Gyro
   
   public Gyro gyro_sensor = new AnalogGyro(RobotMap.gyro_port);
