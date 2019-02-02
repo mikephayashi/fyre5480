@@ -39,8 +39,8 @@ public class DriveSubsystem extends Subsystem {
   //public double rangeLeft = ultraLeft.getRangeInches(); 
   //public double rangeRight= ultraRight.getRangeInches();
   //Gyro
-  //public Gyro gyro_sensor = new AnalogGyro(RobotMap.gyro_port);
-  //public double angle = gyro_sensor.getAngle(); // get current heading
+  public Gyro gyro_sensor = new AnalogGyro(RobotMap.gyro_port);
+  public double angle = gyro_sensor.getAngle(); // get current heading
 
   public DriveSubsystem(){
     //ultraLeft.setAutomaticMode(true); // turns on automatic mode
