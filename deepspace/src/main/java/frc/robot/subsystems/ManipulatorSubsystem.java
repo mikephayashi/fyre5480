@@ -33,9 +33,9 @@ public class ManipulatorSubsystem extends Subsystem {
   public DigitalInput limitSwitch = new DigitalInput(RobotMap.manipulator_switch_port);
   public Boolean limitSwitch_value = limitSwitch.get();
   //Compressor
-  //public Compressor compress = new Compressor(RobotMap.manipulator_compressor_port);
+  public Compressor compress = new Compressor(RobotMap.manipulator_compressor_port);
   //public boolean pressureSwitch = compress.getPressureSwitchValue();
-  //public double current = compress.getCompressorCurrent();
+  public double current = compress.getCompressorCurrent();
   //Solenoids
   //public Solenoid cargo_solenoid = new Solenoid(RobotMap.cargo_solenoid_port);
   //public Solenoid hatch_solenoid = new Solenoid(RobotMap.hatch_solenoid_port);
