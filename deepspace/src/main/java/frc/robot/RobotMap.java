@@ -97,7 +97,7 @@ public class RobotMap {
   public static int manipulator_compressor_port = 0;
 
   //Cargo Subystem Solenoid
-  public static int cargo_solenoid_port = 0;
+  public static int cargo_solenoid_port = 1;
 
   //Hatch subsystem solenoid
   public static int hatch_solenoid_port = 0;

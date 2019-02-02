@@ -37,8 +37,8 @@ public class ManipulatorSubsystem extends Subsystem {
   //public boolean pressureSwitch = compress.getPressureSwitchValue();
   public double current = compress.getCompressorCurrent();
   //Solenoids
-  //public Solenoid cargo_solenoid = new Solenoid(RobotMap.cargo_solenoid_port);
-  //public Solenoid hatch_solenoid = new Solenoid(RobotMap.hatch_solenoid_port);
+  public Solenoid cargo_solenoid = new Solenoid(RobotMap.cargo_solenoid_port);
+  public Solenoid hatch_solenoid = new Solenoid(RobotMap.hatch_solenoid_port);
   //Motors
   //Spark manipulatorMotorController = new Spark(RobotMap.manipulator_motor_port);
   //Spark cargoWingsMotorController = new Spark(RobotMap.cargo_wings_motor_port);
@@ -105,23 +105,23 @@ public class ManipulatorSubsystem extends Subsystem {
 
   //Kicks cargo ball out
   public void cargo(){
-  //   cargo_solenoid.set(true);
-  //   try {
-  //     Thread.sleep(1000);
-  // } catch(InterruptedException e) {
-  //     System.out.println("got interrupted!");
-  // }
-  // cargo_solenoid.set(false);
+    cargo_solenoid.set(true);
+    try {
+      Thread.sleep(1000);
+  } catch(InterruptedException e) {
+      System.out.println("got interrupted!");
+  }
+  cargo_solenoid.set(false);
   }
 
   //Opens clasps to put on hatches
   public void openHatch(){
-    //hatch_solenoid.set(true);
+    hatch_solenoid.set(true);
   }
 
   //Closes clasps to secure hatch onto robot
   public void closeHatch(){
-    //hatch_solenoid.set(false);
+    hatch_solenoid.set(false);
   }
 
 
