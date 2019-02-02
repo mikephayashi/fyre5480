@@ -64,8 +64,8 @@ public class RobotMap {
   public static int gyro_port = 0;
 
   //Dirve Subystem Ultrasonic sensor
-  public static int ultraLeft_digital_out = 0;
-  public static int ultraLeft_digital_in = 0;
+  public static int ultraLeft_digital_out = 3;
+  public static int ultraLeft_digital_in = 3;
   public static int ultraRight_digital_out = 0;
   public static int ultraRight_digital_in = 0;
 
