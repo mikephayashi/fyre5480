@@ -54,6 +54,7 @@ public class ManipulatorSubsystem extends Subsystem {
 
   //Compressor
   public void compressor(){
+    compress.stop();
     // compress.enabled();
     // if (!pressureSwitch){
     //   compress.setClosedLoopControl(true);
