@@ -11,7 +11,6 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.AnalogInput;
-import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -32,7 +31,6 @@ public class DriveSubsystem extends Subsystem {
   Spark m_right = new Spark(RobotMap.driveSubsystemPorts.rightMotor.getValue());
   DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
    // Ultrasonic sensor
-   // usually (1,1)... creates the ultra object and assigns ultra to be an ultrasonic sensor which uses DigitalOutput 1 for the echo pulse and DigitalInput 1 for the trigger pulse
   public AnalogInput ultraLeft = new AnalogInput(RobotMap.ultraLeft_analog_in);
   public AnalogInput ultraRight = new AnalogInput(RobotMap.ultraRight_analog_in);
   //Gyro
@@ -41,8 +39,7 @@ public class DriveSubsystem extends Subsystem {
   public double angle = gyro_sensor.getAngle(); // get current heading
 
   public DriveSubsystem(){
-    //ultraLeft.setAutomaticMode(true); // turns on automatic mode
-    //ultraRight.setAutomaticMode(true);
+    
   }
   
 
