@@ -52,6 +52,8 @@ public class RobotMap {
   public static int button_six = 6;
   public static int button_seven = 7;
   public static int button_eight = 8;
+  public static int button_nine = 9;
+  public static int button_ten = 10;
 
   //OI X Box Controller
   public static int xbox_port = 1;
@@ -102,7 +104,7 @@ public class RobotMap {
   public static int hatch_solenoid_port = 0;
   
   //Manipulator Subsystem Motor
-  public static int manipulator_motor_port = 1;
+  public static int rackAndPinionMotorController = 1;
 
   //Manipulator Subsystem Motorswings
   public static int cargo_wings_motor_port = 0;

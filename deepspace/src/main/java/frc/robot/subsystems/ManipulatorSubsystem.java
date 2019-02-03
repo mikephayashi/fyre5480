@@ -40,7 +40,7 @@ public class ManipulatorSubsystem extends Subsystem {
   public Solenoid cargo_solenoid = new Solenoid(RobotMap.cargo_solenoid_port);
   public Solenoid hatch_solenoid = new Solenoid(RobotMap.hatch_solenoid_port);
   //Motors
-  //Spark manipulatorMotorController = new Spark(RobotMap.manipulator_motor_port);
+  Spark rackAndPinionMotorController = new Spark(RobotMap.rackAndPinionMotorController);
   //Spark cargoWingsMotorController = new Spark(RobotMap.cargo_wings_motor_port);
   //Encoders
   // public Encoder cargo_encoder = new Encoder(RobotMap.cargo_encoder_port_one, RobotMap.cargo_encoder_port_two, false, Encoder.EncodingType.k4X);
@@ -123,6 +123,11 @@ public class ManipulatorSubsystem extends Subsystem {
   //Closes clasps to secure hatch onto robot
   public void closeHatch(){
     hatch_solenoid.set(false);
+  }
+
+  //Extend Rack and pinion
+  public void extendRackAndPinion(){
+    rackAndPinionMotorController.set(0.5);
   }
 
 
