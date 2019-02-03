@@ -34,13 +34,13 @@ public class ClimbingSubsystem extends Subsystem {
 
   //Starts climbing motor and stops when encoder reaches a point
   public void climb(){
-    climbing_Encoder.reset();
-    if (count < 10){
-      ClimbingMotorController.set(0.5);
-    } else {
-      ClimbingMotorController.set(0);
-    }
-    
+    // climbing_Encoder.reset();
+    // if (count < 10){
+    //   ClimbingMotorController.set(0.5);
+    // } else {
+    //   ClimbingMotorController.set(0);
+    // }
+    ClimbingMotorController.set(0.5);
   };
 
   @Override
