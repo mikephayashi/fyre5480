@@ -44,14 +44,14 @@ public class RobotMap {
   
   //OI joystick and buttons
   public static int joy_stick_port = 0;
-  public static int button_one = 0;
-  public static int button_two = 0;
-  public static int button_three = 0;
-  public static int button_four = 0;
-  public static int button_five = 0;
-  public static int button_six = 0;
-  public static int button_seven = 0;
-  public static int button_eight = 0;
+  public static int button_one = 1;
+  public static int button_two = 2;
+  public static int button_three = 3;
+  public static int button_four = 4;
+  public static int button_five = 5;
+  public static int button_six = 6;
+  public static int button_seven = 7;
+  public static int button_eight = 8;
 
   //OI X Box Controller
   public static int xbox_port = 1;
