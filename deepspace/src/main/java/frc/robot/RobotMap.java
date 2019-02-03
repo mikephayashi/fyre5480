@@ -25,19 +25,7 @@ public class RobotMap {
   public static int rangefinderPort = 1;
   public static int rangefinderModule = 1;*/
 
-  public enum driveSubsystemPorts{
-    //Drive subsystem Drive Motors
-    leftMotor(0),
-    rightMotor(1);
-
-    private final int value;
-
-    driveSubsystemPorts(final int newValue) {
-        value = newValue;
-    }
-
-    public int getValue() { return value; }
-}
+  
   
   public static int leftMotor = 0;
 	public static int rightMotor = 0;
@@ -101,10 +89,10 @@ public class RobotMap {
   public static int cargo_solenoid_port = 1;
 
   //Hatch subsystem solenoid
-  public static int hatch_solenoid_port = 0;
+  public static int hatch_solenoid_port = 2;
   
   //Manipulator Subsystem Motor
-  public static int rackAndPinionMotorController = 1;
+  public static int rackAndPinionMotorController = 7;
 
   //Manipulator Subsystem Motorswings
   public static int cargo_wings_motor_port = 0;
