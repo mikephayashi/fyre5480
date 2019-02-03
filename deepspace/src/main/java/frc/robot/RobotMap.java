@@ -40,7 +40,7 @@ public class RobotMap {
 }
   
   public static int leftMotor = 0;
-	public static int rightMotor = 1;
+	public static int rightMotor = 0;
   
   //OI joystick and buttons
   public static int joy_stick_port = 0;
@@ -102,7 +102,7 @@ public class RobotMap {
   public static int hatch_solenoid_port = 0;
   
   //Manipulator Subsystem Motor
-  public static int manipulator_motor_port = 0;
+  public static int manipulator_motor_port = 1;
 
   //Manipulator Subsystem Motorswings
   public static int cargo_wings_motor_port = 0;

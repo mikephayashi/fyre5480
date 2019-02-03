@@ -27,9 +27,9 @@ public class DriveSubsystem extends Subsystem {
   // here. Call these from Commands.
 
   // Drive Train
-  Spark m_left = new Spark(RobotMap.driveSubsystemPorts.leftMotor.getValue());
-  Spark m_right = new Spark(RobotMap.driveSubsystemPorts.rightMotor.getValue());
-  DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
+  //Spark m_left = new Spark(RobotMap.driveSubsystemPorts.leftMotor.getValue());
+  //Spark m_right = new Spark(RobotMap.driveSubsystemPorts.rightMotor.getValue());
+  //DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
    // Ultrasonic sensor
   public AnalogInput ultraLeft = new AnalogInput(RobotMap.ultraLeft_analog_in);
   public AnalogInput ultraRight = new AnalogInput(RobotMap.ultraRight_analog_in);
@@ -44,9 +44,9 @@ public class DriveSubsystem extends Subsystem {
   
 
   //Manual Drive
-  public void manualDrive(double move, double turn) {
-    m_drive.arcadeDrive(move, turn);
-  }
+  // public void manualDrive(double move, double turn) {
+  //   m_drive.arcadeDrive(move, turn);
+  // }
 
   //Simple Networktableprogram
   NetworkTableEntry xEntry;
