@@ -44,7 +44,6 @@ import frc.robot.subsystems.ManipulatorSubsystem;
   public void robotInit() {
     m_oi = new OI();
     m_chooser.setDefaultOption("Default Auto", new DriveManuallyCommand());
-    m_chooser.setDefaultOption("Default Auto", new DriveManuallyCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
     CameraServer.getInstance().startAutomaticCapture();
     
