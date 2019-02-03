@@ -32,14 +32,14 @@ public class OI {
   public Joystick stick = new Joystick(RobotMap.joy_stick_port);
 
   // Button button = new JoystickButton(stick, buttonNumber);
-  Button button1 = new JoystickButton(stick, RobotMap.button_one),
-  button2 = new JoystickButton(stick, RobotMap.button_two),
-  button3 = new JoystickButton(stick, RobotMap.button_three),
-  button4 = new JoystickButton(stick, RobotMap.button_four),
-  button5 = new JoystickButton(stick, RobotMap.button_five),
-  button6 = new JoystickButton(stick, RobotMap.button_six),
-  button7 = new JoystickButton(stick, RobotMap.button_seven),
-  button8 = new JoystickButton(stick, RobotMap.button_eight); 
+  Button button1 = new JoystickButton(stick, RobotMap.button_one);
+  Button button2 = new JoystickButton(stick, RobotMap.button_two);
+  Button button3 = new JoystickButton(stick, RobotMap.button_three);
+  Button button4 = new JoystickButton(stick, RobotMap.button_four);
+  Button button5 = new JoystickButton(stick, RobotMap.button_five);
+  Button button6 = new JoystickButton(stick, RobotMap.button_six);
+  Button button7 = new JoystickButton(stick, RobotMap.button_seven);
+  Button button8 = new JoystickButton(stick, RobotMap.button_eight); 
   
 
   public OI(){
