@@ -74,7 +74,7 @@ public class RobotMap {
 
   //Climbing Subsystem Encoder
   public static int climbing_encoder_port_one = 1;
-  public static int climbing_encoder_port_two = 2;
+  public static int climbing_encoder_port_two = 0;
 
   //Climbing Subsystem Motor
   public static int climbing_motor_port = 0;
