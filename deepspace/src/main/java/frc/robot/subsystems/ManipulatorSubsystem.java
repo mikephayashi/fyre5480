@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.Robot;
 import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.Spark;
 import frc.robot.commands.Manipulator.CargoCommand;
@@ -127,8 +128,7 @@ public class ManipulatorSubsystem extends Subsystem {
 
   //Extend Rack and pinion
   public void extendRackAndPinion(){
-    rackAndPinionMotorController.set(Robot.m_oi.stick.getY()),
-    Robot.m_oi.stick.getX());
+    rackAndPinionMotorController.set(Robot.m_oi.stick.getY());
   }
 
 
