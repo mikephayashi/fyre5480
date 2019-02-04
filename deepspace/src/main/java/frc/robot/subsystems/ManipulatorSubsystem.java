@@ -33,9 +33,9 @@ public class ManipulatorSubsystem extends Subsystem {
   public DigitalInput limitSwitch = new DigitalInput(RobotMap.manipulator_switch_port);
   public Boolean limitSwitch_value = limitSwitch.get();
   //Compressor
-  public Compressor compress = new Compressor(RobotMap.manipulator_compressor_port);
+  //public Compressor compress = new Compressor(RobotMap.manipulator_compressor_port);
   
-  public double current = compress.getCompressorCurrent();
+  //public double current = compress.getCompressorCurrent();
   //Solenoids
   public Solenoid cargo_solenoid = new Solenoid(RobotMap.cargo_solenoid_port);
   public Solenoid hatch_solenoid = new Solenoid(RobotMap.hatch_solenoid_port);
@@ -54,15 +54,15 @@ public class ManipulatorSubsystem extends Subsystem {
 
   //Compressor
   public void compressor(){
-    boolean pressureSwitch = compress.getPressureSwitchValue();
-    compress.enabled();
-    if (!pressureSwitch){
-      compress.setClosedLoopControl(true);
-      System.out.println("Pneumatic Compressor On");
-    } else {
-      compress.setClosedLoopControl(false);
-      System.out.println("Pneumatic Compressor Off");
-    }
+    //boolean pressureSwitch = compress.getPressureSwitchValue();
+    // compress.enabled();
+    // if (!pressureSwitch){
+    //   compress.setClosedLoopControl(true);
+    //   System.out.println("Pneumatic Compressor On");
+    // } else {
+    //   compress.setClosedLoopControl(false);
+    //   System.out.println("Pneumatic Compressor Off");
+    // }
   }
 
   //Extends Manipulator system beyond chassis frame
@@ -127,7 +127,8 @@ public class ManipulatorSubsystem extends Subsystem {
 
   //Extend Rack and pinion
   public void extendRackAndPinion(){
-    //rackAndPinionMotorController.set(0.5);
+    rackAndPinionMotorController.set(Robot.m_oi.stick.getY()),
+    Robot.m_oi.stick.getX());
   }
 
 
