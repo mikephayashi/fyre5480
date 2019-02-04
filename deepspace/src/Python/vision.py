@@ -1,21 +1,14 @@
+#!/usr/bin/env python3
 import json
 import time
 import sys
+import cv2
 import numpy as np
-
 
 from cscore import CameraServer, VideoSource, UsbCamera, MjpegServer
 from networktables import NetworkTablesInstance
-from networktables import NetworkTables
 
-configFile = "/boot/frc.json" #add json here
-
-# As a client to connect to a robot
-NetworkTables.initialize(server='roborio-XXX-frc.local')
-#https://robotpy.readthedocs.io/projects/pynetworktables/en/stable/api.html
-sd = NetworkTables.getTable('SmartDashboard')
-sd.putNumber('someNumber', 1234)
-otherNumber = sd.getNumber('otherNumber')
+configFile = "/boot/frc.json"
 
 class CameraConfig: pass
 
@@ -143,14 +136,37 @@ def imageProcessing():
             # skip the rest of the current iteration
             continue
 
-        #
-        # Insert your image processing logic here!
-        #
-        print("Image Data")
-        print(img)
+
+        #---------------------------
+        # Image Process Logic [Start]
+        #---------------------------
+
+        # load the image and convert it to grayscale
+        image = img
+        height, width, channels = image.shape
+        orig = image.copy()
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+        # the area of the image with the largest intensity value
+        (minVal, maxVal, minLoc, maxLoc) = cv2.minMaxLoc(gray)
+        cv2.circle(image, maxLoc, 5, (255, 0, 0), 2)
+
+        print("Width: ", width, " Height: ", height)
+        print("Circle", " minVal: ", minVal, " maxVal: ", maxVal, " minLoc: ", minLoc, " maxLoc: ", maxLoc)
+
+        # As a client to connect to a robot
+        # NetworkTables.initialize(server='roborio-5480-frc.local')
+        #https://robotpy.readthedocs.io/projects/pynetworktables/en/stable/api.html
+        # sd = NetworkTables.getTable('SmartDashboard')
+        # sd.putNumber('X', cX)
+        # sd.putNumber('Y', cY)
+        # sd.putNumber('Radius', radius)
+        # sd.putNumber("Frame Width", width)
+        # sd.putNumber("Frame Height", height)
+        #otherNumber = sd.getNumber('otherNumber')
 
         # (optional) send some image back to the dashboard
-        outputStream.putFrame(img)
+        # outputStream.putFrame(img)
 
 if __name__ == "__main__":
     if len(sys.argv) >= 2:
@@ -174,7 +190,7 @@ if __name__ == "__main__":
     for cameraConfig in cameraConfigs:
         cameras.append(startCamera(cameraConfig))
 
-    #image imageProcessing
+    #image Processing
     imageProcessing()
 
     # loop forever

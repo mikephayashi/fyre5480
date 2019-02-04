@@ -1,0 +1,27 @@
+java-common
+ntp
+daemontools daemontools-run
+build-essential gdb
+busybox-syslogd
+ssh less fbset sudo psmisc strace ed ncdu crda
+console-setup keyboard-configuration debconf-utils parted unzip
+python python3 gdbserver pkg-config
+python3-numpy libopenblas-base
+python-rpi.gpio python3-rpi.gpio v4l-utils
+avahi-daemon
+lua5.1
+luajit
+hardlink ca-certificates curl
+fake-hwclock usbutils
+dosfstools
+dphys-swapfile
+raspberrypi-sys-mods
+apt-listchanges
+usb-modeswitch
+apt-transport-https
+libpam-chksshpwd
+rpi-update
+libmtp-runtime
+htop
+policykit-1
+ssh-import-id
