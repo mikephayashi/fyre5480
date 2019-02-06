@@ -12,8 +12,8 @@ configFile = "/boot/frc.json"
 
 class CameraConfig: pass
 
-team = None
-server = False
+team = "5480"
+server = "roborio-5480-frc.local"
 cameraConfigs = []
 
 """Report parse error."""
@@ -155,15 +155,13 @@ def imageProcessing():
         print("Circle", " minVal: ", minVal, " maxVal: ", maxVal, " minLoc: ", minLoc, " maxLoc: ", maxLoc)
 
         # As a client to connect to a robot
-        # NetworkTables.initialize(server='roborio-5480-frc.local')
+        #NetworkTables.initialize(server='roborio-XXX-frc.local') # Might need
         #https://robotpy.readthedocs.io/projects/pynetworktables/en/stable/api.html
-        # sd = NetworkTables.getTable('SmartDashboard')
-        # sd.putNumber('X', cX)
-        # sd.putNumber('Y', cY)
-        # sd.putNumber('Radius', radius)
-        # sd.putNumber("Frame Width", width)
-        # sd.putNumber("Frame Height", height)
-        #otherNumber = sd.getNumber('otherNumber')
+        sd = ntinst.getTable('datatable')
+        sd.putNumber('maxVal', str(maxVal))
+        sd.putNumber('maxLoc', str(maxLoc[0])+str(maxLoc[1]))
+        sd.putNumber('Width', str(width))
+        sd.putNumber('Height', str(height))
 
         # (optional) send some image back to the dashboard
         # outputStream.putFrame(img)
@@ -177,6 +175,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     # start NetworkTables
+    global ntinst
     ntinst = NetworkTablesInstance.getDefault()
     if server:
         print("Setting up NetworkTables server")

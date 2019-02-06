@@ -23,10 +23,8 @@ public class Vision {
     // radiusEntry.setDouble(radius);
     // }
 
-    double cX;
-    double cY;
-    double radius;
-    double TARGET_RADIUS = 40.0;
+    double maxVal;
+    double maxLoc;
 
     // Listening to Value changes in table
     // Add an EntryListener for changed values of "X". The lambda ("->" operator)
@@ -39,19 +37,14 @@ public class Vision {
         NetworkTableEntry radiusEntry = netTable.getEntry("Radius");
         inst.startClientTeam(5480);
 
-        netTable.addEntryListener("X", (table, key, entry, value, flags) -> {
-            System.out.println("X changed value: " + value.getValue());
-            cX = (double) value.getValue();
+        netTable.addEntryListener("maxVal", (table, key, entry, value, flags) -> {
+            System.out.println("maxVal changed value: " + value.getValue());
+            maxVal = (double) value.getValue();
         }, EntryListenerFlags.kNew | EntryListenerFlags.kUpdate);
 
-        netTable.addEntryListener("Y", (table, key, entry, value, flags) -> {
-            System.out.println("Y changed value: " + value.getValue());
-            cY = (double) value.getValue();
-        }, EntryListenerFlags.kNew | EntryListenerFlags.kUpdate);
-
-        netTable.addEntryListener("Radius", (table, key, entry, value, flags) -> {
-            System.out.println("Radius changed value: " + value.getValue());
-            radius = (double) value.getValue();
+        netTable.addEntryListener("maxLoc", (table, key, entry, value, flags) -> {
+            System.out.println("maxLoc changed value: " + value.getValue());
+            maxLoc = (double) value.getValue();
         }, EntryListenerFlags.kNew | EntryListenerFlags.kUpdate);
 
         try {
@@ -69,14 +62,9 @@ public class Vision {
         double frameWidth_Entry = netTable.getEntry("Frame Width").getDouble(0);
         double frameHeight_Entry = netTable.getEntry("Frame Height").getDouble(0);
 
+        java.util.List<Double> position = Arrays.asList(frameWidth_Entry, frameHeight_Entry, maxVal, maxLoc);
 
-        double xError = cX/frameWidth_Entry;
-        double yError = cY/frameHeight_Entry;
-        double radiusError = radius/TARGET_RADIUS;
-
-        java.util.List<Double> error = Arrays.asList(xError, yError, radiusError);
-
-    return error;
+    return position;
   }
 
 }
