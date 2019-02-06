@@ -30,7 +30,7 @@ public class ClimbingSubsystem extends Subsystem {
   public boolean direction = climbing_Encoder.getDirection();
   public boolean stopped = climbing_Encoder.getStopped();
   //Motors
-  //Spark ClimbingMotorController = new Spark(RobotMap.climbing_encoder_port_one);
+  Spark ClimbingMotorController = new Spark(RobotMap.climbing_encoder_port_one);
 
   //Starts climbing motor and stops when encoder reaches a point
   public void climb(){
@@ -40,7 +40,7 @@ public class ClimbingSubsystem extends Subsystem {
     // } else {
     //   ClimbingMotorController.set(0);
     // }
-    
+    ClimbingMotorController.set(0.5);
   };
 
   @Override
