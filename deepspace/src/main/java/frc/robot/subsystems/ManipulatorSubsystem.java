@@ -30,12 +30,15 @@ public class ManipulatorSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
+  //Constants
+  double CARGO_ENCODER_TARGET_RETRACTED = 0.0;
+  double CARGO_ENCODER_TARGET_EXTENDED = 0.0;
+
   //Switches
   public DigitalInput limitSwitch = new DigitalInput(RobotMap.manipulator_switch_port);
   public Boolean limitSwitch_value = limitSwitch.get();
   //Compressor
   //public Compressor compress = new Compressor(RobotMap.manipulator_compressor_port);
-  
   //public double current = compress.getCompressorCurrent();
   //Solenoids
   public Solenoid cargo_solenoid = new Solenoid(RobotMap.cargo_solenoid_port);
@@ -87,7 +90,7 @@ public class ManipulatorSubsystem extends Subsystem {
   //Extend cargo wings to hold balls
   public void extendCargoWings(){
     // cargo_encoder.reset();
-    // if (count==10){
+    // if (count==CARGO_ENCODER_TARGET_EXTENDED){
     //   cargoWingsMotorController.set(0.5);
     // } else {
     //   cargoWingsMotorController.set(0);
@@ -98,7 +101,7 @@ public class ManipulatorSubsystem extends Subsystem {
   //Retracts Crgo wing back into lift
   public void retractCargoWings(){
     // cargo_encoder.reset();
-    // if (count==10){
+    // if (count==CARGO_ENCODER_TARGET_RETRACTED){
     //   cargoWingsMotorController.set(0.5);
     // } else {
     //   cargoWingsMotorController.set(0);

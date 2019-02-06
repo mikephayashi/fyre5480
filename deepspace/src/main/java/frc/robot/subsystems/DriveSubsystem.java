@@ -34,12 +34,29 @@ public class DriveSubsystem extends Subsystem {
   public AnalogInput ultraLeft = new AnalogInput(RobotMap.ultraLeft_analog_in);
   public AnalogInput ultraRight = new AnalogInput(RobotMap.ultraRight_analog_in);
   //Gyro
-  
   public Gyro gyro_sensor = new AnalogGyro(RobotMap.gyro_port);
   public double angle = gyro_sensor.getAngle(); // get current heading
+  //Analog input -> color sensor
+  public AnalogInput colorSensor = new AnalogInput(RobotMap.color_sensor_port);
+  double averageVolts = colorSensor.getAverageVoltage();
+  /*
+  Raw value - The instantaneous raw 12-bit (0-4096) value representing the 0-5V range of the ADC. Note that this method does not take into account the calibration information stored in the module.
+  Voltage - The instantaneous voltage value of the channel. This method takes into account the calibration information stored in the module to convert the raw value to a voltage.
+  Average Raw value - The raw, unscaled value output from the oversampling and averaging engine. See above for information on the effect of oversampling and averaging and how to set the number of bits for each.
+  Average Voltage - The scaled voltage value output from the oversampling and averaging engine. This method uses the stored calibration information to convert the raw average value into a voltage.
+  */
+  // int raw = colorSensor.getValue();
+  // double volts = colorSensor.getVoltage();
+  // int averageRaw = colorSensor.getAverageValue();
+  // int bits;
+  // colorSensor.setOversampleBits(4);
+  // bits = exampleAnalog.getOversampleBits();
+  // colorSensor.setAverageBits(2);
+  // bits = exampleAnalog.getAverageBits();
+  
 
   public DriveSubsystem(){
-    
+    colorSensor.setGlobalSampleRate(62500); //default value of 62,500 samples per channel per second (500kS/s total)
   }
   
 
@@ -47,29 +64,6 @@ public class DriveSubsystem extends Subsystem {
   // public void manualDrive(double move, double turn) {
   //   m_drive.arcadeDrive(move, turn);
   // }
-
-  //Simple Networktableprogram
-  NetworkTableEntry xEntry;
-  NetworkTableEntry yEntry;
-  public void RobotInit(){
-    NetworkTableInstance inst = NetworkTableInstance.getDefault();
-    NetworkTable table = inst.getTable("datatable");
-    xEntry = table.getEntry("X");
-    yEntry = table.getEntry("Y");
-  }
-  public void setTableValue(){
-    xEntry.setDouble(1);
-    yEntry.setDouble(1);
-  }
-
-  //TableEntryListenerExample
-  public void run(){
-    NetworkTableInstance inst = NetworkTableInstance.getDefault();
-    NetworkTable table = inst.getTable("datatable");
-    NetworkTableEntry yEntry = table.getEntry("Y");
-    inst.startClientTeam(5480);
-    //Continue on FRC
-  }
    
 
   @Override

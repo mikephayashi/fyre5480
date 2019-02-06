@@ -8,11 +8,13 @@
 package frc.robot.commands.Lift;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
 public class LevelTwoLiftCommand extends Command {
   public LevelTwoLiftCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
+    requires(Robot.liftSubsystemRef);
   }
 
   // Called just before this Command runs the first time
@@ -23,6 +25,12 @@ public class LevelTwoLiftCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    double ENCODER_TARGET_LEVEL_TWO = 0.0;
+    if (Robot.liftSubsystemRef.CURRENT_LEVEL>2){
+      Robot.liftSubsystemRef.liftDown(ENCODER_TARGET_LEVEL_TWO);
+    } else {
+      Robot.liftSubsystemRef.liftUp(ENCODER_TARGET_LEVEL_TWO);
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -34,6 +42,7 @@ public class LevelTwoLiftCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.liftSubsystemRef.CURRENT_LEVEL = 2;
   }
 
   // Called when another command which requires one or more of the same

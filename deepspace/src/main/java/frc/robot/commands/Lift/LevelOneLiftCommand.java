@@ -25,7 +25,12 @@ public class LevelOneLiftCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    
+    double ENCODER_TARGET_LEVEL_ONE = 0.0;
+    if (Robot.liftSubsystemRef.CURRENT_LEVEL>1){
+      Robot.liftSubsystemRef.liftDown(ENCODER_TARGET_LEVEL_ONE);
+    } else {
+      //Do nothing
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -37,6 +42,7 @@ public class LevelOneLiftCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.liftSubsystemRef.CURRENT_LEVEL = 1;
   }
 
   // Called when another command which requires one or more of the same

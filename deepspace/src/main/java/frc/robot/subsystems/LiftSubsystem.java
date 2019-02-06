@@ -21,6 +21,9 @@ public class LiftSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
+  //Constants
+  public int CURRENT_LEVEL = 1;
+
   //Encoders
   // public Encoder lift_Encoder = new Encoder(RobotMap.lift_encoder_port_one, RobotMap.lift_encoder_port_two, false, Encoder.EncodingType.k4X);
   // public int count = lift_Encoder.get();
@@ -40,7 +43,7 @@ public class LiftSubsystem extends Subsystem {
   }
 
   //Lift Down Level
-  public void liftDown(int level){
+  public void liftDown(double level){
     // lift_Encoder.reset();
     // if (count != level){
     //   lift_solenoid.set(false);
@@ -53,7 +56,7 @@ public class LiftSubsystem extends Subsystem {
   }
 
   //Lift Up Level
-  public void liftUp(int level){
+  public void liftUp(double level){
     // lift_Encoder.reset();
     // if (count != level){
     //   lift_solenoid.set(false);
@@ -62,6 +65,11 @@ public class LiftSubsystem extends Subsystem {
     //   LiftMotorController.set(0);
     //   lift_solenoid.set(true);
     // }
+  }
+
+  //Manual Lift
+  public void lift(double stick){
+    // LiftMotorController.set(stick);
   }
   
   @Override

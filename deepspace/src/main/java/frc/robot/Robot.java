@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.Driving.DriveManuallyCommand;
 import frc.robot.subsystems.DriveSubsystem;
-import frc.robot.subsystems.ClimbingSubsystem;
+import frc.robot.subsystems.PIDz;
 import frc.robot.subsystems.LiftSubsystem;
 import frc.robot.subsystems.ManipulatorSubsystem;
 
@@ -28,7 +28,7 @@ import frc.robot.subsystems.ManipulatorSubsystem;
  */
  public class Robot extends TimedRobot {
   public static DriveSubsystem driveSubsystemRef = new DriveSubsystem();
-  public static ClimbingSubsystem climbingSubsystemRef = new ClimbingSubsystem();
+  public static PIDz PIDzRef = new PIDz();
   public static LiftSubsystem liftSubsystemRef = new LiftSubsystem();
   public static ManipulatorSubsystem manipulatorSubsystemRef = new ManipulatorSubsystem();
   public static OI m_oi;

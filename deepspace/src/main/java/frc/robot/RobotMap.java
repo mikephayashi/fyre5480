@@ -57,6 +57,8 @@ public class RobotMap {
   public static int ultraLeft_analog_in = 1;
   public static int ultraRight_analog_in = 2;
   
+  //Drive Subystem color sensor
+  public static int color_sensor_port = 0;
 
   //Lift Subsystem Encoder
   public static int lift_encoder_port_one = 0;
@@ -72,6 +74,8 @@ public class RobotMap {
   //Lift subystem solenoid
   public static int lift_solenoid_port = 0;
 
+
+  //PIDz = climbing
   //Climbing Subsystem Encoder
   public static int climbing_encoder_port_one = 1;
   public static int climbing_encoder_port_two = 2;
