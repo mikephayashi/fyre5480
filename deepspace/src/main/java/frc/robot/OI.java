@@ -31,6 +31,21 @@ public class OI {
   //// it is.
   public Joystick stick = new Joystick(RobotMap.joy_stick_port);
 
+  /*
+  JOYSTICK
+
+  Working:
+  x-axis
+  y-axis
+  slider
+  POV
+  Buttons(1,2,3,4,5,6,8,10)
+
+  Broken:
+  Buttons(7,9,11,12)
+
+  */
+
   // Button button = new JoystickButton(stick, buttonNumber);
   Button button1 = new JoystickButton(stick, RobotMap.button_one);
   Button button2 = new JoystickButton(stick, RobotMap.button_two);
@@ -38,22 +53,21 @@ public class OI {
   Button button4 = new JoystickButton(stick, RobotMap.button_four);
   Button button5 = new JoystickButton(stick, RobotMap.button_five);
   Button button6 = new JoystickButton(stick, RobotMap.button_six);
-  Button button7 = new JoystickButton(stick, RobotMap.button_seven);
   Button button8 = new JoystickButton(stick, RobotMap.button_eight); 
-  Button button9 = new JoystickButton(stick, RobotMap.button_nine);
   Button button10 = new JoystickButton(stick, RobotMap.button_ten);
 
   public OI(){
     //Can't find button 1
+    button1.whenPressed(new ClimbingCommand());
     button2.whenPressed(new ManualLiftCommand());
     button3.whenPressed(new LevelOneLiftCommand());
     button4.whenPressed(new LevelTwoLiftCommand());
     button5.whenPressed(new LevelThreeLiftCommand());
     button6.whenPressed(new CargoCommand());
-    button7.whenPressed(new CloseHatchCommand());
     button8.whenPressed(new OpenHatchCommand());
-    button9.whenPressed(new ClimbingCommand());
     button10.whenPressed(new RackAndPinionCommand());
+
+    //Close hatch command
   }
 
 		

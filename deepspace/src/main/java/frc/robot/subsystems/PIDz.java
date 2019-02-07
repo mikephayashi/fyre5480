@@ -8,6 +8,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import frc.robot.RobotMap;
@@ -33,7 +34,10 @@ public class PIDz extends PIDSubsystem {
   public boolean direction = climbing_Encoder.getDirection();
   public boolean stopped = climbing_Encoder.getStopped();
   //Motors
-  Spark ClimbingMotorController = new Spark(RobotMap.climbing_encoder_port_one);
+  // Spark ClimbingMotorController = new Spark(RobotMap.climbing_motor_port);
+  Relay ClimbingMotorController = new Relay(RobotMap.climbing_motor_port);
+
+  
 
   public PIDz() {
     // Intert a subsystem name and PID values here
@@ -68,6 +72,8 @@ public class PIDz extends PIDSubsystem {
     // Use output to drive your system, like a motor
     // e.g. yourMotor.set(output);
 
+    
+
     // ClimbingMotorController.pidWrite(output); // this is where the computed output value fromthe PIDController is applied to the motor
     // climbing_Encoder.reset();
     // if (ENCODER_TARGET_VALUE < distance){
@@ -75,6 +81,7 @@ public class PIDz extends PIDSubsystem {
     // } else {
     //   ClimbingMotorController.set(0);
     // }
-    ClimbingMotorController.set(0.5);
+    ClimbingMotorController.set(Relay.Value.kOn);
+    ClimbingMotorController.set(Relay.Value.kForward);
   }
 }

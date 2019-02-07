@@ -1,2 +1,0 @@
-Geometrical transformations and registration
---------------------------------------------

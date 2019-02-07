@@ -38,9 +38,7 @@ public class RobotMap {
   public static int button_four = 4;
   public static int button_five = 5;
   public static int button_six = 6;
-  public static int button_seven = 7;
   public static int button_eight = 8;
-  public static int button_nine = 9;
   public static int button_ten = 10;
 
   //OI X Box Controller

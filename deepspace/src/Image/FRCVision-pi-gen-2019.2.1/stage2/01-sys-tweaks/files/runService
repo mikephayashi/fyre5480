@@ -1,2 +1,0 @@
-#!/bin/sh
-sudo svc -u /service/camera

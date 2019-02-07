@@ -1,2 +1,0 @@
-Edges and lines
----------------
