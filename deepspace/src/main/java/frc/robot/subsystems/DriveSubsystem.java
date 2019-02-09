@@ -26,6 +26,8 @@ public class DriveSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
+  public double TARGET_COLOR_VALUE = 0.0;
+
   // Drive Train
   //Spark m_left = new Spark(RobotMap.driveSubsystemPorts.leftMotor.getValue());
   //Spark m_right = new Spark(RobotMap.driveSubsystemPorts.rightMotor.getValue());
@@ -64,6 +66,14 @@ public class DriveSubsystem extends Subsystem {
   // public void manualDrive(double move, double turn) {
   //   m_drive.arcadeDrive(move, turn);
   // }
+
+  //Auto - Detecting white tape 
+  public void white_tape(){
+    // if (averageVolts == TARGET_COLOR_VALUE){
+    //   m_drive.arcadeDrive(0, -1);
+
+    // }
+  }
    
 
   @Override
