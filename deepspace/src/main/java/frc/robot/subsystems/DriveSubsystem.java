@@ -35,8 +35,8 @@ public class DriveSubsystem extends Subsystem {
    // Ultrasonic sensor
   public AnalogInput ultraLeft = new AnalogInput(RobotMap.ultraLeft_analog_in);
   public AnalogInput ultraRight = new AnalogInput(RobotMap.ultraRight_analog_in);
-  public double leftRange = ultraLeft.getDistance();
-  public double rightRange = ultraRight.getDistance();
+  public double leftRange = ultraLeft.getAverageVoltage();
+  public double rightRange = ultraRight.getAverageVoltage();
   //Gyro
   // public Gyro gyro_sensor = new AnalogGyro(RobotMap.gyro_port);
   // public double angle = gyro_sensor.getAngle(); // get current heading
@@ -60,8 +60,7 @@ public class DriveSubsystem extends Subsystem {
   
 
   public DriveSubsystem(){
-    ultraLeft.setAutomaticMode(true);
-    ultraRight.setAutomaticMode(true);
+
 
     // colorSensor.setGlobalSampleRate(62500); //default value of 62,500 samples per channel per second (500kS/s total)
   }
