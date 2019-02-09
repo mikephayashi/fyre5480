@@ -46,7 +46,6 @@ public class OI {
 
   */
 
-  Button button = new JoystickButton(stick, buttonNumber);
   Button button1 = new JoystickButton(stick, RobotMap.button_one);
   Button button2 = new JoystickButton(stick, RobotMap.button_two);
   Button button3 = new JoystickButton(stick, RobotMap.button_three);
