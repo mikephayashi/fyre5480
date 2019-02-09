@@ -41,11 +41,9 @@ public class DriveManuallyCommand extends Command {
     // double move = -Robot.m_oi.stick.getY() * throttle;
     // double turn = Robot.m_oi.stick.getX() * throttle;
     
-  
-
     double move = Robot.m_oi.m_xBox.getY(Hand.kLeft) * 0.5;
     double turn = Robot.m_oi.m_xBox.getY(Hand.kRight) * 0.5;
-    //Robot.driveSubsystemRef.manualDrive(move, turn);
+    Robot.driveSubsystemRef.manualDrive(move, turn);
   }
 
   // Make this return true when this Command no longer needs to run execute()
