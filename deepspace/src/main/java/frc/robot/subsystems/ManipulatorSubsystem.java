@@ -119,6 +119,14 @@ public class ManipulatorSubsystem extends Subsystem {
   // cargo_solenoid.set(false);
   }
 
+  public void openCargo(){
+    cargo_solenoid.set(true);
+  }
+
+  public void closeCargo(){
+    cargo_solenoid.set(false);
+  }
+
   //Opens clasps to put on hatches
   public void openHatch(){
     // hatch_solenoid.set(true);

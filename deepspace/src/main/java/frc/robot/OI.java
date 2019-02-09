@@ -60,16 +60,17 @@ public class OI {
 
   public OI(){
     
+    button1.whenPressed(new OpenCargoCommand());
+    button2.whenPressed(new CloseCargoCommand());
 
-
-    button1.whenPressed(new CargoCommand());
-    button2.whenPressed(new OpenHatchCommand());
-    button3.whenPressed(new CloseHatchCommand());
-    button4.whenPressed(new LevelTwoLiftCommand());
-    button5.whenPressed(new LevelThreeLiftCommand());
-    button6.whenPressed(new CargoCommand());
-    button8.whenPressed(new ClimbingCommand());
-    button10.whenPressed(new RackAndPinionCommand());
+    // button1.whenPressed(new CargoCommand());
+    // button2.whenPressed(new OpenHatchCommand());
+    // button3.whenPressed(new CloseHatchCommand());
+    // button4.whenPressed(new LevelTwoLiftCommand());
+    // button5.whenPressed(new LevelThreeLiftCommand());
+    // button6.whenPressed(new CargoCommand());
+    // button8.whenPressed(new ClimbingCommand());
+    // button10.whenPressed(new RackAndPinionCommand());
 
     //Close hatch command
   }
