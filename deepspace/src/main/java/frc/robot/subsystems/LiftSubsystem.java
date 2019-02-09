@@ -36,8 +36,8 @@ public class LiftSubsystem extends Subsystem {
   //Motors
   // public Spark LiftMotorController = new Spark(RobotMap.lift_motor_port);
   //Ultrasonic
-  public AnalogInput ultraLift = new AnalogInput(RobotMap.ultraLift_analog_in);
-  public double range = ultraLift.getAverageVoltage();
+  // public AnalogInput ultraLift = new AnalogInput(RobotMap.ultraLift_analog_in);
+  // public double range = ultraLift.getAverageVoltage();
 
   public LiftSubsystem(){
 
