@@ -139,7 +139,7 @@ public class ManipulatorSubsystem extends Subsystem {
 
   //Extend Rack and pinion
   public void extendRackAndPinion(){
-    // rackAndPinionMotorController.set(Robot.m_oi.stick.getY());
+    rackAndPinionMotorController.set(Robot.m_oi.stick.getY());
   }
 
 
