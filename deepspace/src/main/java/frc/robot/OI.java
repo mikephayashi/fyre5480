@@ -68,6 +68,8 @@ public class OI {
     button3.whenPressed(new OpenHatchCommand());
     button4.whenPressed(new CloseHatchCommand());
     button5.whenPressed(new CompressorCommand());
+    button6.whileHeld(new ClimbingCommand());
+    
 
 
     povOne.whileHeld(new ExtendRackAndPinionCommand());
@@ -82,7 +84,6 @@ public class OI {
     // button8.whenPressed(new ClimbingCommand());
     // button10.whenPressed(new RackAndPinionCommand());
 
-    //Close hatch command
   }
 
 		
