@@ -5,16 +5,16 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands.Climbing;
+package frc.robot.commands.Manipulator;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class ClimbingCommand extends Command {
-  public ClimbingCommand() {
+public class RetractRackAndPinionCommand extends Command {
+  public RetractRackAndPinionCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.PIDzRef);
+    requires(Robot.manipulatorSubsystemRef);
   }
 
   // Called just before this Command runs the first time
@@ -25,9 +25,7 @@ public class ClimbingCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double move = Robot.m_oi.stick.getY()*0.5;
-    Robot.PIDzRef.climb(move);
-    
+    // Robot.manipulatorSubsystemRef.retractManipulator();
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -39,6 +37,7 @@ public class ClimbingCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+      
   }
 
   // Called when another command which requires one or more of the same

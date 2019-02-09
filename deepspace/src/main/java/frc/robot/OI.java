@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.buttons.POVButton;
 import frc.robot.RobotMap;
 import frc.robot.commands.Lift.*;
 import frc.robot.commands.Manipulator.*;
@@ -31,6 +32,9 @@ public class OI {
   //// it is.
   public Joystick stick = new Joystick(RobotMap.joy_stick_port);
 
+  public POVButton povOne = new POVButton(stick, 0);
+  public POVButton povTwo = new POVButton(stick, 180);
+
   /*
   JOYSTICK
 
@@ -45,7 +49,6 @@ public class OI {
   Buttons(7,9,11,12)
 
   */
-
   Button button1 = new JoystickButton(stick, RobotMap.button_one);
   Button button2 = new JoystickButton(stick, RobotMap.button_two);
   Button button3 = new JoystickButton(stick, RobotMap.button_three);
@@ -65,6 +68,12 @@ public class OI {
     button3.whenPressed(new OpenHatchCommand());
     button4.whenPressed(new CloseHatchCommand());
     button5.whenPressed(new CompressorCommand());
+    button6.whileHeld(new ClimbingCommand());
+    
+
+
+    povOne.whileHeld(new ExtendRackAndPinionCommand());
+    povTwo.whileHeld(new RetractRackAndPinionCommand());
 
     // button1.whenPressed(new CargoCommand());
     // button2.whenPressed(new OpenHatchCommand());
@@ -75,7 +84,6 @@ public class OI {
     // button8.whenPressed(new ClimbingCommand());
     // button10.whenPressed(new RackAndPinionCommand());
 
-    //Close hatch command
   }
 
 		

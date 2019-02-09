@@ -79,7 +79,7 @@ public class RobotMap {
   public static int climbing_encoder_port_two = 2;
 
   //Climbing Subsystem Motor
-  public static int climbing_motor_port = 0;
+  public static int climbing_motor_port = 4;
 
   //Climbing Solenoid 
   public static int climbing_solenoid = 0;
