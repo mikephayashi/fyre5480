@@ -33,8 +33,10 @@ public class DriveSubsystem extends Subsystem {
   Spark m_right = new Spark(RobotMap.rightMotor);
   DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
    // Ultrasonic sensor
-  // public AnalogInput ultraLeft = new AnalogInput(RobotMap.ultraLeft_analog_in);
-  // public AnalogInput ultraRight = new AnalogInput(RobotMap.ultraRight_analog_in);
+  public AnalogInput ultraLeft = new AnalogInput(RobotMap.ultraLeft_analog_in);
+  public AnalogInput ultraRight = new AnalogInput(RobotMap.ultraRight_analog_in);
+  public double leftRange = ultraLeft.getDistance();
+  public double rightRange = ultraRight.getDistance();
   //Gyro
   // public Gyro gyro_sensor = new AnalogGyro(RobotMap.gyro_port);
   // public double angle = gyro_sensor.getAngle(); // get current heading
@@ -58,6 +60,9 @@ public class DriveSubsystem extends Subsystem {
   
 
   public DriveSubsystem(){
+    ultraLeft.setAutomaticMode(true);
+    ultraRight.setAutomaticMode(true);
+
     // colorSensor.setGlobalSampleRate(62500); //default value of 62,500 samples per channel per second (500kS/s total)
   }
   

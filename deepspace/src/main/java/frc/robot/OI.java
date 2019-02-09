@@ -62,6 +62,9 @@ public class OI {
     
     button1.whenPressed(new OpenCargoCommand());
     button2.whenPressed(new CloseCargoCommand());
+    button3.whenPressed(new OpenHatchCommand());
+    button4.whenPressed(new CloseHatchCommand());
+    button5.whenPressed(new CompressorCommand());
 
     // button1.whenPressed(new CargoCommand());
     // button2.whenPressed(new OpenHatchCommand());

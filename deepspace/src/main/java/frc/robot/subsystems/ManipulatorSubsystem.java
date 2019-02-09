@@ -129,12 +129,12 @@ public class ManipulatorSubsystem extends Subsystem {
 
   //Opens clasps to put on hatches
   public void openHatch(){
-    // hatch_solenoid.set(true);
+    hatch_solenoid.set(true);
   }
 
   //Closes clasps to secure hatch onto robot
   public void closeHatch(){
-    // hatch_solenoid.set(false);
+    hatch_solenoid.set(false);
   }
 
   //Extend Rack and pinion
