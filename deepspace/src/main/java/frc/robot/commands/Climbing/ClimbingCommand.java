@@ -14,7 +14,7 @@ public class ClimbingCommand extends Command {
   public ClimbingCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.PIDzRef);
+    requires(Robot.driveSubsystemRef);
   }
 
   // Called just before this Command runs the first time
@@ -26,7 +26,7 @@ public class ClimbingCommand extends Command {
   @Override
   protected void execute() {
     double move = Robot.m_oi.stick.getY()*0.5;
-    Robot.PIDzRef.climb(move);
+    Robot.driveSubsystemRef.climb(move);
     
   }
 
