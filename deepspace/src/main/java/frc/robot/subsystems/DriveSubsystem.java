@@ -70,7 +70,18 @@ public class DriveSubsystem extends Subsystem {
   //Auto - Detecting white tape 
   public void white_tape(){
     // if (averageVolts == TARGET_COLOR_VALUE){
-    //   m_drive.arcadeDrive(0, -1);
+    //   if (angle>270 | angle < 90){
+    //     //On near side of white line
+    //     m_drive.arcadeDrive(0, angle);
+    //   } else {
+    //     //On far side of white line
+    //     m_drive.arcadeDrive(0, angle);
+    //   }
+
+    //   if (angle != 90){
+
+    //   }
+      
 
     // }
   }

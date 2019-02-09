@@ -9,6 +9,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import frc.robot.RobotMap;
@@ -36,6 +37,8 @@ public class PIDz extends PIDSubsystem {
   //Motors
   // Spark ClimbingMotorController = new Spark(RobotMap.climbing_motor_port);
   Relay ClimbingMotorController = new Relay(RobotMap.climbing_motor_port);
+  //Solenoid
+  public Solenoid pidz_solenoid = new Solenoid(RobotMap.climbing_solenoid);
 
   
 
@@ -49,6 +52,10 @@ public class PIDz extends PIDSubsystem {
     // enable() - Enables the PID controller.
 		setAbsoluteTolerance(0.05);
 		getPIDController().setContinuous(false);
+  }
+
+  public void solenod_break(){
+    pidz_solenoid.set(true);
   }
 
   @Override

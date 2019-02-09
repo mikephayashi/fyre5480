@@ -81,6 +81,9 @@ public class RobotMap {
   //Climbing Subsystem Motor
   public static int climbing_motor_port = 0;
 
+  //Climbing Solenoid 
+  public static int climbing_solenoid = 0;
+
   //Mainpulator Subsystem Switch
   public static int manipulator_switch_port = 0;
 
