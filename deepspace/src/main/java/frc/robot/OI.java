@@ -32,7 +32,8 @@ public class OI {
   //// it is.
   public Joystick stick = new Joystick(RobotMap.joy_stick_port);
 
-  public POVButton povOne= new POVButton(stick, 0);
+  public POVButton povOne = new POVButton(stick, 0);
+  public POVButton povTwo = new POVButton(stick, 180);
 
   /*
   JOYSTICK
@@ -67,6 +68,10 @@ public class OI {
     button3.whenPressed(new OpenHatchCommand());
     button4.whenPressed(new CloseHatchCommand());
     button5.whenPressed(new CompressorCommand());
+
+
+    povOne.whileHeld(new ExtendRackAndPinionCommand());
+    povTwo.whileHeld(new RetractRackAndPinionCommand());
 
     // button1.whenPressed(new CargoCommand());
     // button2.whenPressed(new OpenHatchCommand());

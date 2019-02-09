@@ -9,10 +9,9 @@ package frc.robot.commands.Manipulator;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.subsystems.ManipulatorSubsystem;
 
-public class RackAndPinionCommand extends Command {
-  public RackAndPinionCommand() {
+public class RetractRackAndPinionCommand extends Command {
+  public RetractRackAndPinionCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(Robot.manipulatorSubsystemRef);
@@ -26,7 +25,7 @@ public class RackAndPinionCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.manipulatorSubsystemRef.extendRackAndPinion();
+    Robot.manipulatorSubsystemRef.retractManipulator();
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -38,6 +37,7 @@ public class RackAndPinionCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+      
   }
 
   // Called when another command which requires one or more of the same

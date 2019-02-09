@@ -44,7 +44,7 @@ public class ManipulatorSubsystem extends Subsystem {
   public Solenoid cargo_solenoid = new Solenoid(RobotMap.cargo_solenoid_port);
   public Solenoid hatch_solenoid = new Solenoid(RobotMap.hatch_solenoid_port);
   //Motors
-  // Spark rackAndPinionMotorController = new Spark(RobotMap.rackAndPinionMotorController);
+  Spark rackAndPinionMotorController = new Spark(RobotMap.rackAndPinionMotorController);
   //Spark cargoWingsMotorController = new Spark(RobotMap.cargo_wings_motor_port);
   //Encoders
   // public Encoder cargo_encoder = new Encoder(RobotMap.cargo_encoder_port_one, RobotMap.cargo_encoder_port_two, false, Encoder.EncodingType.k4X);
@@ -72,7 +72,7 @@ public class ManipulatorSubsystem extends Subsystem {
   //Extends Manipulator system beyond chassis frame
   public void extendManipulator(){
     // if (limitSwitch_value){
-    //   manipulatorMotorController.set(0.5);
+      rackAndPinionMotorController.set(0.25);
     // } else {
     //   manipulatorMotorController.set(0);
     // }
@@ -81,7 +81,7 @@ public class ManipulatorSubsystem extends Subsystem {
   //Tretracts manipulator system within chassi frame
   public void retractManipulator(){
     // if (limitSwitch_value){
-    //   manipulatorMotorController.set(0.5);
+      rackAndPinionMotorController.set(-0.25);
     // } else {
     //   manipulatorMotorController.set(0);
     // }
@@ -136,13 +136,6 @@ public class ManipulatorSubsystem extends Subsystem {
   public void closeHatch(){
     hatch_solenoid.set(false);
   }
-
-  //Extend Rack and pinion
-  public void extendRackAndPinion(){
-    // rackAndPinionMotorController.set(Robot.m_oi.stick.getY());
-  }
-
-
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
