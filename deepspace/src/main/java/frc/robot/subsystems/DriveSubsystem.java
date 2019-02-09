@@ -29,18 +29,20 @@ public class DriveSubsystem extends Subsystem {
   public double TARGET_COLOR_VALUE = 0.0;
 
   // Drive Train
-  //Spark m_left = new Spark(RobotMap.driveSubsystemPorts.leftMotor.getValue());
-  //Spark m_right = new Spark(RobotMap.driveSubsystemPorts.rightMotor.getValue());
-  //DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
+  Spark m_left = new Spark(RobotMap.leftMotor);
+  Spark m_right = new Spark(RobotMap.rightMotor);
+  DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
    // Ultrasonic sensor
   public AnalogInput ultraLeft = new AnalogInput(RobotMap.ultraLeft_analog_in);
   public AnalogInput ultraRight = new AnalogInput(RobotMap.ultraRight_analog_in);
+  public double leftRange = ultraLeft.getAverageVoltage();
+  public double rightRange = ultraRight.getAverageVoltage();
   //Gyro
-  public Gyro gyro_sensor = new AnalogGyro(RobotMap.gyro_port);
-  public double angle = gyro_sensor.getAngle(); // get current heading
+  // public Gyro gyro_sensor = new AnalogGyro(RobotMap.gyro_port);
+  // public double angle = gyro_sensor.getAngle(); // get current heading
   //Analog input -> color sensor
-  public AnalogInput colorSensor = new AnalogInput(RobotMap.color_sensor_port);
-  double averageVolts = colorSensor.getAverageVoltage();
+  // public AnalogInput colorSensor = new AnalogInput(RobotMap.color_sensor_port);
+  // double averageVolts = colorSensor.getAverageVoltage();
   /*
   Raw value - The instantaneous raw 12-bit (0-4096) value representing the 0-5V range of the ADC. Note that this method does not take into account the calibration information stored in the module.
   Voltage - The instantaneous voltage value of the channel. This method takes into account the calibration information stored in the module to convert the raw value to a voltage.
@@ -58,14 +60,16 @@ public class DriveSubsystem extends Subsystem {
   
 
   public DriveSubsystem(){
-    colorSensor.setGlobalSampleRate(62500); //default value of 62,500 samples per channel per second (500kS/s total)
+
+
+    // colorSensor.setGlobalSampleRate(62500); //default value of 62,500 samples per channel per second (500kS/s total)
   }
   
 
   //Manual Drive
-  // public void manualDrive(double move, double turn) {
-  //   m_drive.arcadeDrive(move, turn);
-  // }
+  public void manualDrive(double move, double turn) {
+    m_drive.arcadeDrive(move, turn);
+  }
 
   //Auto - Detecting white tape 
   public void white_tape(){

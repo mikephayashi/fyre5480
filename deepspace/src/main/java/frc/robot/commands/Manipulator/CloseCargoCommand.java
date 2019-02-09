@@ -5,45 +5,28 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands.Driving;
+package frc.robot.commands.Manipulator;
 
-import frc.robot.Robot;
-import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
-
-public class DriveManuallyCommand extends Command {
-
-
-  public DriveManuallyCommand() {
+public class CloseCargoCommand extends Command {
+  public CloseCargoCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.driveSubsystemRef);
-  }
+    requires(Robot.manipulatorSubsystemRef);
 
+  }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-
-    /* double throttle = Robot.m_oi.stick.getThrottleChannel();
-    double move = -Robot.m_oi.stick.getY()*throttle;
-    double turn = Robot.m_oi.stick.getX(); */
-    
-    // double throttle = 0.25;  
-    // double move = -Robot.m_oi.stick.getY() * throttle;
-    // double turn = Robot.m_oi.stick.getX() * throttle;
-    
-    double move = Robot.m_oi.m_xBox.getY(Hand.kLeft) * 0.5;
-    double turn = Robot.m_oi.m_xBox.getY(Hand.kRight) * 0.5;
-    Robot.driveSubsystemRef.manualDrive(move, turn);
+    Robot.manipulatorSubsystemRef.closeCargo();
   }
 
   // Make this return true when this Command no longer needs to run execute()

@@ -23,12 +23,12 @@ public class RobotMap {
   If you are using multiple modules, make sure to define both the port
   number and the module. For example you with a rangefinder:
   public static int rangefinderPort = 1;
-  public static int rangefinderModule = 1;*/
+  public static int rangefinderModule = 1;*/ 
 
   
-  
+  //Drive Motors
   public static int leftMotor = 0;
-	public static int rightMotor = 0;
+	public static int rightMotor = 1;
   
   //OI joystick and buttons
   public static int joy_stick_port = 0;
@@ -52,7 +52,7 @@ public class RobotMap {
   public static int gyro_port = 0;
 
   //Dirve Subystem Ultrasonic sensor
-  public static int ultraLeft_analog_in = 1;
+  public static int ultraLeft_analog_in = 3;
   public static int ultraRight_analog_in = 2;
   
   //Drive Subystem color sensor
@@ -66,7 +66,7 @@ public class RobotMap {
   public static int lift_motor_port = 0;
 
   //Lift Subystem Ultrasonic sensor
-  public static int ultraLift_analog_in = 3;
+  public static int ultraLift_analog_in = 8;
 
 
   //Lift subystem solenoid

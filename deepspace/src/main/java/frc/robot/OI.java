@@ -48,8 +48,6 @@ public class OI {
   Buttons(7,9,11,12)
 
   */
-  POVButton pov1 = new POVButton(stick, 0);
-  // Button button = new JoystickButton(stick, buttonNumber);
   Button button1 = new JoystickButton(stick, RobotMap.button_one);
   Button button2 = new JoystickButton(stick, RobotMap.button_two);
   Button button3 = new JoystickButton(stick, RobotMap.button_three);
@@ -59,17 +57,26 @@ public class OI {
   Button button8 = new JoystickButton(stick, RobotMap.button_eight); 
   Button button10 = new JoystickButton(stick, RobotMap.button_ten);
 
+ 
+
+
   public OI(){
-    //Can't find button 1
-    button1.whenPressed(new ClimbingCommand());
-    button2.whenPressed(new ManualLiftCommand());
-    button3.whenPressed(new LevelOneLiftCommand());
-    button4.whenPressed(new LevelTwoLiftCommand());
-    button5.whenPressed(new LevelThreeLiftCommand());
-    button6.whenPressed(new CargoCommand());
-    button8.whenPressed(new OpenHatchCommand());
-    button10.whenPressed(new RackAndPinionCommand());
-    pov1.whileHeld(new RackAndPinionCommand());
+    
+    button1.whenPressed(new OpenCargoCommand());
+    button2.whenPressed(new CloseCargoCommand());
+    button3.whenPressed(new OpenHatchCommand());
+    button4.whenPressed(new CloseHatchCommand());
+    button5.whenPressed(new CompressorCommand());
+
+    // button1.whenPressed(new CargoCommand());
+    // button2.whenPressed(new OpenHatchCommand());
+    // button3.whenPressed(new CloseHatchCommand());
+    // button4.whenPressed(new LevelTwoLiftCommand());
+    // button5.whenPressed(new LevelThreeLiftCommand());
+    // button6.whenPressed(new CargoCommand());
+    // button8.whenPressed(new ClimbingCommand());
+    // button10.whenPressed(new RackAndPinionCommand());
+
     //Close hatch command
   }
 

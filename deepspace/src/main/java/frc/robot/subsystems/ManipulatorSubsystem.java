@@ -35,8 +35,8 @@ public class ManipulatorSubsystem extends Subsystem {
   double CARGO_ENCODER_TARGET_EXTENDED = 0.0;
 
   //Switches
-  public DigitalInput limitSwitch = new DigitalInput(RobotMap.manipulator_switch_port);
-  public Boolean limitSwitch_value = limitSwitch.get();
+  // public DigitalInput limitSwitch = new DigitalInput(RobotMap.manipulator_switch_port);
+  // public Boolean limitSwitch_value = limitSwitch.get();
   //Compressor
   //public Compressor compress = new Compressor(RobotMap.manipulator_compressor_port);
   //public double current = compress.getCompressorCurrent();
@@ -44,7 +44,7 @@ public class ManipulatorSubsystem extends Subsystem {
   public Solenoid cargo_solenoid = new Solenoid(RobotMap.cargo_solenoid_port);
   public Solenoid hatch_solenoid = new Solenoid(RobotMap.hatch_solenoid_port);
   //Motors
-  Spark rackAndPinionMotorController = new Spark(RobotMap.rackAndPinionMotorController);
+  // Spark rackAndPinionMotorController = new Spark(RobotMap.rackAndPinionMotorController);
   //Spark cargoWingsMotorController = new Spark(RobotMap.cargo_wings_motor_port);
   //Encoders
   // public Encoder cargo_encoder = new Encoder(RobotMap.cargo_encoder_port_one, RobotMap.cargo_encoder_port_two, false, Encoder.EncodingType.k4X);
@@ -110,13 +110,21 @@ public class ManipulatorSubsystem extends Subsystem {
 
   //Kicks cargo ball out
   public void cargo(){
-    cargo_solenoid.set(true);
-    try {
-      Thread.sleep(1000);
-  } catch(InterruptedException e) {
-      System.out.println("got interrupted!");
+  //   cargo_solenoid.set(true);
+  //   try {
+  //     Thread.sleep(1000);
+  // } catch(InterruptedException e) {
+  //     System.out.println("got interrupted!");
+  // }
+  // cargo_solenoid.set(false);
   }
-  cargo_solenoid.set(false);
+
+  public void openCargo(){
+    cargo_solenoid.set(true);
+  }
+
+  public void closeCargo(){
+    cargo_solenoid.set(false);
   }
 
   //Opens clasps to put on hatches
@@ -131,7 +139,7 @@ public class ManipulatorSubsystem extends Subsystem {
 
   //Extend Rack and pinion
   public void extendRackAndPinion(){
-    rackAndPinionMotorController.set(Robot.m_oi.stick.getY());
+    // rackAndPinionMotorController.set(Robot.m_oi.stick.getY());
   }
 
 
