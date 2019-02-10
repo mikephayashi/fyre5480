@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.Climbing.ClimbingCommand;
 
 /**
  * Add your docs here.
@@ -36,7 +37,6 @@ public class PIDz extends PIDSubsystem {
   public boolean stopped = climbing_Encoder.getStopped();
   //Motors
   Spark ClimbingMotorController = new Spark(RobotMap.climbing_motor_port);
-  // Relay ClimbingMotorController = new Relay(RobotMap.climbing_motor_port);
   //Solenoid
   public Solenoid pidz_solenoid = new Solenoid(RobotMap.climbing_solenoid);
 
@@ -65,7 +65,8 @@ public class PIDz extends PIDSubsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
+    setDefaultCommand(new ClimbingCommand());
+
   }
 
   @Override

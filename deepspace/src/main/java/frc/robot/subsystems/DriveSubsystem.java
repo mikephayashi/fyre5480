@@ -57,11 +57,6 @@ public class DriveSubsystem extends Subsystem {
   // bits = exampleAnalog.getOversampleBits();
   // colorSensor.setAverageBits(2);
   // bits = exampleAnalog.getAverageBits();
-
-  Spark ClimbingMotorController = new Spark(RobotMap.climbing_motor_port);
-  public void climb(double speed){
-    ClimbingMotorController.set(speed);
-  }
   
 
   public DriveSubsystem(){
