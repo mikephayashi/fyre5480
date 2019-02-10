@@ -59,7 +59,7 @@ public class PIDz extends PIDSubsystem {
   }
 
   public void climb(double speed){
-    // ClimbingMotorController.set(speed);
+    ClimbingMotorController.set(speed);
   }
 
   @Override
