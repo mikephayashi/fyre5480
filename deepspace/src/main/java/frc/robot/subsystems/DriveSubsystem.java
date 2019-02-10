@@ -18,6 +18,7 @@ import edu.wpi.first.wpilibj.interfaces.Gyro;
 import edu.wpi.first.networktables.NetworkTable;
 import frc.robot.RobotMap;
 import frc.robot.commands.Driving.DriveManuallyCommand;
+import frc.robot.commands.Climbing.ClimbingCommand;
 
 /**
  * Add your docs here.
@@ -99,7 +100,7 @@ public class DriveSubsystem extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new DriveManuallyCommand());
+    setDefaultCommand(new ClimbingCommand());
 
   }
 }

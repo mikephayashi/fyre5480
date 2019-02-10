@@ -8,6 +8,7 @@
 package frc.robot.commands.Climbing;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import frc.robot.Robot;
 
 public class ClimbingCommand extends Command {
@@ -25,7 +26,7 @@ public class ClimbingCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double move = Robot.m_oi.stick.getY()*0.5;
+    double move = Robot.m_oi.m_xBox.getY(Hand.kLeft) * 0.5;
     Robot.driveSubsystemRef.climb(move);
     
   }

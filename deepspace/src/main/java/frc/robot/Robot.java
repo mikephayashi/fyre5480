@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.Driving.DriveManuallyCommand;
+import frc.robot.commands.Climbing.ClimbingCommand;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.PIDz;
 import frc.robot.subsystems.LiftSubsystem;
@@ -43,7 +44,7 @@ import frc.robot.subsystems.ManipulatorSubsystem;
   @Override
   public void robotInit() {
     m_oi = new OI();
-    m_chooser.setDefaultOption("Default Auto", new DriveManuallyCommand());
+    m_chooser.setDefaultOption("Default Auto", new ClimbingCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
     CameraServer.getInstance().startAutomaticCapture();
     
