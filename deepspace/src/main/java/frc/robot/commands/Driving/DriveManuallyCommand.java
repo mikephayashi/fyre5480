@@ -8,7 +8,6 @@
 package frc.robot.commands.Driving;
 
 import frc.robot.Robot;
-import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -41,9 +40,9 @@ public class DriveManuallyCommand extends Command {
     // double move = -Robot.m_oi.stick.getY() * throttle;
     // double turn = Robot.m_oi.stick.getX() * throttle;
     
-    // double move = Robot.m_oi.m_xBox.getY(Hand.kLeft) * 0.5;
-    // double turn = Robot.m_oi.m_xBox.getY(Hand.kRight) * 0.5;
-    // Robot.driveSubsystemRef.manualDrive(move, turn);
+    double move = Robot.m_oi.m_xBox.getY(Hand.kLeft);
+    double turn = Robot.m_oi.m_xBox.getY(Hand.kRight);
+    Robot.driveSubsystemRef.manualDrive(move, turn);
   }
 
   // Make this return true when this Command no longer needs to run execute()
