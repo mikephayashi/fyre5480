@@ -38,8 +38,8 @@ public class ManipulatorSubsystem extends Subsystem {
   // public DigitalInput limitSwitch = new DigitalInput(RobotMap.manipulator_switch_port);
   // public Boolean limitSwitch_value = limitSwitch.get();
   //Compressor
-  //public Compressor compress = new Compressor(RobotMap.manipulator_compressor_port);
-  //public double current = compress.getCompressorCurrent();
+  public Compressor compress = new Compressor(RobotMap.manipulator_compressor_port);
+  public double current = compress.getCompressorCurrent();
   //Solenoids
   public Solenoid cargo_solenoid = new Solenoid(RobotMap.cargo_solenoid_port);
   public Solenoid hatch_solenoid = new Solenoid(RobotMap.hatch_solenoid_port);
@@ -58,15 +58,15 @@ public class ManipulatorSubsystem extends Subsystem {
 
   //Compressor
   public void compressor(){
-    //boolean pressureSwitch = compress.getPressureSwitchValue();
-    // compress.enabled();
-    // if (!pressureSwitch){
-    //   compress.setClosedLoopControl(true);
-    //   System.out.println("Pneumatic Compressor On");
-    // } else {
-    //   compress.setClosedLoopControl(false);
-    //   System.out.println("Pneumatic Compressor Off");
-    // }
+    boolean pressureSwitch = compress.getPressureSwitchValue();
+    compress.enabled();
+    if (!pressureSwitch){
+      compress.setClosedLoopControl(true);
+      System.out.println("Pneumatic Compressor On");
+    } else {
+      compress.setClosedLoopControl(false);
+      System.out.println("Pneumatic Compressor Off");
+    }
   }
 
   //Extends Manipulator system beyond chassis frame
@@ -110,13 +110,13 @@ public class ManipulatorSubsystem extends Subsystem {
 
   //Kicks cargo ball out
   public void cargo(){
-  //   cargo_solenoid.set(true);
-  //   try {
-  //     Thread.sleep(1000);
-  // } catch(InterruptedException e) {
-  //     System.out.println("got interrupted!");
-  // }
-  // cargo_solenoid.set(false);
+    cargo_solenoid.set(true);
+    try {
+      Thread.sleep(1000);
+  } catch(InterruptedException e) {
+      System.out.println("got interrupted!");
+  }
+  cargo_solenoid.set(false);
   }
 
   public void openCargo(){
