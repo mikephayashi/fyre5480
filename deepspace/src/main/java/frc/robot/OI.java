@@ -67,8 +67,8 @@ public class OI {
     button2.whenPressed(new CloseCargoCommand());
     button3.whenPressed(new OpenHatchCommand());
     button4.whenPressed(new CloseHatchCommand());
-    button5.whenPressed(new CompressorCommand());
-    button6.whileHeld(new ClimbingCommand());
+    button5.whileHeld(new ExtendRackAndPinionCommand());
+    button6.whileHeld(new RetractRackAndPinionCommand());
     
 
 
