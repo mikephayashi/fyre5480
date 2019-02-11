@@ -63,7 +63,7 @@ public class RobotMap {
   public static int lift_encoder_port_two = 0;
   
   //Lift Subsystem Motor
-  public static int lift_motor_port = 9;
+  public static int lift_motor_port = 0;
 
   //Lift Subystem Ultrasonic sensor
   public static int ultraLift_analog_in = 8;
