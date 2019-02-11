@@ -27,8 +27,8 @@ public class ClimbingCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double move = Robot.m_oi.stick.getY()*0.5;
-    Robot.PIDzRef.climb(move);
+    // double move = Robot.m_oi.stick.getY();
+    // Robot.PIDzRef.climb(move);
     
   }
 
