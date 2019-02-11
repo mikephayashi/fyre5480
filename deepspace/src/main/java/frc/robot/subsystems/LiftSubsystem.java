@@ -34,7 +34,7 @@ public class LiftSubsystem extends Subsystem {
   // public boolean direction = lift_Encoder.getDirection();
   // public boolean stopped = lift_Encoder.getStopped();
   //Motors
-  public Spark LiftMotorController = new Spark(RobotMap.lift_motor_port);
+  // public Spark LiftMotorController = new Spark(RobotMap.lift_motor_port);
   //Ultrasonic
   // public AnalogInput ultraLift = new AnalogInput(RobotMap.ultraLift_analog_in);
   // public double range = ultraLift.getAverageVoltage();
@@ -48,7 +48,7 @@ public class LiftSubsystem extends Subsystem {
     // lift_Encoder.reset();
     // if (count != level){
     //   lift_solenoid.set(false);
-    // LiftMotorController.set(level);
+    //   LiftMotorController.set(0.5);
     // } else {
     //   LiftMotorController.set(0);
     //   lift_solenoid.set(true);
@@ -61,7 +61,7 @@ public class LiftSubsystem extends Subsystem {
     // lift_Encoder.reset();
     // if (count != level){
     //   lift_solenoid.set(false);
-      LiftMotorController.set(level/8.2);
+    //   LiftMotorController.set(0.5);
     // } else {
     //   LiftMotorController.set(0);
     //   lift_solenoid.set(true);
@@ -70,7 +70,7 @@ public class LiftSubsystem extends Subsystem {
 
   //Manual Lift
   public void lift(double stick){
-    LiftMotorController.set(stick);
+    // LiftMotorController.set(stick);
   }
   
   @Override
