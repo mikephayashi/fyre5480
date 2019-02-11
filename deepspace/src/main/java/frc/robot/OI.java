@@ -68,7 +68,7 @@ public class OI {
     button3.whenPressed(new OpenHatchCommand());
     button4.whenPressed(new CloseHatchCommand());
     button5.whenPressed(new CompressorCommand());
-    // button6.whileHeld(new ClimbingCommand());
+    button6.whileHeld(new ClimbingCommand());
     
 
 
