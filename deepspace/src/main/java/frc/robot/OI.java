@@ -72,8 +72,8 @@ public class OI {
     
 
 
-    povOne.whileHeld(new ExtendRackAndPinionCommand());
-    povTwo.whileHeld(new RetractRackAndPinionCommand());
+    //povOne.whileHeld(new ExtendRackAndPinionCommand());
+    //povTwo.whileHeld(new RetractRackAndPinionCommand());
 
     // button1.whenPressed(new CargoCommand());
     // button2.whenPressed(new OpenHatchCommand());
