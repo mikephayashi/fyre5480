@@ -9,5 +9,7 @@
     "bin/": true,
     ".classpath": true,
     ".project": true
-  }
+  },
+  "python.linting.pylintEnabled": true,
+  "python.pythonPath": "/anaconda3/bin/python"
 }
