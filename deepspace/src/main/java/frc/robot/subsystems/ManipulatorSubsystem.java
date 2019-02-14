@@ -25,8 +25,10 @@ public class ManipulatorSubsystem extends Subsystem {
   double CARGO_ENCODER_TARGET_EXTENDED = 0.0;
 
   //Switches
-  // public DigitalInput limitSwitch = new DigitalInput(RobotMap.manipulator_switch_port);
-  // public Boolean limitSwitch_value = limitSwitch.get();
+  public DigitalInput limitSwitchFront = new DigitalInput(RobotMap.manipulator_switchFront_port);
+  public Boolean limitSwitchFront_value = limitSwitchFront.get();
+  public DigitalInput limitSwitchBack = new DigitalInput(RobotMap.manipulator_switchBack_port);
+  public Boolean limitSwitchBack_value = limitSwitchBack.get();
   //Compressor
   //public Compressor compress = new Compressor(RobotMap.manipulator_compressor_port);
   //public double current = compress.getCompressorCurrent();
@@ -61,12 +63,24 @@ public class ManipulatorSubsystem extends Subsystem {
   //Extends Manipulator system beyond chassis frame
   public void extendManipulator(){
     rackAndPinionMotorController.set(1);
+    if (limitSwitchFront_value == false){
+      rackAndPinionMotorController.set(0.5);
+    } else {
+      rackAndPinionMotorController.set(0);
+    }
   }
 
   //Tretracts manipulator system within chassi frame
   public void retractManipulator(){
     rackAndPinionMotorController.set(-1);
+    if (limitSwitchBack_value == false){
+      rackAndPinionMotorController.set(-0.5);
+    } else {
+      rackAndPinionMotorController.set(0);
+    }
   }
+
+
 
   //Extends cargo piston
   public void openCargo(){
