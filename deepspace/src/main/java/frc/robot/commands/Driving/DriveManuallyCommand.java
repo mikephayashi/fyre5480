@@ -25,20 +25,12 @@ public class DriveManuallyCommand extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    
+    Robot.driveSubsystemRef.manualDrive(0, 0);
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-
-    /* double throttle = Robot.m_oi.stick.getThrottleChannel();
-    double move = -Robot.m_oi.stick.getY()*throttle;
-    double turn = Robot.m_oi.stick.getX(); */
-    
-    // double throttle = 0.25;  
-    // double move = -Robot.m_oi.stick.getY() * throttle;
-    // double turn = Robot.m_oi.stick.getX() * throttle;
     
     double move = Robot.m_oi.m_xBox.getY(Hand.kLeft);
     double turn = Robot.m_oi.m_xBox.getY(Hand.kRight);
@@ -48,17 +40,20 @@ public class DriveManuallyCommand extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
+    Robot.driveSubsystemRef.manualDrive(0, 0);
     return false;
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    Robot.driveSubsystemRef.manualDrive(0, 0);
   }
 }

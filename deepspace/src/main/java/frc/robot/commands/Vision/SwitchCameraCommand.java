@@ -5,36 +5,33 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands.Climbing;
+package frc.robot.commands.Vision;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class ClimbingCommand extends Command {
-  public ClimbingCommand() {
+public class SwitchCameraCommand extends Command {
+  public SwitchCameraCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.PIDzRef);
+    requires(Robot.visionRef);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.PIDzRef.climb(0);
+    Robot.visionRef.switchCameras();
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double move = Robot.m_oi.stick.getY();
-    Robot.PIDzRef.climb(move);
-    
+
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    Robot.PIDzRef.climb(0);
     return false;
   }
 
@@ -47,6 +44,5 @@ public class ClimbingCommand extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    Robot.PIDzRef.climb(0);
   }
 }

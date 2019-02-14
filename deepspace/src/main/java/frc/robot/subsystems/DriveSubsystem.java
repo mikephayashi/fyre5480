@@ -7,18 +7,14 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.networktables.NetworkTableEntry;
-import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
-import edu.wpi.first.networktables.NetworkTable;
 import frc.robot.RobotMap;
 import frc.robot.commands.Driving.DriveManuallyCommand;
-import frc.robot.commands.Climbing.ClimbingCommand;
 
 /**
  * Add your docs here.

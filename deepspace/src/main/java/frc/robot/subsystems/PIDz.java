@@ -8,8 +8,6 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.Relay;
-import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import frc.robot.RobotMap;
@@ -59,7 +57,7 @@ public class PIDz extends PIDSubsystem {
   }
 
   public void climb(double speed){
-    ClimbingMotorController.set(speed);
+    usePIDOutput(speed);
   }
 
   @Override
@@ -75,8 +73,7 @@ public class PIDz extends PIDSubsystem {
     // e.g. a sensor, like a potentiometer:
     // yourPot.getAverageVoltage() / kYourMaxVoltage;
 
-    // return climbing_Encoder.getAverageVoltage(); // returns the sensor value that is providing the feedback for the system
-    return 0.0;
+    return distance;  //returns the sensor value that is providing the feedback for the system
   }
 
   @Override
@@ -84,16 +81,6 @@ public class PIDz extends PIDSubsystem {
     // Use output to drive your system, like a motor
     // e.g. yourMotor.set(output);
     
-
-    // ClimbingMotorController.pidWrite(output); // this is where the computed output value fromthe PIDController is applied to the motor
-    // climbing_Encoder.reset();
-    // if (ENCODER_TARGET_VALUE < distance){
-    //   ClimbingMotorController.set(0.5);
-    // } else {
-    //   ClimbingMotorController.set(0);
-    // }
-
-    // ClimbingMotorController.set(Relay.Value.kOn);
-    // ClimbingMotorController.set(Relay.Value.kForward);
+    ClimbingMotorController.set(output);
   }
 }
