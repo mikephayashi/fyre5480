@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.buttons.POVButton;
 import frc.robot.RobotMap;
 import frc.robot.commands.Lift.*;
 import frc.robot.commands.Manipulator.*;
+import frc.robot.commands.Vision.SwitchCameraCommand;
 import frc.robot.commands.Climbing.*;
 
 /**
@@ -70,6 +71,7 @@ public class OI {
     button5.whileHeld(new ExtendRackAndPinionCommand());
     button6.whileHeld(new RetractRackAndPinionCommand());
     povOne.whileHeld(new ManualLiftUpCommand());
+    button8.whenPressed(new SwitchCameraCommand());
     povTwo.whileHeld(new ManipulatorLiftDownCommand());
 
   }
