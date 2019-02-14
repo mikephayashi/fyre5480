@@ -1,10 +1,8 @@
 package frc.robot;
 
-import java.util.Arrays;
 import edu.wpi.first.networktables.EntryListenerFlags;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
-import edu.wpi.first.networktables.NetworkTableValue;
 
 public class NetworkTables {
 

@@ -7,20 +7,11 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Compressor;
-import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.Robot;
 import frc.robot.RobotMap;
-import edu.wpi.first.wpilibj.Spark;
-import frc.robot.commands.Manipulator.CloseHatchCommand;
 import frc.robot.commands.Manipulator.OpenHatchCommand;
-import java.io.*;
-import java.sql.Time;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Add your docs here.

@@ -8,7 +8,6 @@
 package frc.robot.commands.Climbing;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.GenericHID.Hand;
 import frc.robot.Robot;
 
 public class ClimbingCommand extends Command {
