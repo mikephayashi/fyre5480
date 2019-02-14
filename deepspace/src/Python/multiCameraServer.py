@@ -130,25 +130,25 @@ def imageProcessing(cam):
 
     # Get a CvSink. This will capture images from the camera
     cvSink = cs.getVideo()
-    print("got video")
+    # print("got video")
 
     # (optional) Setup a CvSource. This will send images back to the Dashboard
     outputStream = cs.putVideo("Name", 320, 240)
-    print("got output stream")
+    # print("got output stream")
 
     # Allocating new images is very expensive, always try to preallocate
     img = np.zeros(shape=(240, 320, 3), dtype=np.uint8)
-    print("allocated image")
+    # print("allocated image")
 
     while True:
         # Tell the CvSink to grab a frame from the camera and put it
         # in the source image.  If there is an error notify the output
-        print("infinite loop started")
+        # print("infinite loop started")
         time, img = cvSink.grabFrame(img)
-        print("got time and image")
+        # print("got time and image")
         if time == 0:
             # Send the output the error.
-            outputStream.notifyError(cvSink.getError());
+            outputStream.notifyError(cvSink.getError())
             print("got error")
             # skip the rest of the current iteration
             continue
@@ -179,9 +179,9 @@ def imageProcessing(cam):
         f2, f1 = np.where(thresh == 255) ####CX, where not found####
         rows, columns = thresh.shape
 
-        print("Printing lenghts")
-        print(len(f2))
-        print(len(f1))
+        # print("Printing lengths")
+        # print(len(f2))
+        # print(len(f1))
 
         if f1!=None and f2!=None and len(f1) != 0 and len(f2) != 0:
 
@@ -199,10 +199,10 @@ def imageProcessing(cam):
 
             #Prints
             np.set_printoptions(threshold=np.nan)
-            print("Rows: ", rows, " Columns: ", columns)
-            print("xC Length", len(f1))
+            # print("Rows: ", rows, " Columns: ", columns)
+            # print("xC Length", len(f1))
             # print("xC", xC)
-            print("yC Length", len(f2))
+            # print("yC Length", len(f2))
             # print("yC", yC)
             # print(zip(xC,yC))
 
@@ -232,8 +232,7 @@ def imageProcessing(cam):
             clusters = np.zeros(len(X))
             # Error func. - Distance between new centroids and old centroids
             error = dist(C, C_old, None)
-            print("Error")
-            print(error)
+            # print("Error: ", error)
 
             leftArea = 0
             rightArea = 0
@@ -248,16 +247,16 @@ def imageProcessing(cam):
                     # print(cluster) #Prints 0s
                 # Storing the old centroid values
                 C_old = deepcopy(C)
-                print(k)
+                # print(k)
                 # Finding the new centroids by taking the average value
                 for i in range(k):
                     points = [X[j] for j in range(len(X)) if clusters[j] == i]
                     # print("Points", points) ###Leave this in or it gives a warning and breaks, reason uknown???ß
                     C[i] = np.mean(points, axis=0)
                     if i == 0:
-                        leftArea = leftArea + 1
+                        leftArea = len(points)
                     elif i == 1:
-                        rightArea = rightArea + 1
+                        rightArea = len(points)
                 #   print(C)
                 error = dist(C, C_old, None)
                 if error != isinstance(error, int):
@@ -276,16 +275,17 @@ def imageProcessing(cam):
             stop = timeit.default_timer()
             print('Time: ', stop - start)
             print("Centroid", " x: ", centroid_x, " y: ", centroid_y)
+            print("left area: ", leftArea, " right area: ", rightArea)
 
             #---------------------------
             # Image Process Logic [End]
             #---------------------------
 
-            sd = ntinst.getTable('datatable')
-            sd.putNumber('X', centroid_x)
-            sd.putNumber('Y', centroid_y)
-            sd.putNumber('leftArea', leftArea)
-            sd.putNumber('rightArea', rightArea)
+            # sd = ntinst.getTable('datatable')
+            # sd.putNumber('X', centroid_x)
+            # sd.putNumber('Y', centroid_y)
+            # sd.putNumber('leftArea', leftArea)
+            # sd.putNumber('rightArea', rightArea)
 
             # (optional) send some image back to the dashboard
             # outputStream.putFrame(img)
