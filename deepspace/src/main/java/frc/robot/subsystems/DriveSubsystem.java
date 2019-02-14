@@ -30,13 +30,13 @@ public class DriveSubsystem extends Subsystem {
   Spark m_right = new Spark(RobotMap.rightMotor);
   DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
    // Ultrasonic sensor
-  public AnalogInput ultraLeft = new AnalogInput(RobotMap.ultraLeft_analog_in);
-  public AnalogInput ultraRight = new AnalogInput(RobotMap.ultraRight_analog_in);
-  public double leftRange = ultraLeft.getAverageVoltage();
-  public double rightRange = ultraRight.getAverageVoltage();
-  //Gyro
-  public Gyro gyro_sensor = new AnalogGyro(RobotMap.gyro_port);
-  public double angle = gyro_sensor.getAngle(); // get current heading
+  // public AnalogInput ultraLeft = new AnalogInput(RobotMap.ultraLeft_analog_in);
+  // public AnalogInput ultraRight = new AnalogInput(RobotMap.ultraRight_analog_in);
+  // public double leftRange = ultraLeft.getAverageVoltage();
+  // public double rightRange = ultraRight.getAverageVoltage();
+  // //Gyro
+  // public Gyro gyro_sensor = new AnalogGyro(RobotMap.gyro_port);
+  // public double angle = gyro_sensor.getAngle(); // get current heading
   //Analog input -> color sensor
   // public AnalogInput colorSensor = new AnalogInput(RobotMap.color_sensor_port);
   // double averageVolts = colorSensor.getAverageVoltage();

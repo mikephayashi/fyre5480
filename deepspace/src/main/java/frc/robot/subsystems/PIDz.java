@@ -25,14 +25,14 @@ public class PIDz extends PIDSubsystem {
   double ENCODER_TARGET_VALUE = 0.0;
 
   //Encoders
-  public Encoder climbing_Encoder = new Encoder(RobotMap.climbing_encoder_port_one, RobotMap.climbing_encoder_port_two, false, Encoder.EncodingType.k4X);
-  public int count = climbing_Encoder.get();
-  public double raw_distance = climbing_Encoder.getRaw();
-  public double distance = climbing_Encoder.getDistance();
-  public double period = climbing_Encoder.getRate();
-  public double rate = climbing_Encoder.getRate();
-  public boolean direction = climbing_Encoder.getDirection();
-  public boolean stopped = climbing_Encoder.getStopped();
+  // public Encoder climbing_Encoder = new Encoder(RobotMap.climbing_encoder_port_one, RobotMap.climbing_encoder_port_two, false, Encoder.EncodingType.k4X);
+  // public int count = climbing_Encoder.get();
+  // public double raw_distance = climbing_Encoder.getRaw();
+  // public double distance = climbing_Encoder.getDistance();
+  // public double period = climbing_Encoder.getRate();
+  // public double rate = climbing_Encoder.getRate();
+  // public boolean direction = climbing_Encoder.getDirection();
+  // public boolean stopped = climbing_Encoder.getStopped();
   //Motors
   Spark ClimbingMotorController = new Spark(RobotMap.climbing_motor_port);
   //Solenoid
@@ -73,7 +73,8 @@ public class PIDz extends PIDSubsystem {
     // e.g. a sensor, like a potentiometer:
     // yourPot.getAverageVoltage() / kYourMaxVoltage;
 
-    return distance;  //returns the sensor value that is providing the feedback for the system
+    // return distance;  //returns the sensor value that is providing the feedback for the system
+    return 0;
   }
 
   @Override
