@@ -16,7 +16,6 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.Spark;
-import frc.robot.commands.Manipulator.CargoCommand;
 import frc.robot.commands.Manipulator.CloseHatchCommand;
 import frc.robot.commands.Manipulator.OpenHatchCommand;
 import java.io.*;
@@ -45,7 +44,6 @@ public class ManipulatorSubsystem extends Subsystem {
   public Solenoid hatch_solenoid = new Solenoid(RobotMap.hatch_solenoid_port);
   //Motors
   Spark rackAndPinionMotorController = new Spark(RobotMap.rackAndPinionMotorController);
-  //Spark cargoWingsMotorController = new Spark(RobotMap.cargo_wings_motor_port);
   //Encoders
   // public Encoder cargo_encoder = new Encoder(RobotMap.cargo_encoder_port_one, RobotMap.cargo_encoder_port_two, false, Encoder.EncodingType.k4X);
   // public int count = cargo_encoder.get();
@@ -71,58 +69,20 @@ public class ManipulatorSubsystem extends Subsystem {
 
   //Extends Manipulator system beyond chassis frame
   public void extendManipulator(){
-    // if (limitSwitch_value){
-      rackAndPinionMotorController.set(0.5);
-    // } else {
-    //   manipulatorMotorController.set(0);
-    // }
+    rackAndPinionMotorController.set(1);
   }
 
   //Tretracts manipulator system within chassi frame
   public void retractManipulator(){
-    // if (limitSwitch_value){
-      rackAndPinionMotorController.set(-0.5);
-    // } else {
-    //   manipulatorMotorController.set(0);
-    // }
+    rackAndPinionMotorController.set(-1);
   }
 
-  //Extend cargo wings to hold balls
-  public void extendCargoWings(){
-    // cargo_encoder.reset();
-    // if (count==CARGO_ENCODER_TARGET_EXTENDED){
-    //   cargoWingsMotorController.set(0.5);
-    // } else {
-    //   cargoWingsMotorController.set(0);
-    // }
-    
-  }
-
-  //Retracts Crgo wing back into lift
-  public void retractCargoWings(){
-    // cargo_encoder.reset();
-    // if (count==CARGO_ENCODER_TARGET_RETRACTED){
-    //   cargoWingsMotorController.set(0.5);
-    // } else {
-    //   cargoWingsMotorController.set(0);
-    // }
-  }
-
-  //Kicks cargo ball out
-  public void cargo(){
-  //   cargo_solenoid.set(true);
-  //   try {
-  //     Thread.sleep(1000);
-  // } catch(InterruptedException e) {
-  //     System.out.println("got interrupted!");
-  // }
-  // cargo_solenoid.set(false);
-  }
-
+  //Extends cargo piston
   public void openCargo(){
     cargo_solenoid.set(true);
   }
 
+  //Retracts cargo piston
   public void closeCargo(){
     cargo_solenoid.set(false);
   }
@@ -139,6 +99,6 @@ public class ManipulatorSubsystem extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new CargoCommand());
+    setDefaultCommand(new OpenHatchCommand());
   }
 }

@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-import frc.robot.commands.Lift.ManualLiftCommand;
+import frc.robot.commands.Lift.ManualLiftUpCommand;
 
 /**
  * Add your docs here.
@@ -76,6 +76,6 @@ public class LiftSubsystem extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new ManualLiftCommand());
+    setDefaultCommand(new ManualLiftUpCommand());
   }
 }

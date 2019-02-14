@@ -26,29 +26,29 @@ public class OI {
   // XBox
   public XboxController m_xBox = new XboxController(RobotMap.xbox_port);
 
-  //// CREATING BUTTONS
+  //Joystick
+  public Joystick stick = new Joystick(RobotMap.joy_stick_port);
+
+  // Joystick
+  // Working:
+  // x-axis
+  // y-axis
+  // slider
+  // POV
+  // Buttons(1,2,3,4,5,6,8,10)
+  // 
+  // Broken:
+  // Buttons(7,9,11,12)
+
+
+//// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a joystick.
   // You create one by telling it which joystick it's on and which button number
   //// it is.
-  public Joystick stick = new Joystick(RobotMap.joy_stick_port);
 
   public POVButton povOne = new POVButton(stick, 0);
   public POVButton povTwo = new POVButton(stick, 180);
 
-  /*
-  JOYSTICK
-
-  Working:
-  x-axis
-  y-axis
-  slider
-  POV
-  Buttons(1,2,3,4,5,6,8,10)
-
-  Broken:
-  Buttons(7,9,11,12)
-
-  */
   Button button1 = new JoystickButton(stick, RobotMap.button_one);
   Button button2 = new JoystickButton(stick, RobotMap.button_two);
   Button button3 = new JoystickButton(stick, RobotMap.button_three);
@@ -69,20 +69,8 @@ public class OI {
     button4.whenPressed(new CloseHatchCommand());
     button5.whileHeld(new ExtendRackAndPinionCommand());
     button6.whileHeld(new RetractRackAndPinionCommand());
-    
-
-
-    //povOne.whileHeld(new ExtendRackAndPinionCommand());
-    //povTwo.whileHeld(new RetractRackAndPinionCommand());
-
-    // button1.whenPressed(new CargoCommand());
-    // button2.whenPressed(new OpenHatchCommand());
-    // button3.whenPressed(new CloseHatchCommand());
-    // button4.whenPressed(new LevelTwoLiftCommand());
-    // button5.whenPressed(new LevelThreeLiftCommand());
-    // button6.whenPressed(new CargoCommand());
-    // button8.whenPressed(new ClimbingCommand());
-    // button10.whenPressed(new RackAndPinionCommand());
+    povOne.whileHeld(new ManualLiftUpCommand());
+    povTwo.whileHeld(new ManipulatorLiftDownCommand());
 
   }
 

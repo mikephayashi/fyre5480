@@ -7,18 +7,17 @@
 
 package frc.robot;
 
-import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.Driving.DriveManuallyCommand;
-import frc.robot.commands.Climbing.ClimbingCommand;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.PIDz;
 import frc.robot.subsystems.LiftSubsystem;
 import frc.robot.subsystems.ManipulatorSubsystem;
+import frc.robot.subsystems.Vision;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,13 +26,16 @@ import frc.robot.subsystems.ManipulatorSubsystem;
  * creating this project, you must also update the build.gradle file in the
  * project.
  */
+
+
+ 
  public class Robot extends TimedRobot {
   public static DriveSubsystem driveSubsystemRef = new DriveSubsystem();
   public static PIDz PIDzRef = new PIDz();
   public static LiftSubsystem liftSubsystemRef = new LiftSubsystem();
   public static ManipulatorSubsystem manipulatorSubsystemRef = new ManipulatorSubsystem();
+  public static Vision visionRef = new Vision();
   public static OI m_oi;
-
 
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -46,8 +48,8 @@ import frc.robot.subsystems.ManipulatorSubsystem;
     m_oi = new OI();
     m_chooser.setDefaultOption("Default Auto", new DriveManuallyCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
-    CameraServer.getInstance().startAutomaticCapture();
     
+
   }
 
   /**

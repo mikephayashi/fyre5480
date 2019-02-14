@@ -10,8 +10,8 @@ package frc.robot.commands.Lift;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class ManualLiftCommand extends Command {
-  public ManualLiftCommand() {
+public class ManipulatorLiftDownCommand extends Command {
+  public ManipulatorLiftDownCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(Robot.liftSubsystemRef);
@@ -25,8 +25,7 @@ public class ManualLiftCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double move = Robot.m_oi.stick.getY();
-    Robot.liftSubsystemRef.lift(move);
+    Robot.liftSubsystemRef.lift(-1);
   }
 
   // Make this return true when this Command no longer needs to run execute()

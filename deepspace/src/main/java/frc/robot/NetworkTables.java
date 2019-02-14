@@ -6,7 +6,7 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.networktables.NetworkTableValue;
 
-public class Vision {
+public class NetworkTables {
 
     // public void robotInit(){
     // NetworkTableInstance inst = NetworkTableInstance.getDefault();

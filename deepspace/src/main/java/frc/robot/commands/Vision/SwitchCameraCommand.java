@@ -5,55 +5,44 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands.Driving;
+package frc.robot.commands.Vision;
 
-import frc.robot.Robot;
-import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
-
-public class DriveManuallyCommand extends Command {
-
-
-  public DriveManuallyCommand() {
+public class SwitchCameraCommand extends Command {
+  public SwitchCameraCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.driveSubsystemRef);
+    requires(Robot.visionRef);
   }
-
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.driveSubsystemRef.manualDrive(0, 0);
+    Robot.visionRef.switchCameras();
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    
-    double move = Robot.m_oi.m_xBox.getY(Hand.kLeft);
-    double turn = Robot.m_oi.m_xBox.getY(Hand.kRight);
-    Robot.driveSubsystemRef.manualDrive(move, turn);
+
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    Robot.driveSubsystemRef.manualDrive(0, 0);
     return false;
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    Robot.driveSubsystemRef.manualDrive(0, 0);
   }
 }
