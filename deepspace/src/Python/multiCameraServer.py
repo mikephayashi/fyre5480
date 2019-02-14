@@ -168,7 +168,7 @@ def imageProcessing(cam):
 
         # threshold the image to reveal light regions in the
         # blurred image
-        thresh = cv2.threshold(blurred, 200, 255, cv2.THRESH_BINARY)[1] ### When Testing, measure light intensity that is reflected +++ remove outliers ###
+        thresh = cv2.threshold(blurred, 230, 255, cv2.THRESH_BINARY)[1] ### When Testing, measure light intensity that is reflected +++ remove outliers ###
 
         # perform a series of erosions and dilations to remove
         # any small blobs of noise from the thresholded image
