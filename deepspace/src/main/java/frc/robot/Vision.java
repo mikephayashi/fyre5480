@@ -29,21 +29,30 @@ public class Vision {
     // Listening to Value changes in table
     // Add an EntryListener for changed values of "X". The lambda ("->" operator)
     // defines the code that should run when "X" changes.
-    public void listenToNetworkTable() {
+    public void listenToNetworkTable(String NtwkKey) {
         NetworkTableInstance inst = NetworkTableInstance.getDefault();
         edu.wpi.first.networktables.NetworkTable netTable = inst.getTable("datatable");
         NetworkTableEntry xEntry = netTable.getEntry("X");
         NetworkTableEntry yEntry = netTable.getEntry("Y");
-        NetworkTableEntry radiusEntry = netTable.getEntry("Radius");
         inst.startClientTeam(5480);
 
-        netTable.addEntryListener("maxVal", (table, key, entry, value, flags) -> {
-            System.out.println("maxVal changed value: " + value.getValue());
+        netTable.addEntryListener("X", (table, key, entry, value, flags) -> {
+            System.out.println("X changed value: " + value.getValue());
             maxVal = (double) value.getValue();
         }, EntryListenerFlags.kNew | EntryListenerFlags.kUpdate);
 
-        netTable.addEntryListener("maxLoc", (table, key, entry, value, flags) -> {
-            System.out.println("maxLoc changed value: " + value.getValue());
+        netTable.addEntryListener("Y", (table, key, entry, value, flags) -> {
+            System.out.println("Y changed value: " + value.getValue());
+            maxLoc = (double) value.getValue();
+        }, EntryListenerFlags.kNew | EntryListenerFlags.kUpdate);
+
+        netTable.addEntryListener("leftArea", (table, key, entry, value, flags) -> {
+            System.out.println("leftArea changed value: " + value.getValue());
+            maxLoc = (double) value.getValue();
+        }, EntryListenerFlags.kNew | EntryListenerFlags.kUpdate);
+
+        netTable.addEntryListener("rightArea", (table, key, entry, value, flags) -> {
+            System.out.println("rightArea changed value: " + value.getValue());
             maxLoc = (double) value.getValue();
         }, EntryListenerFlags.kNew | EntryListenerFlags.kUpdate);
 
@@ -54,17 +63,5 @@ public class Vision {
             return;
         }
     }
-
-    public java.util.List<Double> visionProcessing() {
-
-        NetworkTableInstance inst = NetworkTableInstance.getDefault();
-        edu.wpi.first.networktables.NetworkTable netTable = inst.getTable("datatable");
-        double frameWidth_Entry = netTable.getEntry("Frame Width").getDouble(0);
-        double frameHeight_Entry = netTable.getEntry("Frame Height").getDouble(0);
-
-        java.util.List<Double> position = Arrays.asList(frameWidth_Entry, frameHeight_Entry, maxVal, maxLoc);
-
-    return position;
-  }
 
 }

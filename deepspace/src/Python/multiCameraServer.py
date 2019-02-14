@@ -234,6 +234,10 @@ def imageProcessing(cam):
             error = dist(C, C_old, None)
             print("Error")
             print(error)
+
+            leftArea = 0
+            rightArea = 0
+
             # Loop will run till the error becomes zero
             while error != 0:
                 # Assigning each value to its closest cluster
@@ -250,7 +254,11 @@ def imageProcessing(cam):
                     points = [X[j] for j in range(len(X)) if clusters[j] == i]
                     # print("Points", points) ###Leave this in or it gives a warning and breaks, reason uknown???ß
                     C[i] = np.mean(points, axis=0)
-#                    print(C)
+                    if i == 0:
+                        leftArea = leftArea + 1
+                    elif i == 1:
+                        rightArea = rightArea + 1
+                #   print(C)
                 error = dist(C, C_old, None)
                 if error != isinstance(error, int):
                     break
@@ -273,12 +281,11 @@ def imageProcessing(cam):
             # Image Process Logic [End]
             #---------------------------
 
-
-            # As a client to connect to a robot
-            #NetworkTables.initialize(server='roborio-XXX-frc.local') # Might need
-            #https://robotpy.readthedocs.io/projects/pynetworktables/en/stable/api.html
-            # sd = ntinst.getTable('datatable')
-            # sd.putNumber('Height', str(height))
+            sd = ntinst.getTable('datatable')
+            sd.putNumber('X', centroid_x)
+            sd.putNumber('Y', centroid_y)
+            sd.putNumber('leftArea', leftArea)
+            sd.putNumber('rightArea', rightArea)
 
             # (optional) send some image back to the dashboard
             # outputStream.putFrame(img)
@@ -290,18 +297,18 @@ if __name__ == "__main__":
     # read configuration
     if not readConfig():
         sys.exit(1)
-    #
-    # # start NetworkTables
-    # global ntinst
-    # ntinst = NetworkTablesInstance.getDefault()
-    # if server:
-    #     print("Setting up NetworkTables server")
-    #     ntinst.startServer()
-    # else:
-    #     print("Setting up NetworkTables client for team {}".format(team))
-    #     ntinst.startClientTeam(team)
-    #
-    # # start cameras
+    
+    # start NetworkTables
+    global ntinst
+    ntinst = NetworkTablesInstance.getDefault()
+    if server:
+        print("Setting up NetworkTables server")
+        ntinst.startServer()
+    else:
+        print("Setting up NetworkTables client for team {}".format(team))
+        ntinst.startClientTeam(team)
+    
+    # start cameras
     cameras = []
 
     camera, inst = startCamera(cameraConfigs[0])
