@@ -58,6 +58,7 @@ public class OI {
   Button button8 = new JoystickButton(stick, RobotMap.button_eight); 
   Button button10 = new JoystickButton(stick, RobotMap.button_ten);
   
+  
  
 
 
@@ -69,9 +70,11 @@ public class OI {
     button4.whenPressed(new CloseHatchCommand());
     button5.whileHeld(new ExtendRackAndPinionCommand());
     button6.whileHeld(new RetractRackAndPinionCommand());
-    povOne.whileHeld(new ManualLiftUpCommand());
-    button8.whenPressed(new SwitchCameraCommand());
-    povTwo.whileHeld(new ManipulatorLiftDownCommand());
+    // povOne.whileHeld(new ManualLiftUpCommand());
+    // button8.whenPressed(new SwitchCameraCommand());
+    // povTwo.whileHeld(new ManipulatorLiftDownCommand());
+    button8.whileHeld(new ManualLiftUpCommand());
+    button10.whileHeld(new ManipulatorLiftDownCommand());
 
   }
 

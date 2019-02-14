@@ -99,9 +99,6 @@ public class RobotMap {
   //Manipulator Subsystem Motor
   public static int rackAndPinionMotorController = 7;
 
-  //Manipulator Subsystem Motorswings
-  public static int cargo_wings_motor_port = 0;
-
   //Manipulator Subsystem Encoder
   public static int cargo_encoder_port_one = 0;
   public static int cargo_encoder_port_two = 0;
