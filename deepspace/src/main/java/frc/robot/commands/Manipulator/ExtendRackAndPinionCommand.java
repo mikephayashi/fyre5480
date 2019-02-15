@@ -25,7 +25,7 @@ public class ExtendRackAndPinionCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.manipulatorSubsystemRef.extendManipulator();
+    // Robot.manipulatorSubsystemRef.extendManipulator();
   }
 
   // Make this return true when this Command no longer needs to run execute()

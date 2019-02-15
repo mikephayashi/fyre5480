@@ -20,7 +20,7 @@ public class ClimbingCommand extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.PIDzRef.climb(0);
+    // Robot.PIDzRef.climb(0);
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -34,7 +34,7 @@ public class ClimbingCommand extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    Robot.PIDzRef.climb(0);
+    // Robot.PIDzRef.climb(0);
     return false;
   }
 
@@ -47,6 +47,6 @@ public class ClimbingCommand extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    Robot.PIDzRef.climb(0);
+    // Robot.PIDzRef.climb(0);
   }
 }

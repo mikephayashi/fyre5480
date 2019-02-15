@@ -25,12 +25,12 @@ public class LevelTwoLiftCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double ENCODER_TARGET_LEVEL_TWO = 0.0;
-    if (Robot.liftSubsystemRef.CURRENT_LEVEL>2){
-      Robot.liftSubsystemRef.liftDown(ENCODER_TARGET_LEVEL_TWO);
-    } else {
-      Robot.liftSubsystemRef.liftUp(ENCODER_TARGET_LEVEL_TWO);
-    }
+    // double ENCODER_TARGET_LEVEL_TWO = 0.0;
+    // if (Robot.liftSubsystemRef.CURRENT_LEVEL>2){
+    //   Robot.liftSubsystemRef.liftDown(ENCODER_TARGET_LEVEL_TWO);
+    // } else {
+    //   Robot.liftSubsystemRef.liftUp(ENCODER_TARGET_LEVEL_TWO);
+    // }
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -42,7 +42,7 @@ public class LevelTwoLiftCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.liftSubsystemRef.CURRENT_LEVEL = 2;
+    // Robot.liftSubsystemRef.CURRENT_LEVEL = 2;
   }
 
   // Called when another command which requires one or more of the same

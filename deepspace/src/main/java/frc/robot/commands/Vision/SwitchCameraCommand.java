@@ -20,7 +20,7 @@ public class SwitchCameraCommand extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.visionRef.switchCameras();
+    // Robot.visionRef.switchCameras();
   }
 
   // Called repeatedly when this Command is scheduled to run

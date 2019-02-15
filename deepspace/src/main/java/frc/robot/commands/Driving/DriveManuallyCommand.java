@@ -25,7 +25,7 @@ public class DriveManuallyCommand extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.driveSubsystemRef.manualDrive(0, 0);
+    // Robot.driveSubsystemRef.manualDrive(0, 0);
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -40,7 +40,7 @@ public class DriveManuallyCommand extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    Robot.driveSubsystemRef.manualDrive(0, 0);
+    // Robot.driveSubsystemRef.manualDrive(0, 0);
     return false;
   }
 
@@ -54,6 +54,6 @@ public class DriveManuallyCommand extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    Robot.driveSubsystemRef.manualDrive(0, 0);
+    // Robot.driveSubsystemRef.manualDrive(0, 0);
   }
 }
