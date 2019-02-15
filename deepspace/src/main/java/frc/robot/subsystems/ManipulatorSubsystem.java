@@ -63,7 +63,7 @@ public class ManipulatorSubsystem extends Subsystem {
 
   //Extends Manipulator system beyond chassis frame
   public void extendManipulator(){
-    rackAndPinionMotorController.set(1);
+    rackAndPinionMotorController.set(0.1);
     // if (limitSwitchFront_value == false){
     //   rackAndPinionMotorController.set(0.5);
     // } else {
@@ -74,7 +74,7 @@ public class ManipulatorSubsystem extends Subsystem {
 
   //Tretracts manipulator system within chassi frame
   public void retractManipulator(){
-    rackAndPinionMotorController.set(-1);
+    rackAndPinionMotorController.set(-0.1);
     // if (limitSwitchBack_value == false){
     //   rackAndPinionMotorController.set(-0.5);
     // } else {
