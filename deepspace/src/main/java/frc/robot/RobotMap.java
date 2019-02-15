@@ -38,8 +38,7 @@ public class RobotMap {
   public static int button_ten = 10;
   //OI X Box Controller
   public static int xbox_port = 1;
-  //Lift Subsystem Motor
-  public static int lift_motor_port = 9;
+ 
 
   ////Actuators
   //Drive Motors
@@ -57,6 +56,8 @@ public class RobotMap {
   public static int hatch_solenoid_port = 2;
   //Manipulator Subsystem Motor
   public static int rackAndPinionMotorController = 7;
+  //Lift Subsystem Motor
+  public static int lift_motor_port = 2;
 
   ////Sensors
   //Drive Subystem Wheel Chassis encoder
