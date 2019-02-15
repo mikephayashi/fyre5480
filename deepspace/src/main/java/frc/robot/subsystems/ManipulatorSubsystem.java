@@ -34,7 +34,7 @@ public class ManipulatorSubsystem extends Subsystem {
   //public Compressor compress = new Compressor(RobotMap.manipulator_compressor_port);
   //public double current = compress.getCompressorCurrent();
   //Solenoids
-  // public Solenoid cargo_solenoid = new Solenoid(RobotMap.cargo_solenoid_port);
+  public Solenoid cargo_solenoid = new Solenoid(RobotMap.cargo_solenoid_port);
   // public Solenoid hatch_solenoid = new Solenoid(RobotMap.hatch_solenoid_port);
   //Motors
   // Spark rackAndPinionMotorController = new Spark(RobotMap.rackAndPinionMotorController);
@@ -87,12 +87,12 @@ public class ManipulatorSubsystem extends Subsystem {
 
   //Extends cargo piston
   public void openCargo(){
-    // cargo_solenoid.set(true);
+    cargo_solenoid.set(true);
   }
 
   //Retracts cargo piston
   public void closeCargo(){
-    // cargo_solenoid.set(false);
+    cargo_solenoid.set(false);
   }
 
   //Opens clasps to put on hatches
