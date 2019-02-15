@@ -67,7 +67,7 @@ public class LiftSubsystem extends Subsystem {
 
   //Manual Lift
   public void lift(double stick){
-    //  LiftMotorController.set(stick);
+     LiftMotorController.set(stick);
   }
   
   @Override
