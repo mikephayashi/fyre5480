@@ -55,7 +55,7 @@ public class RobotMap {
   //Hatch subsystem solenoid
   public static int hatch_solenoid_port = 2;
   //Manipulator Subsystem Motor
-  public static int rackAndPinionMotorController = 7;
+  public static int rackAndPinionMotorController = 4;
   //Lift Subsystem Motor
   public static int lift_motor_port = 2;
 

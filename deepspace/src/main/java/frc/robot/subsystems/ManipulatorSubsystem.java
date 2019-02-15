@@ -37,7 +37,7 @@ public class ManipulatorSubsystem extends Subsystem {
   public Solenoid cargo_solenoid = new Solenoid(RobotMap.cargo_solenoid_port);
   public Solenoid hatch_solenoid = new Solenoid(RobotMap.hatch_solenoid_port);
   //Motors
-  // Spark rackAndPinionMotorController = new Spark(RobotMap.rackAndPinionMotorController);
+  Spark rackAndPinionMotorController = new Spark(RobotMap.rackAndPinionMotorController);
   //Encoders
   // public Encoder cargo_encoder = new Encoder(RobotMap.cargo_encoder_port_one, RobotMap.cargo_encoder_port_two, false, Encoder.EncodingType.k4X);
   // public int count = cargo_encoder.get();
@@ -63,7 +63,7 @@ public class ManipulatorSubsystem extends Subsystem {
 
   //Extends Manipulator system beyond chassis frame
   public void extendManipulator(){
-    // rackAndPinionMotorController.set(1);
+    rackAndPinionMotorController.set(1);
     // if (limitSwitchFront_value == false){
     //   rackAndPinionMotorController.set(0.5);
     // } else {
@@ -74,7 +74,7 @@ public class ManipulatorSubsystem extends Subsystem {
 
   //Tretracts manipulator system within chassi frame
   public void retractManipulator(){
-    // rackAndPinionMotorController.set(-1);
+    rackAndPinionMotorController.set(-1);
     // if (limitSwitchBack_value == false){
     //   rackAndPinionMotorController.set(-0.5);
     // } else {
