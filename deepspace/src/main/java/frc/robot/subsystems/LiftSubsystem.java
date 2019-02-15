@@ -31,7 +31,7 @@ public class LiftSubsystem extends Subsystem {
   // public boolean direction = lift_Encoder.getDirection();
   // public boolean stopped = lift_Encoder.getStopped();
   //Motors
-  //  public Spark LiftMotorController = new Spark(RobotMap.lift_motor_port);
+   public Spark LiftMotorController = new Spark(RobotMap.lift_motor_port);
   //Ultrasonic
   // public AnalogInput ultraLift = new AnalogInput(RobotMap.ultraLift_analog_in);
   // public double range = ultraLift.getAverageVoltage();
