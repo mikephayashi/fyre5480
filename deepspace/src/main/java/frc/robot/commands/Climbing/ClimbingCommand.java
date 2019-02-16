@@ -26,7 +26,7 @@ public class ClimbingCommand extends Command {
   @Override
   protected void execute() {
     double move = Robot.m_oi.stick.getY();
-    Robot.PIDzRef.climb(move/8.2);
+    Robot.PIDzRef.climb(move);
     
   }
 
