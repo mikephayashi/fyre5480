@@ -16,7 +16,6 @@ import frc.robot.commands.Climbing.DisengageBreakCommand;
 import frc.robot.commands.Climbing.EngageBreakCommand;
 import frc.robot.commands.Lift.*;
 import frc.robot.commands.Manipulator.*;
-import frc.robot.commands.Vision.SwitchCameraCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
