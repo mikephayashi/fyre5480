@@ -24,7 +24,7 @@ public class PIDz extends PIDSubsystem {
   
   //Constants
   double ENCODER_TARGET_VALUE = 0.0;
-
+  public static boolean breakEngaged = true;
   //Encoders
   // public Encoder climbing_Encoder = new Encoder(RobotMap.climbing_encoder_port_one, RobotMap.climbing_encoder_port_two, false, Encoder.EncodingType.k4X);
   // public int count = climbing_Encoder.get();
@@ -53,6 +53,7 @@ public class PIDz extends PIDSubsystem {
 
   public void solenod_break(DoubleSolenoid.Value state){
     pidz_solenoid.set(state);
+    breakEngaged =!breakEngaged;
   }
 
   @Override
