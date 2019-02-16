@@ -9,12 +9,13 @@ package frc.robot.commands.Climbing;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.commands.Climbing.ClimbingCommand;
 
 public class ClimbingCommand extends Command {
   public ClimbingCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.PIDzRef);
+    requires(Robot.liftSubsystemRef);
   }
 
   // Called just before this Command runs the first time
@@ -26,7 +27,7 @@ public class ClimbingCommand extends Command {
   @Override
   protected void execute() {
     double move = Robot.m_oi.stick.getY();
-    Robot.PIDzRef.climb(move);
+    Robot.liftSubsystemRef.climb(move);
     
   }
 
@@ -40,13 +41,13 @@ public class ClimbingCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.PIDzRef.climb(0);
+    Robot.liftSubsystemRef.climb(0);
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    Robot.PIDzRef.climb(0);
+    Robot.liftSubsystemRef.climb(0);
   }
 }
