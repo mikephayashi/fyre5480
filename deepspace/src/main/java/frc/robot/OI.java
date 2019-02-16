@@ -79,7 +79,7 @@ public class OI {
     button8.whileHeld(new ManualLiftUpCommand());
     //button 10 backwards
     button10.whileHeld(new ManualLiftDownCommand());
-    // button a is disengauged
+    // button a is disengaged
     buttonA.whenPressed(new DisengageBreakCommand());
     //button b engaged
     buttonB.whenPressed(new EngageBreakCommand());
