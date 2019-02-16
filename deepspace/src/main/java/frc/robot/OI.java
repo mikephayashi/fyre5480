@@ -71,11 +71,17 @@ public class OI {
     button2.whenPressed(new CloseCargoCommand());
     button3.whenPressed(new OpenHatchCommand());
     button4.whenPressed(new CloseHatchCommand());
+    //button 5 goes backwards
     button5.whileHeld(new ExtendRackAndPinionCommand());
+    //button  6 goes forward
     button6.whileHeld(new RetractRackAndPinionCommand());
+    //button 8 forwards
     button8.whileHeld(new ManualLiftUpCommand());
+    //button 10 backwards
     button10.whileHeld(new ManualLiftDownCommand());
+    //button a is disengauged
     buttonA.whenPressed(new DisengageBreakCommand());
+    //button b engaged
     buttonB.whenPressed(new EngageBreakCommand());
 
   }
