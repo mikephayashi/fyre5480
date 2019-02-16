@@ -20,7 +20,7 @@ public class ExtendRackAndPinionCommand extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.manipulatorSubsystemRef.manualExtend(0.0);
+ 
   }
 
   // Called repeatedly when this Command is scheduled to run
