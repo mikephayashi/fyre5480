@@ -32,13 +32,13 @@ public class ManualLiftUpCommand extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return true;
+    return false;
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    
+    Robot.liftSubsystemRef.lift(0);
   }
 
   // Called when another command which requires one or more of the same
