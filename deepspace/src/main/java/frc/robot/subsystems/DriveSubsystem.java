@@ -59,7 +59,7 @@ public class DriveSubsystem extends Subsystem {
   public DriveSubsystem(){
     // colorSensor.setGlobalSampleRate(62500); //default value of 62,500 samples per channel per second (500kS/s total)
     gyro_sensor.calibrate();
-    // gyro_sensor.reset();
+    gyro_sensor.reset();
   }
   
 
