@@ -83,6 +83,10 @@ public class ManipulatorSubsystem extends Subsystem {
     // rackAndPinionMotorController.set(-0.5);
   }
 
+  public void manualExtend(Double speed){
+    rackAndPinionMotorController.set(speed);
+  }
+
 
 
   //Extends cargo piston
