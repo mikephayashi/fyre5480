@@ -20,6 +20,7 @@ public class RetractRackAndPinionCommand extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    Robot.manipulatorSubsystemRef.manualExtend(0.0);
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -37,7 +38,7 @@ public class RetractRackAndPinionCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.manipulatorSubsystemRef.rackAndPinionMotorController.set(0);
+    Robot.manipulatorSubsystemRef.rackAndPinionMotorController.set(0.0);
   }
 
   // Called when another command which requires one or more of the same
