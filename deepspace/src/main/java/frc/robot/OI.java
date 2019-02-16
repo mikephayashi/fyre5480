@@ -16,6 +16,7 @@ import frc.robot.commands.Climbing.DisengageBreakCommand;
 import frc.robot.commands.Climbing.EngageBreakCommand;
 import frc.robot.commands.Lift.*;
 import frc.robot.commands.Manipulator.*;
+import frc.robot.commands.Vision.SwitchCameraCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -82,7 +83,8 @@ public class OI {
     //buttonA.whenPressed(new DisengageBreakCommand());
     //button b disengaged
     //buttonB.whenPressed(new EngageBreakCommand());
-
+    //button x switch cameras
+    buttonX.whenPressed(new SwitchCameraCommand());
   }
 
 		
