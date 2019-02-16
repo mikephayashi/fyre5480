@@ -64,7 +64,7 @@ public class PIDz extends PIDSubsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new ClimbingCommand());
+    setDefaultCommand(null);
 
   }
 
