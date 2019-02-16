@@ -53,7 +53,8 @@ public class RobotMap {
   //Lift subystem solenoid
   public static int lift_solenoid_port = 0;
   //Climbing Solenoid 
-  public static int climbing_solenoid = 4;
+  public static int climbing_solenoidOne = 3;
+  public static int climbing_solenoidTwo = 4;
   //Cargo Subystem Solenoid
   public static int cargo_solenoid_port = 1;
   //Hatch subsystem solenoid

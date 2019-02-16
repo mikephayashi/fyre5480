@@ -7,8 +7,8 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import frc.robot.RobotMap;
@@ -37,7 +37,7 @@ public class PIDz extends PIDSubsystem {
   //Motors
   Spark ClimbingMotorController = new Spark(RobotMap.climbing_motor_port);
   //Solenoid
-  public Solenoid pidz_solenoid = new Solenoid(RobotMap.climbing_solenoid);
+  public DoubleSolenoid pidz_solenoid = new DoubleSolenoid(RobotMap.climbing_solenoidOne, RobotMap.climbing_solenoidTwo);
 
   
 
@@ -53,7 +53,7 @@ public class PIDz extends PIDSubsystem {
 		getPIDController().setContinuous(false);
   }
 
-  public void solenod_break(boolean state){
+  public void solenod_break(DoubleSolenoid.Value state){
     pidz_solenoid.set(state);
   }
 

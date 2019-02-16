@@ -9,6 +9,7 @@ package frc.robot.commands.Climbing;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 public class DisengageBreakCommand extends Command {
   public DisengageBreakCommand() {
@@ -25,7 +26,7 @@ public class DisengageBreakCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.PIDzRef.solenod_break(false);
+    Robot.PIDzRef.solenod_break(DoubleSolenoid.Value.kReverse);
   }
 
   // Make this return true when this Command no longer needs to run execute()
