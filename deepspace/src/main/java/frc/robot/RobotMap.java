@@ -38,6 +38,10 @@ public class RobotMap {
   public static int button_ten = 10;
   //OI X Box Controller
   public static int xbox_port = 1;
+  public static int buttonA = 1;
+  public static int buttonB = 2;
+  public static int buttonX = 3;
+  public static int buttonY = 4;
  
 
   ////Actuators

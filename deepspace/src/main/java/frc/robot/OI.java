@@ -11,8 +11,9 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.buttons.POVButton;
 import frc.robot.RobotMap;
+import frc.robot.commands.Climbing.DisengageBreakCommand;
+import frc.robot.commands.Climbing.EngageBreakCommand;
 import frc.robot.commands.Lift.*;
 import frc.robot.commands.Manipulator.*;
 import frc.robot.commands.Vision.SwitchCameraCommand;
@@ -46,9 +47,6 @@ public class OI {
   // You create one by telling it which joystick it's on and which button number
   //// it is.
 
-  public POVButton povOne = new POVButton(stick, 0);
-  public POVButton povTwo = new POVButton(stick, 180);
-
   Button button1 = new JoystickButton(stick, RobotMap.button_one);
   Button button2 = new JoystickButton(stick, RobotMap.button_two);
   Button button3 = new JoystickButton(stick, RobotMap.button_three);
@@ -57,6 +55,11 @@ public class OI {
   Button button6 = new JoystickButton(stick, RobotMap.button_six);
   Button button8 = new JoystickButton(stick, RobotMap.button_eight); 
   Button button10 = new JoystickButton(stick, RobotMap.button_ten);
+
+  Button buttonA = new JoystickButton(m_xBox, RobotMap.buttonA);
+  Button buttonB = new JoystickButton(m_xBox, RobotMap.buttonB);
+  Button buttonX = new JoystickButton(m_xBox, RobotMap.buttonX);
+  Button buttonY = new JoystickButton(m_xBox, RobotMap.buttonY);
   
   
  
@@ -70,11 +73,10 @@ public class OI {
     button4.whenPressed(new CloseHatchCommand());
     button5.whileHeld(new ExtendRackAndPinionCommand());
     button6.whileHeld(new RetractRackAndPinionCommand());
-    // povOne.whileHeld(new ManualLiftUpCommand());
-    // button8.whenPressed(new SwitchCameraCommand());
-    // povTwo.whileHeld(new ManipulatorLiftDownCommand());
     button8.whileHeld(new ManualLiftUpCommand());
-    button10.whileHeld(new ManipulatorLiftDownCommand());
+    button10.whileHeld(new ManualLiftDownCommand());
+    buttonA.whenPressed(new DisengageBreakCommand());
+    buttonB.whenPressed(new EngageBreakCommand());
 
   }
 
