@@ -25,8 +25,8 @@ public class ExtendRackAndPinionCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double move = Robot.m_oi.stick.getY();
-    Robot.manipulatorSubsystemRef.rackAndPinionMotorController.set(move);
+    // double move = Robot.m_oi.stick.getY();
+    // Robot.manipulatorSubsystemRef.rackAndPinionMotorController.set(move);
   }
 
   // Make this return true when this Command no longer needs to run execute()
