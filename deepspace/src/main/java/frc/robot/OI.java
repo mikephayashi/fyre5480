@@ -71,10 +71,12 @@ public class OI {
     button2.whenPressed(new CloseCargoCommand());
     button3.whenPressed(new OpenHatchCommand());
     button4.whenPressed(new CloseHatchCommand());
-    button5.whileHeld(new ExtendRackAndPinionCommand());
-    button6.whileHeld(new RetractRackAndPinionCommand());
-    button8.whileHeld(new ManualLiftUpCommand());
-    button10.whileHeld(new ManualLiftDownCommand());
+    button5.whenPressed(new LiftStart());
+    button4.whenReleased(new LiftEnd());
+    // button5.whileHeld(new ExtendRackAndPinionCommand());
+    // button6.whileHeld(new RetractRackAndPinionCommand());
+    // button8.whileHeld(new ManualLiftUpCommand());
+    // button10.whileHeld(new ManualLiftDownCommand());
     buttonA.whenPressed(new DisengageBreakCommand());
     buttonB.whenPressed(new EngageBreakCommand());
 
