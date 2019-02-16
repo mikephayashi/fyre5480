@@ -26,7 +26,7 @@ public class ClimbingCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if (Robot.liftSubsystemRef.breakEngaged == false) {
+    if (Robot.PIDzRef.breakEngaged == false) {
       double move = Robot.m_oi.stick.getY();
       Robot.liftSubsystemRef.climb(move);
     } 
