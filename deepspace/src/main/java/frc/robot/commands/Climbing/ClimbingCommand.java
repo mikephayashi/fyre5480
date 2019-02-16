@@ -26,7 +26,7 @@ public class ClimbingCommand extends Command {
   @Override
   protected void execute() {
     double move = Robot.m_oi.stick.getY();
-    Robot.driveSubsystemRef.climb(move);
+    Robot.PIDzRef.climb(move);
     
   }
 
@@ -40,13 +40,13 @@ public class ClimbingCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.driveSubsystemRef.climb(0);
+    Robot.PIDzRef.climb(0);
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    Robot.driveSubsystemRef.climb(0);
+    Robot.PIDzRef.climb(0);
   }
 }

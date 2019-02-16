@@ -34,10 +34,10 @@ public class PIDz extends PIDSubsystem {
   // public double rate = climbing_Encoder.getRate();
   // public boolean direction = climbing_Encoder.getDirection();
   // public boolean stopped = climbing_Encoder.getStopped();
-  
   //Solenoid
   public DoubleSolenoid pidz_solenoid = new DoubleSolenoid(RobotMap.climbing_solenoidOne, RobotMap.climbing_solenoidTwo);
-
+  //Motors
+  Spark ClimbingMotorController = new Spark(RobotMap.climbing_motor_port);
   
 
   public PIDz() {
@@ -57,6 +57,11 @@ public class PIDz extends PIDSubsystem {
   }
 
  
+
+ public void climb(double speed){
+   // usePIDOutput(speed);
+   ClimbingMotorController.set(speed);
+ }
 
   @Override
   public void initDefaultCommand() {
