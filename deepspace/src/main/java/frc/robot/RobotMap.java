@@ -50,8 +50,6 @@ public class RobotMap {
 	public static int rightMotor = 1;
   //Climbing Subsystem Motor
   public static int climbing_motor_port = 3;
-  //Lift subystem solenoid
-  public static int lift_solenoid_port = 0;
   //Climbing Solenoid 
   public static int climbing_solenoidOne = 3;
   public static int climbing_solenoidTwo = 4;
