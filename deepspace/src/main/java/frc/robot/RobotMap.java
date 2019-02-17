@@ -50,8 +50,6 @@ public class RobotMap {
 	public static int rightMotor = 1;
   //Climbing Subsystem Motor
   public static int climbing_motor_port = 3;
-  //Lift subystem solenoid
-  public static int lift_solenoid_port = 0;
   //Climbing Solenoid 
   public static int climbing_solenoidOne = 3;
   public static int climbing_solenoidTwo = 4;
@@ -85,8 +83,8 @@ public class RobotMap {
   public static int climbing_encoder_port_one = 1;
   public static int climbing_encoder_port_two = 2;
   //Mainpulator Subsystem Switch
-  public static int manipulator_switchFront_port = 0;
-  public static int manipulator_switchBack_port = 0;
+  public static int manipulator_switchFront_port = 5;
+  public static int manipulator_switchBack_port = 9;
   //Manipulator Subsystem Compressor
   public static int manipulator_compressor_port = 0;
   //Manipulator Subsystem Encoder
