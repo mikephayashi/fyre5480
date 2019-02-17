@@ -32,7 +32,7 @@ public class DriveManuallyCommand extends Command {
   protected void execute() {
     
     double move = Robot.m_oi.m_xBox.getY(Hand.kLeft);
-    double turn = Robot.m_oi.m_xBox.getX(Hand.kLeft);
+    double turn = Robot.m_oi.m_xBox.getX(Hand.kRight);
     Robot.driveSubsystemRef.manualDrive(move, turn);
   }
 
