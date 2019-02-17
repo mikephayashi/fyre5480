@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -39,6 +41,9 @@ import frc.robot.subsystems.Vision;
 
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
+  public UsbCamera cam1 = new UsbCamera("cam1", 0);
+  public UsbCamera cam2 = new UsbCamera("cam2", 1);
+
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
@@ -48,7 +53,9 @@ import frc.robot.subsystems.Vision;
     m_oi = new OI();
     m_chooser.setDefaultOption("Default Auto", new DriveManuallyCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
-    
+    CameraServer.getInstance().startAutomaticCapture("cam1", 0);
+    CameraServer.getInstance().startAutomaticCapture("cam2", 1);
+
 
   }
 
