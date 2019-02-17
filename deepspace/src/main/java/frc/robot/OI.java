@@ -80,9 +80,9 @@ public class OI {
     //button 10 forwards
     button8.whileHeld(new ManualLiftDownCommand());
     // button a is engaged
-    //buttonA.whenPressed(new DisengageBreakCommand());
+    buttonA.whenPressed(new DisengageBreakCommand());
     //button b disengaged
-    //buttonB.whenPressed(new EngageBreakCommand());
+    buttonB.whenPressed(new EngageBreakCommand());
     //button x switch cameras
     buttonX.whenPressed(new SwitchCameraCommand());
   }
