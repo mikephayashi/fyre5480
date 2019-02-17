@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+
 import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -54,10 +55,10 @@ import frc.robot.subsystems.Vision;
     m_chooser.setDefaultOption("Default Auto", new DriveManuallyCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
     CameraServer.getInstance().startAutomaticCapture("cam1", 0);
-    CameraServer.getInstance().startAutomaticCapture("cam2", 1);
-
-
+    CameraServer.getInstance().startAutomaticCapture("cam2", 0);
+    
   }
+
 
   /**
    * This function is called every robot packet, no matter the mode. Use
