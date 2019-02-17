@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.RobotMap;
 import frc.robot.commands.Lift.*;
 import frc.robot.commands.Manipulator.*;
+import frc.robot.commands.Climbing.*;
 import frc.robot.commands.Vision.SwitchCameraCommand;
 
 /**
