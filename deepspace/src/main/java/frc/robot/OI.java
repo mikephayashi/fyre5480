@@ -66,10 +66,8 @@ public class OI {
 
   public OI(){
     
-    button1.whenPressed(new OpenCargoCommand());
-    button2.whenPressed(new CloseCargoCommand());
-    button3.whenPressed(new OpenHatchCommand());
-    button4.whenPressed(new CloseHatchCommand());
+    //Toggles Carg0
+    button1.whenPressed(new CargoCommand());
     //button 5 goes backwards
     button3.whileHeld(new ExtendRackAndPinionCommand());
     //button  6 goes forward
