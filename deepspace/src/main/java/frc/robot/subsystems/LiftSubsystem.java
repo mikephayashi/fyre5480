@@ -43,31 +43,6 @@ public class LiftSubsystem extends Subsystem {
 
   }
 
-  //Lift Down Level
-  public void liftDown(double level){
-    // lift_Encoder.reset();
-    // if (count != level){
-    //   lift_solenoid.set(false);
-    //   LiftMotorController.set(0.5);
-    // } else {
-    //   LiftMotorController.set(0);
-    //   lift_solenoid.set(true);
-    // }
-    
-  }
-
-  //Lift Up Level
-  public void liftUp(double level){
-    // lift_Encoder.reset();
-    // if (count != level){
-    //   lift_solenoid.set(false);
-    //   LiftMotorController.set(0.5);
-    // } else {
-    //   LiftMotorController.set(0);
-    //   lift_solenoid.set(true);
-    // }
-  }
-
   //Manual Lift
   public void lift(double stick){
      LiftMotorController.set(stick);
