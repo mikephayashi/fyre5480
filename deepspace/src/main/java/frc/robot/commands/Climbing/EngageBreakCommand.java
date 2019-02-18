@@ -9,7 +9,7 @@ package frc.robot.commands.Climbing;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-// import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 public class EngageBreakCommand extends Command {
   public EngageBreakCommand() {
@@ -26,7 +26,7 @@ public class EngageBreakCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    //Robot.PIDzRef.solenod_break(DoubleSolenoid.Value.kForward);
+    Robot.PIDzRef.solenod_break(DoubleSolenoid.Value.kForward);
   }
 
   // Make this return true when this Command no longer needs to run execute()
