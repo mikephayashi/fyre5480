@@ -35,7 +35,6 @@ public class ManipulatorSubsystem extends Subsystem {
   //Solenoids
   public Solenoid cargo_solenoid = new Solenoid(RobotMap.cargo_solenoid_port);
   public Solenoid hatch_solenoid = new Solenoid(RobotMap.hatch_solenoid_port);
-  public static Boolean hatch = false;
   //Motors
   public Spark rackAndPinionMotorController = new Spark(RobotMap.rackAndPinionMotorController);
   //Encoders
@@ -77,12 +76,15 @@ public class ManipulatorSubsystem extends Subsystem {
     cargo_solenoid.set(false);
   }
 
-  //Opens clasps to put on hatches and closes it
-  public void Hatch(){
-    hatch = !hatch;
-    hatch_solenoid.set(hatch);
+  //Opens clasps to put on hatches
+  public void openHatch(){
+    hatch_solenoid.set(true);
   }
 
+  //Closes clasps to secure hatch onto robot
+  public void closeHatch(){
+    hatch_solenoid.set(false);
+  }
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
