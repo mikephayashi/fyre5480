@@ -61,19 +61,39 @@ public class ManipulatorSubsystem extends Subsystem {
     // }
   }
 
+  //Extends Manipulator system beyond chassis frame
+  public void extendManipulator(){
+    // if (limitSwitchFront_value == false){
+    //   rackAndPinionMotorController.set(0.5);
+    // } else {
+    //   rackAndPinionMotorController.set(0);
+    // }
+      // rackAndPinionMotorController.set(0.5);
+  }
+
+  //Tretracts manipulator system within chassi frame
+  public void retractManipulator(){
+    // if (limitSwitchBack_value == false){
+    //   rackAndPinionMotorController.set(-0.5);
+    // } else {
+    //   rackAndPinionMotorController.set(0);
+    // }
+    // rackAndPinionMotorController.set(-0.5);
+  }
 
   public void manualExtend(Double speed){
     rackAndPinionMotorController.set(speed);
   }
 
-  //Toggles cargo 
-  public void Cargo(){
+
+
+  //Extends cargo piston
+  public void openCargo(){
     cargo_solenoid.set(true);
-    try {
-      Thread.sleep(1000);
-    }catch(InterruptedException ex){
-      Thread.currentThread().interrupt();
-    }
+  }
+
+  //Retracts cargo piston
+  public void closeCargo(){
     cargo_solenoid.set(false);
   }
 
