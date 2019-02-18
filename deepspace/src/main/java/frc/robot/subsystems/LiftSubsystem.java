@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import frc.robot.commands.Climbing.ClimbingCommand;
-
+import edu.wpi.first.wpilibj.DigitalInput;
 /**
  * Add your docs here.
  */
@@ -35,35 +35,12 @@ public class LiftSubsystem extends Subsystem {
    public Spark LiftMotorController = new Spark(RobotMap.lift_motor_port);
   //Ultrasonic
   // public AnalogInput ultraLift = new AnalogInput(RobotMap.ultraLift_analog_in);
-  // public double range = ultraLift.getAverageVoltage();
-
+  // public double range = ultraLift.getAverageVoltage();t
+  //lift
+  public DigitalInput limitSwitch = new DigitalInput(RobotMap.manipulator_switch_port);
+  public Boolean limitSwitch_value = limitSwitch.get();
   public LiftSubsystem(){
 
-  }
-
-  //Lift Down Level
-  public void liftDown(double level){
-    // lift_Encoder.reset();
-    // if (count != level){
-    //   lift_solenoid.set(false);
-    //   LiftMotorController.set(0.5);
-    // } else {
-    //   LiftMotorController.set(0);
-    //   lift_solenoid.set(true);
-    // }
-    
-  }
-
-  //Lift Up Level
-  public void liftUp(double level){
-    // lift_Encoder.reset();
-    // if (count != level){
-    //   lift_solenoid.set(false);
-    //   LiftMotorController.set(0.5);
-    // } else {
-    //   LiftMotorController.set(0);
-    //   lift_solenoid.set(true);
-    // }
   }
 
   //Manual Lift

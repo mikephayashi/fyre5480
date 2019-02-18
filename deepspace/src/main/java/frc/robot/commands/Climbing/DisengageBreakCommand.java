@@ -26,7 +26,7 @@ public class DisengageBreakCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    //Robot.PIDzRef.solenod_break(DoubleSolenoid.Value.kReverse);
+    Robot.PIDzRef.solenod_break(DoubleSolenoid.Value.kReverse);
   }
 
   // Make this return true when this Command no longer needs to run execute()

@@ -27,7 +27,10 @@ public class ManualLiftDownCommand extends Command {
   @Override
   protected void execute() {
     // double move = Robot.m_oi.stick.getY();
-    Robot.liftSubsystemRef.lift(-0.75);
+    if (Robot.liftSubsystemRef.limitSwitch_value == false) {
+      Robot.liftSubsystemRef.lift(-0.75);
+    } 
+    
   }
 
   // Make this return true when this Command no longer needs to run execute()

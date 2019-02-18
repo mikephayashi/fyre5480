@@ -83,12 +83,10 @@ public class RobotMap {
   public static int climbing_encoder_port_one = 1;
   public static int climbing_encoder_port_two = 2;
   //Mainpulator Subsystem Switch
-  public static int manipulator_switchFront_port = 5;
-  public static int manipulator_switchBack_port = 9;
+  public static int manipulator_switch_port = 3;
   //Manipulator Subsystem Compressor
   public static int manipulator_compressor_port = 0;
   //Manipulator Subsystem Encoder
   public static int cargo_encoder_port_one = 0;
   public static int cargo_encoder_port_two = 0;
 }
-
