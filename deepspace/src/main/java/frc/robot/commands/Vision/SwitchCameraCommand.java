@@ -8,13 +8,13 @@
 package frc.robot.commands.Vision;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
+// import frc.robot.Robot;
 
 public class SwitchCameraCommand extends Command {
   public SwitchCameraCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.visionRef);
+    // requires(Robot.visionRef);
   }
 
   // Called just before this Command runs the first time

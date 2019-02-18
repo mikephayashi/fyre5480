@@ -9,7 +9,7 @@ package frc.robot.commands.Climbing;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
+// import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 public class DisengageBreakCommand extends Command {
   public DisengageBreakCommand() {
