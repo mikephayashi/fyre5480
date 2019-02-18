@@ -66,24 +66,20 @@ public class OI {
 
   public OI(){
     
-    button1.whenPressed(new OpenCargoCommand());
-    button2.whenPressed(new CloseCargoCommand());
-    button3.whenPressed(new HatchCommand());
-    // button4.whenPressed(new );
+    //Toggles Carg0
+    button1.whenPressed(new CargoCommand());
     //button 5 goes backwards
-    button5.whileHeld(new ExtendRackAndPinionCommand());
+    button3.whileHeld(new ExtendRackAndPinionCommand());
     //button  6 goes forward
-    button6.whileHeld(new RetractRackAndPinionCommand());
+    button5.whileHeld(new RetractRackAndPinionCommand());
     //button 8 backwards
-    button10.whileHeld(new ManualLiftUpCommand());
+    button6.whileHeld(new ManualLiftUpCommand());
     //button 10 forwards
-    button8.whileHeld(new ManualLiftDownCommand());
-    // button a is engaged
-    buttonA.whenPressed(new DisengageBreakCommand());
-    //button b disengaged
-    buttonB.whenPressed(new EngageBreakCommand());
-    //button x switch cameras
-    // buttonX.whenPressed(new SwitchCameraCommand());
+    button4.whileHeld(new ManualLiftDownCommand());
+    // // button a is engaged
+    // buttonA.whenPressed(new DisengageBreakCommand());
+    // //button b disengaged
+    // buttonB.whenPressed(new EngageBreakCommand());
   }
 
 		
