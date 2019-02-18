@@ -29,16 +29,14 @@ public class ClimbingCommand extends Command {
   protected void execute() {
     if (PIDz.breakEngaged == false) {
       double move = Robot.m_oi.stick.getY();
-      if (move>0.5){
-        if (move > 0){
+      if (move > 0){
+        if (move>0.5){
           Robot.liftSubsystemRef.climb(1);
-        } else {
-          Robot.liftSubsystemRef.climb(-1);
         }
       } else {
-        Robot.liftSubsystemRef.climb(move);
+        Robot.liftSubsystemRef.climb(move*0.5);
       }
-    } 
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
