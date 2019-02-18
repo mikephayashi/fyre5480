@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.RobotMap;
 import frc.robot.commands.Lift.*;
 import frc.robot.commands.Manipulator.*;
-import frc.robot.commands.Climbing.*;
+
 // import frc.robot.commands.Vision.SwitchCameraCommand;
 
 /**
@@ -78,12 +78,6 @@ public class OI {
     button10.whileHeld(new ManualLiftUpCommand());
     //button 10 forwards
     button8.whileHeld(new ManualLiftDownCommand());
-    // button a is engaged
-    buttonA.whenPressed(new DisengageBreakCommand());
-    //button b disengaged
-    buttonB.whenPressed(new EngageBreakCommand());
-    //button x switch cameras
-    // buttonX.whenPressed(new SwitchCameraCommand());
   }
 
 		
