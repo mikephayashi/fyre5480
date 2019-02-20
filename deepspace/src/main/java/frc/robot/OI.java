@@ -74,10 +74,10 @@ public class OI {
     button5.whileHeld(new ExtendRackAndPinionCommand());
     //button  6 goes forward
     button6.whileHeld(new RetractRackAndPinionCommand());
-    //button 8 backwards
-    button10.whileHeld(new ManualLiftUpCommand());
-    //button 10 forwards
-    button8.whileHeld(new ManualLiftDownCommand());
+    // //button 8 backwards
+    // button10.whileHeld(new ManualLiftUpCommand());
+    // //button 10 forwards
+    // button8.whileHeld(new ManualLiftDownCommand());
   }
 
 		
