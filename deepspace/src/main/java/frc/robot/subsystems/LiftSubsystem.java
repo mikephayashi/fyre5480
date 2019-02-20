@@ -19,26 +19,14 @@ public class LiftSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  //Constants
-  public int CURRENT_LEVEL = 1;
 
-  //Encoders
-  // public Encoder lift_Encoder = new Encoder(RobotMap.lift_encoder_port_one, RobotMap.lift_encoder_port_two, false, Encoder.EncodingType.k4X);
-  // public int count = lift_Encoder.get();
-  // public double raw_distance = lift_Encoder.getRaw();
-  // public double distance = lift_Encoder.getDistance();
-  // public double period = lift_Encoder.getRate();
-  // public double rate = lift_Encoder.getRate();
-  // public boolean direction = lift_Encoder.getDirection();
-  // public boolean stopped = lift_Encoder.getStopped();
   //Motors
    public Spark LiftMotorController = new Spark(RobotMap.lift_motor_port);
-  //Ultrasonic
-  // public AnalogInput ultraLift = new AnalogInput(RobotMap.ultraLift_analog_in);
-  // public double range = ultraLift.getAverageVoltage();t
-  //lift
+
+  //Limit Switch
   public DigitalInput limitSwitch = new DigitalInput(RobotMap.manipulator_switch_port);
   public Boolean limitSwitch_value = limitSwitch.get();
+
   public LiftSubsystem(){
 
   }
@@ -47,6 +35,7 @@ public class LiftSubsystem extends Subsystem {
   public void lift(double stick){
      LiftMotorController.set(stick);
   }
+
   
   @Override
   public void initDefaultCommand() {

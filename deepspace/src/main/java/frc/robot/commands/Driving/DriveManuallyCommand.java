@@ -8,6 +8,7 @@
 package frc.robot.commands.Driving;
 
 import frc.robot.Robot;
+import frc.robot.subsystems.DriveSubsystem;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -33,7 +34,13 @@ public class DriveManuallyCommand extends Command {
     
     double move = Robot.m_oi.m_xBox.getY(Hand.kLeft);
     double turn = Robot.m_oi.m_xBox.getX(Hand.kRight);
-    Robot.driveSubsystemRef.manualDrive(move, turn);
+    boolean driveThrottle = Robot.m_oi.m_xBox.getBumperPressed(Hand.kLeft);
+    if (driveThrottle==true){
+      Robot.driveSubsystemRef.manualDrive(move*0.25, turn*0.25);
+    } else {
+      Robot.driveSubsystemRef.manualDrive(move, turn);
+    }
+    
   }
 
   // Make this return true when this Command no longer needs to run execute()

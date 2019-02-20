@@ -9,6 +9,7 @@ package frc.robot.commands.Lift;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.subsystems.LiftSubsystem;
 
 public class ManualLiftCommand extends Command {
   public ManualLiftCommand() {
@@ -27,10 +28,10 @@ public class ManualLiftCommand extends Command {
   @Override
   protected void execute() {
     double move = Robot.m_oi.stick.getY();
+    double liftThrottle = Robot.m_oi.stick.getThrottle();
     if (Robot.liftSubsystemRef.limitSwitch_value == true) {
-      Robot.liftSubsystemRef.lift(move);
+        Robot.liftSubsystemRef.lift(move*liftThrottle);
     } 
-    
   }
 
   // Make this return true when this Command no longer needs to run execute()
